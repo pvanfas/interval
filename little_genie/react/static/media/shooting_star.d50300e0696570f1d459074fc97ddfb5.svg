@@ -1,7 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="125.301" height="96.2" viewBox="0 0 125.301 96.2">
-  <g id="SHOOTING_STAR" data-name="SHOOTING STAR" transform="translate(-152.285 -222.9)">
-    <path id="XMLID_352_" d="M159.318,294.828c-16.617,14.042-.7,32.844,15.837,19.971,16.539-12.794,50.553-38.539,50.553-38.539l-16.149,2.73L277.586,222.9,184.75,285.155l5.149-12.092Z" transform="translate(0 0)" fill="#fbe006" fill-rule="evenodd"/>
-    <path id="XMLID_33_" d="M172.965,333.082a1.482,1.482,0,0,0-2.965,0,1.534,1.534,0,0,0,1.482,1.482,1.434,1.434,0,0,0,1.482-1.482Z" transform="translate(-3.895 -23.899)" fill="#fff" fill-rule="evenodd"/>
-    <circle id="XMLID_350_" cx="9.284" cy="9.284" r="9.284" transform="translate(156.821 296.389)" fill="#f05a22"/>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="125.301" height="96.2" viewBox="0 0 125.301 96.2"><g id="SHOOTING_STAR" data-name="SHOOTING STAR" transform="translate(-152.285 -222.9)"><path id="XMLID_352_" fill="#fbe006" fill-rule="evenodd" d="M159.318,294.828c-16.617,14.042-.7,32.844,15.837,19.971,16.539-12.794,50.553-38.539,50.553-38.539l-16.149,2.73L277.586,222.9,184.75,285.155l5.149-12.092Z" transform="translate(0 0)"/><path id="XMLID_33_" fill="#fff" fill-rule="evenodd" d="M172.965,333.082a1.482,1.482,0,0,0-2.965,0,1.534,1.534,0,0,0,1.482,1.482,1.434,1.434,0,0,0,1.482-1.482Z" transform="translate(-3.895 -23.899)"/><circle id="XMLID_350_" cx="9.284" cy="9.284" r="9.284" fill="#f05a22" transform="translate(156.821 296.389)"/></g></svg>
