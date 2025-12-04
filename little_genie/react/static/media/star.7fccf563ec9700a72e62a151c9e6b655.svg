@@ -1,3 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="25.5" height="24.3" viewBox="0 0 25.5 24.3">
-  <path id="star_image" data-name="star image" d="M150.8,208.6l3,9.2h9.7l-7.9,5.8,3,9.3-7.8-5.8-7.9,5.8,3-9.3-7.9-5.8h9.8Z" transform="translate(-138 -208.6)" fill="#fbee2d" fill-rule="evenodd"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="25.5" height="24.3" viewBox="0 0 25.5 24.3"><path id="star_image" fill="#fbee2d" fill-rule="evenodd" d="M150.8,208.6l3,9.2h9.7l-7.9,5.8,3,9.3-7.8-5.8-7.9,5.8,3-9.3-7.9-5.8h9.8Z" data-name="star image" transform="translate(-138 -208.6)"/></svg>
