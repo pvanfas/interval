@@ -1,0 +1,101 @@
+{% extends 'web/base.html' %}
+{% load honeypot %}
+
+
+{% block static_backdrop %}{% endblock %}
+{% block demo_backdrop %}{% endblock %}
+{% block header %}{% endblock %}
+{% block footer %}{% endblock %}
+{% block intl_block %}{% endblock %}
+{% block robots %}<meta name="robots" content="noindex">{% endblock %}
+
+
+{% block stylesheet %}
+<style>
+    #otp_input {display: flex;justify-content: center;}
+    form #otp_input input {width: 40px;height: 50px;margin: 0 6px;text-align: center;font-size: 1.5rem;border: 2px solid #6665F1;border-radius: 12px;transition: all 0.3s ease;padding: unset;}
+    #otp_input input:focus {border-color: #A556F6;box-shadow: 0 0 0 2px rgba(166, 86, 246, 0.3);outline: none;}
+    #otp_input input::-webkit-outer-spin-button,
+    #otp_input input::-webkit-inner-spin-button {-webkit-appearance: none;margin: 0;}
+    #otp_input input[type=number] {-moz-appearance: textfield;}
+</style>
+{% endblock %}
+
+
+{% block content %}
+<div class="edu-cta-banner-area home-one-cta-wrapper bg-image" style="min-height:100vh;">
+    <div class="container">
+        <div class="edu-cta-banner">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-6">
+                    <div class="card" style="padding: 50px;border-radius: 20px;align-items: center;">
+                        <h2 class="h3 mb--20"><span class="color-secondary">OTP Verification</h2>
+                        <p>Enter the OTP you received on {{obj.phone_number}}</p>
+
+                        <form action="" class="w-100">
+                            <div class="form-group">
+                                <div id="otp_input">
+                                    <input class="input" type="text" inputmode="numeric" maxlength="1" />
+                                    <input class="input" type="text" inputmode="numeric" maxlength="1" />
+                                    <input class="input" type="text" inputmode="numeric" maxlength="1" />
+                                    <input class="input" type="text" inputmode="numeric" maxlength="1" />
+                                    <input class="input" type="text" inputmode="numeric" maxlength="1" />
+                                    <input class="input" type="text" inputmode="numeric" maxlength="1" />
+                                </div>
+                                <p class="text-primary">{{message|default:""}}</p>
+                            </div>
+                        </form>
+                        
+                        <div class="d-flex justify-content-between align-items-center w-100">
+                            <span class="edu-btn border">Resend OTP</span>
+                            <button class="edu-btn ms-auto" id="paymentBtn">Submit<i class="icon-4"></i></button>
+                        </div>
+
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+{% block scripts %}
+<script>
+    // script.js
+    const inputs = document.getElementById("otp_input");
+        
+    inputs.addEventListener("input", function (e) {
+      const target = e.target;
+      const val = target.value;
+    
+      if (isNaN(val)) {
+        target.value = "";
+        return;
+      }
+    
+      if (val != "") {
+        const next = target.nextElementSibling;
+        if (next) {
+          next.focus();
+        }
+      }
+    });
+    
+    inputs.addEventListener("keyup", function (e) {
+      const target = e.target;
+      const key = e.key.toLowerCase();
+    
+      if (key == "backspace" || key == "delete") {
+        target.value = "";
+        const prev = target.previousElementSibling;
+        if (prev) {
+          prev.focus();
+        }
+        return;
+      }
+    });
+</script>
+{% endblock %}
+

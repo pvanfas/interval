@@ -1,0 +1,31 @@
+<div class="modal fade ed-auth__modal" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="ed-auth__modal-content modal-content">
+            <button type="button" class="ed-auth__modal-close" data-bs-dismiss="modal" aria-label="Close">
+                <i class="fi-rr-cross"></i>
+            </button>
+
+            <!-- Auth Head  -->
+            <div class="ed-auth__modal-head">
+                <a href="/" class="ed-auth__modal-logo">
+                    <img src="/static/web/images/isofs_logo.png" alt="logo" />
+                </a>
+                <p class="ed-auth__modal-text">Chat with Us – We’re Here to Help!</p>
+            </div>
+
+            <!-- Auth Body  -->
+            <div class="ed-auth__modal-body">
+                <form action="{% url 'web:save_chat_request' %}" method="post" class="ed-auth__modal-form">
+                    {% csrf_token %}
+                    <div class="form-group">{{chat_request_form.name}}</div>
+                    <div class="form-group">{{chat_request_form.email}}</div>
+                    <div class="form-group">{{chat_request_form.phone}}</div>
+                    <div class="form-group">{{chat_request_form.city}}</div>
+                    <div class="ed-auth__form-btn">
+                        <button type="submit" class="ed-btn-full w-100">Start Chat</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,599 @@
+{% extends 'web/base.html' %}
+{% load static tags %}
+{% load honeypot %}
+
+
+{% block meta %}
+<!-- Primary Meta Tags -->
+<title>{% get_value 'littlegenie_meta_title' %}</title>
+<meta name="title" content="{% get_value 'littlegenie_meta_title' %}" />
+<meta name="description" content="{% get_value 'littlegenie_meta_desc' %}" />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{og_url}}" />
+<meta property="og:title" content="{% get_value 'littlegenie_meta_title' %}" />
+<meta property="og:description" content="{% get_value 'littlegenie_meta_desc' %}" />
+<meta property="og:image" content="https://www.intervaledu.com/static/web/images/main/preview.png" />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content="{{og_url}}" />
+<meta property="twitter:title" content="{% get_value 'littlegenie_meta_title' %}" />
+<meta property="twitter:description" content="{% get_value 'littlegenie_meta_desc' %}" />
+<meta property="twitter:image" content="https://www.intervaledu.com/static/web/images/main/preview.png" />
+{% endblock %}
+
+
+{% block content %}
+<div id="main-wrapper" class="main-wrapper bg1">
+
+    <header class="droplets">
+        <div class="container">
+            <div class="logos">
+                <div class="item" >
+                    <img src="/static/web/images/mask/interval.png" alt="">
+                </div>
+                 <div class="item">
+                    <img src="/static/web/images/mask/littlegenie.png" alt="">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="hero-banner hero-style-7">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="banner-content text-start">
+                        <h1 class="title h2 lang_ml" data-sal-delay="100" data-sal="slide-up" data-sal-duration="1000">
+                            കളിചിരികളോടൊപ്പം ഇനി കുട്ടികളുടെ skills വളർത്തിയെടുക്കാം</h1>
+                        <h6 data-sal-delay="200" data-sal="slide-up" data-sal-duration="1000" class="description">
+                            Personalized Online Kindergarten Program for Children: <span class="colored"> Ages 3–7</span></h6>
+                        
+                        <div class="black_column">
+                            <div class="d-flex align-items-center">
+                                <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d"
+                                    class="rounded-circle" alt="User 1">
+                                <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d"
+                                    class="rounded-circle" alt="User 2">
+                                <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d"
+                                    class="rounded-circle" alt="User 3">
+                            </div>
+
+                            <!-- Enrollment Text -->
+                            <div class="text-center text-md-start">
+                                <h6 class="mb-0">50,000+ Students Enrolled</h6>
+                            </div>
+                            <span class="text-dark divider">|</span>
+
+                            <!-- Ratings -->
+                            <div class="d-flex align-items-center gap-2">
+                                <div class="text-warning">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-half"></i>
+                                </div>
+                                <h6 class="mb-0">
+                                    4.7/5 <span class="text-secondary fs-4">(26,789 Ratings)</span>
+                                </h6>
+                            </div>
+                        </div>
+
+                        <div class="banner-btn pt-5" data-sal-delay="400" data-sal="slide-up" data-sal-duration="1000">
+                            <a href="#mainForm" class="edu-btn btn-curved">Register Now <i class="icon-4"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="thumb">
+                        <img src="/static/web/images/main/child.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <ul class="shape-group">
+            <li class="shape-1 scene" data-sal-delay="1000" data-sal="fade" data-sal-duration="1000">
+                <img data-depth="2" src="/static/web/images/banner/icon-3.png" alt="Shape">
+            </li>
+            <li class="shape-2 scene" data-sal-delay="1000" data-sal="fade" data-sal-duration="1000">
+                <img data-depth="-2" src="/static/web/images/banner/icon-1.png" alt="Shape">
+            </li>
+            <li class="shape-3 scene" data-sal-delay="1000" data-sal="fade" data-sal-duration="1000">
+                <img data-depth="2" src="/static/web/images/banner/icon-5.png" alt="Shape">
+            </li>
+            <li class="shape-4 scene" data-sal-delay="1000" data-sal="fade" data-sal-duration="1000">
+                <img data-depth="-2" src="/static/web/images/banner/icon-2.png" alt="Shape">
+            </li>
+            <li class="shape-5 scene" data-sal-delay="1000" data-sal="fade" data-sal-duration="1000">
+                <img data-depth="2" src="/static/web/images/banner/icon-4.png" alt="Shape">
+            </li>
+            <li class="shape-7" data-sal-delay="1000" data-sal="fade" data-sal-duration="1000">
+                <img class="rotateit" src="/static/web/images/about/shape-13.png" alt="Shape">
+            </li>
+        </ul>
+    </div>
+
+    <div class="gap-bottom-equal edu-about-area about-style-2 edu-section-gap pt-0">
+        <div class="container edublink-animated-shape">
+            <div class="row g-5 align-items-start">
+                <div class="col-md-4">
+                    <div class="about-content">
+                        <div class="section-title section-left" data-sal-delay="150" data-sal="slide-up"
+                            data-sal-duration="800">
+                            <h2 class="title">Why Choose <br>
+                                <span class="color-secondary">Little Genie?</span>
+                            </h2>
+                        </div>
+                        <div class="content mt-5">
+                            <p class="description">
+                                At Little Genie, your kid will have an early education that sparks their curiosity, creativity, and confidence. Our program blends playful learning with expert guidance, creating a foundation that helps children thrive academically, socially, and emotionally. 
+                            </p>
+                            <a href="#mainForm" class="edu-btn btn-curved mt-0">Book a demo class today <i class="icon-4"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="whycard card" data-sal-delay="100" data-sal="slide-up" data-sal-duration="1000">
+                        <div class="text-content">
+                            <h4>Play-Based Learning</h4>
+                            <p class="description">
+                                Play-based learning combines purposeful play with guided instruction, nurturing curiosity and foundational skills in young children through joyful, hands-on activities that make learning feel like play.
+                            </p>
+                        </div>
+                        <img src="/static/web/images/mask/play.webp" alt="">
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="whycard card" data-sal-delay="200" data-sal="slide-up" data-sal-duration="1000">
+                        <div class="text-content">
+                            <h4>Safe and Nurturing Environment</h4>
+                            <p class="description">We provide a secure, warm, and inspiring virtual space for children to express themselves, explore, and develop. </p>
+                        </div>
+                        <img src="/static/web/images/mask/educator.webp" alt="">
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="whycard card" data-sal-delay="300" data-sal="slide-up" data-sal-duration="1000">
+                        <div class="text-content">
+                            <h4>Expert Educators</h4>
+                            <p class="description">We have a team of passionate and professionally trained teachers who adapt themselves to each child's unique learning style, ensuring personalized attention and support. </p>
+                        </div>
+                        <img src="/static/web/images/mask/safe.webp" alt="">
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="whycard card" data-sal-delay="400" data-sal="slide-up" data-sal-duration="1000">
+                        <div class="text-content">
+                            <h4>High-quality study materials</h4>
+                            <p class="description">We provide our little munchkins with a range of research-backed, fun study materials to boost their language, comprehension, hygiene, and scientific thinking abilities while keeping them engaged.</p>
+                        </div>
+                        <img src="/static/web/images/mask/books.webp" alt="">
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="whycard card" data-sal-delay="400" data-sal="slide-up" data-sal-duration="1000">
+                        <div class="text-content">
+                            <h4>Parent Collaboration</h4>
+                            <p class="description">Regular updates and progress reports keep parents informed and involved in the child's educational journey.</p>
+                        </div>
+                        <img src="/static/web/images/mask/parent.webp" alt="">
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="whycard card" data-sal-delay="400" data-sal="slide-up" data-sal-duration="1000">
+                        <div class="text-content">
+                            <h4>Certification Upon Completion</h4>
+                            <p class="description">Children who complete the one-year Little Genie program will receive a Completion Certificate that recognizes their progress and readiness for their next academic stage.</p>
+                        </div>
+                        <img src="/static/web/images/mask/certificate.webp" alt="">
+                    </div>
+                </div>
+
+            </div>
+            <ul class="shape-group">
+                <li class="shape-1 circle scene" data-sal-delay="500" data-sal="fade" data-sal-duration="200">
+                    <span data-depth="-2.3"></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="gap-bottom-equal edu-about-area about-style-2 edu-section-gap pt-0">
+        <div class="container">
+            <div class="section-title section-center" data-sal-delay="100" data-sal="slide-up" data-sal-duration="800">
+                <h2 class="title">Core Learning Areas</h2>
+                <span class="shape-line"><i class="icon-19"></i></span>
+            </div>
+            <div class="mansory_boxes">
+                <div class="row">
+                    <div class="col-md-5" data-sal-delay="100" data-sal="slide-up" data-sal-duration="1000">
+                        <div class="box">
+                            <h3 class="title">Language & Communication</h3>
+                            <p class="description">Reading, writing, rhymes, and storytelling to build vocabulary and literacy.</p>
+                            <img src="/static/web/images/mask/language.webp" alt="">
+                        </div>
+                    </div>
+                    <div class="col-md-7" data-sal-delay="200" data-sal="slide-up" data-sal-duration="1000">
+                        <div class="box">
+                            <h3 class="title">Math & Problem-Solving</h3>
+                            <p class="description">Interactive games introducing numbers, counting, shapes, and measurements.</p>
+                            <img src="/static/web/images/mask/math.webp" alt="">
+                        </div>
+                    </div>
+                    <div class="col-md-6" data-sal-delay="300" data-sal="slide-up" data-sal-duration="1000">
+                        <div class="box">
+                            <h3 class="title">Social & Emotional Development</h3>
+                            <p class="description">Encouraging teamwork, sharing, and communication to ensure the social & emotional development of kids. </p>
+                            <img src="/static/web/images/mask/social.webp" alt="">
+                        </div>
+                    </div>
+                    <div class="col-md-6" data-sal-delay="400" data-sal="slide-up" data-sal-duration="1000">
+                        <div class="box">
+                            <h3 class="title">Science & Discovery</h3>
+                            <p class="description">Encouraging observation, questioning, and understanding of the world around us to develop scientific thinking in children</p>
+                            <img src="/static/web/images/mask/science.webp" alt="">
+                        </div>
+                    </div>
+                    <div class="col-md-7" data-sal-delay="500" data-sal="slide-up" data-sal-duration="1000">
+                        <div class="box">
+                            <h3 class="title">Creativity & Imagination</h3>
+                            <p class="description">Exposure to arts, music, dance, and role-playing activities to foster creativity and imagination</p>
+                            <img src="/static/web/images/mask/imagination.webp" alt="">
+                        </div>
+                    </div>
+                    <div class="col-md-5" data-sal-delay="600" data-sal="slide-up" data-sal-duration="1000">
+                        <div class="box">
+                            <h3 class="title"> Physical & Motor Skills</h3>
+                            <p class="description">Engaging movement games and exercises to improve kids’ physical activity.</p>
+                            <img src="/static/web/images/mask/exercise.webp" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <div class="gap-bottom-equal edu-about-area about-style-2 edu-section-gap pt-50 pb-50">
+        <div class="container">
+            <div class="section-title section-center" data-sal-delay="100" data-sal="slide-up" data-sal-duration="800">
+                <h2 class="title mt-0">Students Achievements</h2>
+                <p class="description">Last year, Over 5,000+ students gained confidence through Interval’s Littlegenie Program</p>
+            </div>
+            <div class="testimonial-activation-3 swiper">
+                <div class="swiper-wrapper">
+                    
+                    <div class="swiper-slide mb-3" data-sal-delay="100" data-sal="slide-up" data-sal-duration="1000">
+                        <div class="thumbnail shadow">
+                            <img src="/static/web/images/mask/thumb.jpg" alt="">
+                            <span class="youtube-link" youtubeid="RZzAX0K9C64">
+                                <svg height="64px" style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 0 32 32" width="64px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Layer_1"/><g id="play_x5F_alt"><path d="M16,0C7.164,0,0,7.164,0,16s7.164,16,16,16s16-7.164,16-16S24.836,0,16,0z M10,24V8l16.008,8L10,24z   " style="fill:#FFFFFF;"/></g></svg>
+                            </span>
+                        </div>
+                        <div class="context p-4">
+                            <p class="description">Vishal from Calicut</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide mb-3" data-sal-delay="100" data-sal="slide-up" data-sal-duration="1000">
+                        <div class="thumbnail shadow">
+                            <img src="/static/web/images/mask/thumb.jpg" alt="">
+                            <span class="youtube-link" youtubeid="RZzAX0K9C64">
+                                <svg height="64px" style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 0 32 32" width="64px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Layer_1"/><g id="play_x5F_alt"><path d="M16,0C7.164,0,0,7.164,0,16s7.164,16,16,16s16-7.164,16-16S24.836,0,16,0z M10,24V8l16.008,8L10,24z   " style="fill:#FFFFFF;"/></g></svg>
+                            </span>
+                        </div>
+                        <div class="context p-4">
+                            <p class="description">Vishal from Calicut</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide mb-3" data-sal-delay="100" data-sal="slide-up" data-sal-duration="1000">
+                        <div class="thumbnail shadow">
+                            <img src="/static/web/images/mask/thumb.jpg" alt="">
+                            <span class="youtube-link" youtubeid="RZzAX0K9C64">
+                                <svg height="64px" style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 0 32 32" width="64px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Layer_1"/><g id="play_x5F_alt"><path d="M16,0C7.164,0,0,7.164,0,16s7.164,16,16,16s16-7.164,16-16S24.836,0,16,0z M10,24V8l16.008,8L10,24z   " style="fill:#FFFFFF;"/></g></svg>
+                            </span>
+                        </div>
+                        <div class="context p-4">
+                            <p class="description">Vishal from Calicut</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide mb-3" data-sal-delay="100" data-sal="slide-up" data-sal-duration="1000">
+                        <div class="thumbnail shadow">
+                            <img src="/static/web/images/mask/thumb.jpg" alt="">
+                            <span class="youtube-link" youtubeid="RZzAX0K9C64">
+                                <svg height="64px" style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 0 32 32" width="64px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Layer_1"/><g id="play_x5F_alt"><path d="M16,0C7.164,0,0,7.164,0,16s7.164,16,16,16s16-7.164,16-16S24.836,0,16,0z M10,24V8l16.008,8L10,24z   " style="fill:#FFFFFF;"/></g></svg>
+                            </span>
+                        </div>
+                        <div class="context p-4">
+                            <p class="description">Vishal from Calicut</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide mb-3" data-sal-delay="100" data-sal="slide-up" data-sal-duration="1000">
+                        <div class="thumbnail shadow">
+                            <img src="/static/web/images/mask/thumb.jpg" alt="">
+                            <span class="youtube-link" youtubeid="RZzAX0K9C64">
+                                <svg height="64px" style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 0 32 32" width="64px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Layer_1"/><g id="play_x5F_alt"><path d="M16,0C7.164,0,0,7.164,0,16s7.164,16,16,16s16-7.164,16-16S24.836,0,16,0z M10,24V8l16.008,8L10,24z   " style="fill:#FFFFFF;"/></g></svg>
+                            </span>
+                        </div>
+                        <div class="context p-4">
+                            <p class="description">Vishal from Calicut</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="gap-bottom-equal edu-about-area about-style-2 edu-section-gap pt-50 pb-50" style="background-color: #faf3e9;">
+        <div class="container">
+            <div class="section-title section-center" data-sal-delay="100" data-sal="slide-up" data-sal-duration="800">
+                <h2 class="title">Parents Feedback</h2>
+            </div>
+            <div class="testimonial-activation-3 swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide mb-3" data-sal-delay="100" data-sal="slide-up" data-sal-duration="1000">
+                        <div class="thumbnail shadow">
+                            <img src="/static/web/images/mask/thumb.jpg" alt="">
+                            <span class="youtube-link" youtubeid="RZzAX0K9C64">
+                                <svg height="64px" style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 0 32 32" width="64px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Layer_1"/><g id="play_x5F_alt"><path d="M16,0C7.164,0,0,7.164,0,16s7.164,16,16,16s16-7.164,16-16S24.836,0,16,0z M10,24V8l16.008,8L10,24z   " style="fill:#FFFFFF;"/></g></svg>
+                            </span>
+                        </div>
+                        <div class="context p-4">
+                            <p class="description">Vishal from Calicut</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide mb-3" data-sal-delay="100" data-sal="slide-up" data-sal-duration="1000">
+                        <div class="thumbnail shadow">
+                            <img src="/static/web/images/mask/thumb.jpg" alt="">
+                            <span class="youtube-link" youtubeid="RZzAX0K9C64">
+                                <svg height="64px" style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 0 32 32" width="64px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Layer_1"/><g id="play_x5F_alt"><path d="M16,0C7.164,0,0,7.164,0,16s7.164,16,16,16s16-7.164,16-16S24.836,0,16,0z M10,24V8l16.008,8L10,24z   " style="fill:#FFFFFF;"/></g></svg>
+                            </span>
+                        </div>
+                        <div class="context p-4">
+                            <p class="description">Vishal from Calicut</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide mb-3" data-sal-delay="100" data-sal="slide-up" data-sal-duration="1000">
+                        <div class="thumbnail shadow">
+                            <img src="/static/web/images/mask/thumb.jpg" alt="">
+                            <span class="youtube-link" youtubeid="RZzAX0K9C64">
+                                <svg height="64px" style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 0 32 32" width="64px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Layer_1"/><g id="play_x5F_alt"><path d="M16,0C7.164,0,0,7.164,0,16s7.164,16,16,16s16-7.164,16-16S24.836,0,16,0z M10,24V8l16.008,8L10,24z   " style="fill:#FFFFFF;"/></g></svg>
+                            </span>
+                        </div>
+                        <div class="context p-4">
+                            <p class="description">Vishal from Calicut</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide mb-3" data-sal-delay="100" data-sal="slide-up" data-sal-duration="1000">
+                        <div class="thumbnail shadow">
+                            <img src="/static/web/images/mask/thumb.jpg" alt="">
+                            <span class="youtube-link" youtubeid="RZzAX0K9C64">
+                                <svg height="64px" style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 0 32 32" width="64px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Layer_1"/><g id="play_x5F_alt"><path d="M16,0C7.164,0,0,7.164,0,16s7.164,16,16,16s16-7.164,16-16S24.836,0,16,0z M10,24V8l16.008,8L10,24z   " style="fill:#FFFFFF;"/></g></svg>
+                            </span>
+                        </div>
+                        <div class="context p-4">
+                            <p class="description">Vishal from Calicut</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide mb-3" data-sal-delay="100" data-sal="slide-up" data-sal-duration="1000">
+                        <div class="thumbnail shadow">
+                            <img src="/static/web/images/mask/thumb.jpg" alt="">
+                            <span class="youtube-link" youtubeid="RZzAX0K9C64">
+                                <svg height="64px" style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 0 32 32" width="64px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Layer_1"/><g id="play_x5F_alt"><path d="M16,0C7.164,0,0,7.164,0,16s7.164,16,16,16s16-7.164,16-16S24.836,0,16,0z M10,24V8l16.008,8L10,24z   " style="fill:#FFFFFF;"/></g></svg>
+                            </span>
+                        </div>
+                        <div class="context p-4">
+                            <p class="description">Vishal from Calicut</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide mb-3" data-sal-delay="100" data-sal="slide-up" data-sal-duration="1000">
+                        <div class="thumbnail shadow">
+                            <img src="/static/web/images/mask/thumb.jpg" alt="">
+                            <span class="youtube-link" youtubeid="RZzAX0K9C64">
+                                <svg height="64px" style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 0 32 32" width="64px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Layer_1"/><g id="play_x5F_alt"><path d="M16,0C7.164,0,0,7.164,0,16s7.164,16,16,16s16-7.164,16-16S24.836,0,16,0z M10,24V8l16.008,8L10,24z   " style="fill:#FFFFFF;"/></g></svg>
+                            </span>
+                        </div>
+                        <div class="context p-4">
+                            <p class="description">Vishal from Calicut</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="gap-bottom-equal edu-about-area about-style-2 edu-section-gap pt-50">
+        <div class="container">
+            <div class="section-title section-center" data-sal-delay="100" data-sal="slide-up" data-sal-duration="800">
+                <h2 class="title">On Media</h2>
+            </div>
+            <div class="testimonial-activation-3 swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide mb-3" data-sal-delay="100" data-sal="slide-up" data-sal-duration="1000">
+                        <div class="thumbnail shadow">
+                            <img src="/static/web/images/mask/thumb.jpg" alt="">
+                            <span class="youtube-link" youtubeid="RZzAX0K9C64">
+                                <svg height="64px" style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 0 32 32" width="64px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Layer_1"/><g id="play_x5F_alt"><path d="M16,0C7.164,0,0,7.164,0,16s7.164,16,16,16s16-7.164,16-16S24.836,0,16,0z M10,24V8l16.008,8L10,24z   " style="fill:#FFFFFF;"/></g></svg>
+                            </span>
+                        </div>
+                        <div class="context p-4">
+                            <p class="description">Vishal from Calicut</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide mb-3" data-sal-delay="100" data-sal="slide-up" data-sal-duration="1000">
+                        <div class="thumbnail shadow">
+                            <img src="/static/web/images/mask/thumb.jpg" alt="">
+                            <span class="youtube-link" youtubeid="RZzAX0K9C64">
+                                <svg height="64px" style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 0 32 32" width="64px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Layer_1"/><g id="play_x5F_alt"><path d="M16,0C7.164,0,0,7.164,0,16s7.164,16,16,16s16-7.164,16-16S24.836,0,16,0z M10,24V8l16.008,8L10,24z   " style="fill:#FFFFFF;"/></g></svg>
+                            </span>
+                        </div>
+                        <div class="context p-4">
+                            <p class="description">Vishal from Calicut</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide mb-3" data-sal-delay="100" data-sal="slide-up" data-sal-duration="1000">
+                        <div class="thumbnail shadow">
+                            <img src="/static/web/images/mask/thumb.jpg" alt="">
+                            <span class="youtube-link" youtubeid="RZzAX0K9C64">
+                                <svg height="64px" style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 0 32 32" width="64px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Layer_1"/><g id="play_x5F_alt"><path d="M16,0C7.164,0,0,7.164,0,16s7.164,16,16,16s16-7.164,16-16S24.836,0,16,0z M10,24V8l16.008,8L10,24z   " style="fill:#FFFFFF;"/></g></svg>
+                            </span>
+                        </div>
+                        <div class="context p-4">
+                            <p class="description">Vishal from Calicut</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide mb-3" data-sal-delay="100" data-sal="slide-up" data-sal-duration="1000">
+                        <div class="thumbnail shadow">
+                            <img src="/static/web/images/mask/thumb.jpg" alt="">
+                            <span class="youtube-link" youtubeid="RZzAX0K9C64">
+                                <svg height="64px" style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 0 32 32" width="64px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Layer_1"/><g id="play_x5F_alt"><path d="M16,0C7.164,0,0,7.164,0,16s7.164,16,16,16s16-7.164,16-16S24.836,0,16,0z M10,24V8l16.008,8L10,24z   " style="fill:#FFFFFF;"/></g></svg>
+                            </span>
+                        </div>
+                        <div class="context p-4">
+                            <p class="description">Vishal from Calicut</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide mb-3" data-sal-delay="100" data-sal="slide-up" data-sal-duration="1000">
+                        <div class="thumbnail shadow">
+                            <img src="/static/web/images/mask/thumb.jpg" alt="">
+                            <span class="youtube-link" youtubeid="RZzAX0K9C64">
+                                <svg height="64px" style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 0 32 32" width="64px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Layer_1"/><g id="play_x5F_alt"><path d="M16,0C7.164,0,0,7.164,0,16s7.164,16,16,16s16-7.164,16-16S24.836,0,16,0z M10,24V8l16.008,8L10,24z   " style="fill:#FFFFFF;"/></g></svg>
+                            </span>
+                        </div>
+                        <div class="context p-4">
+                            <p class="description">Vishal from Calicut</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide mb-3" data-sal-delay="100" data-sal="slide-up" data-sal-duration="1000">
+                        <div class="thumbnail shadow">
+                            <img src="/static/web/images/mask/thumb.jpg" alt="">
+                            <span class="youtube-link" youtubeid="RZzAX0K9C64">
+                                <svg height="64px" style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 0 32 32" width="64px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Layer_1"/><g id="play_x5F_alt"><path d="M16,0C7.164,0,0,7.164,0,16s7.164,16,16,16s16-7.164,16-16S24.836,0,16,0z M10,24V8l16.008,8L10,24z   " style="fill:#FFFFFF;"/></g></svg>
+                            </span>
+                        </div>
+                        <div class="context p-4">
+                            <p class="description">Vishal from Calicut</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="gap-bottom-equal edu-about-area about-style-2 edu-section-gap pt-0" id="mainForm">
+        <div class="container">
+            <div class="card_box">
+                <div class="section-title section-center" data-sal-delay="100" data-sal="slide-up" data-sal-duration="800">
+                    <p class="description mb-0">No passive scrolling, just real learning.</p>
+                <h2 class="title mt-0">Book your kids free session </h2>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <form action="" method="post" class="form rounded footer_form">
+                            {% csrf_token %}
+
+                            {% render_honeypot_field %}
+
+                            {% if form.errors %}
+                            {% for field in form %}
+                            {% for error in field.errors %}
+                            <div class="alert alert-danger">
+                                <strong>{{ error|escape }}</strong>
+                            </div>
+                            {% endfor %}
+                            {% endfor %}
+                            {% for error in form.non_field_errors %}
+                            <div class="alert alert-danger">
+                                <strong>{{ error|escape }}</strong>
+                            </div>
+                            {% endfor %}
+                            {% endif %}
+
+                            <div class="form-group">
+                                <label class="mb-0" for="{{form.name.id_for_label}}">{{form.name.label}}</label>
+                                {{form.name}}
+                            </div>
+
+                            <div class="form-group">
+                                <label class="mb-0"
+                                    for="{{form.phone_number.id_for_label}}">{{form.phone_number.label}}</label>
+                                {{form.phone_number}}
+                            </div>
+
+                            <div class="form-group">
+                                <label class="mb-0"
+                                    for="{{form.whatsapp_number.id_for_label}}">{{form.whatsapp_number.label}}</label>
+                                {{form.whatsapp_number}}
+                            </div>
+
+                            <div class="form-group">
+                                <label class="mb-0" for="{{form.age.id_for_label}}">{{form.age.label}}</label>
+                                {{form.age}}
+                            </div>
+
+                            {{form.intro_phone_number_country_code}}
+                            {{form.intro_whatsapp_number_country_code}}
+
+                            <div class="form-group">
+                                <button type="submit" class="edu-btn btn-medium btn-gradient">Submit <i class="icon-4"></i>
+                                </button>
+                            </div>
+
+                        </form>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="cta_imag">
+                            <img src="/static/web/images/mask/cta.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
+
+
+{% block scripts %}
+<script>
+    initializeIntlTelInput(".enquiry_form", "phone_number", "intro_phone_number_country_code");
+    initializeIntlTelInput(".enquiry_form", "whatsapp_number", "intro_whatsapp_number_country_code");
+</script>
+{% endblock %}

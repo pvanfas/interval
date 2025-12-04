@@ -1,0 +1,95 @@
+{% load honeypot %}
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+            <div class="border-0 modal-header pt-5 px-5">
+                <h5 class="modal-title" id="staticBackdropLabel">Upgrade Your Learning With Us</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row align-items-center">
+                    <div class="col-md-5">
+                        <!-- <div class="thumb ps-5">
+                            <div class="thumbnail pb-3">
+                                <img src="/static/web/images/main/offercta.png" alt="" style="border-radius: 4px;">
+                            </div>
+                        </div> -->
+                        <div class="thumb p-5">
+                            <div class="thumbnail">
+                                <video autoplay muted loop playsinline style="width:100%;max-height: 300px;">
+                                    <source src="/static/web/video/map.webm" type="video/webm">
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="pb-3 px-5 pt-0">
+                            <form action="{% url 'web:thanks' %}" method="post" class="enquiry_form">
+                                {% csrf_token %}
+
+                                {% render_honeypot_field %}
+
+                                {% if form.errors %}
+                                    {% for field in form %}
+                                        {% for error in field.errors %}
+                                            <div class="alert alert-danger">
+                                                <strong>{{ error|escape }}</strong>
+                                            </div>
+                                        {% endfor %}
+                                    {% endfor %}
+                                    {% for error in form.non_field_errors %}
+                                        <div class="alert alert-danger">
+                                            <strong>{{ error|escape }}</strong>
+                                        </div>
+                                    {% endfor %}
+                                {% endif %}
+
+                                <div class="form-group">
+                                    <label class="mb-0" for="{{ enquiry_form.name.id_for_label }}">{{ enquiry_form.name.label }}</label>
+                                    {{ enquiry_form.name }}
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="mb-0" for="{{ enquiry_form.country.id_for_label }}">{{ enquiry_form.country.label }}</label>
+                                    {{ enquiry_form.country }}
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="mb-0" for="{{ enquiry_form.email.id_for_label }}">{{ enquiry_form.email.label }}</label>
+                                    {{ enquiry_form.email }}
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="mb-0" for="{{ enquiry_form.purpose.id_for_label }}">{{ enquiry_form.purpose.label }}</label>
+                                    {{ enquiry_form.purpose }}
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="mb-0" for="{{ enquiry_form.phone_number.id_for_label }}">{{ enquiry_form.phone_number.label }}</label>
+                                    {{ enquiry_form.phone_number }}
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="mb-0" for="{{ enquiry_form.whatsapp_number.id_for_label }}">{{ enquiry_form.whatsapp_number.label }}</label>
+                                    {{ enquiry_form.whatsapp_number }}
+                                </div>
+
+                                {{ enquiry_form.popup_phone_number_country_code }}
+                                {{ enquiry_form.popup_whatsapp_number_country_code }}
+
+                                <div class="form-group">
+                                    <button type="submit" class="edu-btn btn-medium btn-gradient">Submit <i
+                                            class="icon-4"></i>
+                                    </button>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

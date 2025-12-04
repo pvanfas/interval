@@ -1,0 +1,63 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Offers{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h3 class="page-title"> Offers </h3>
+</div>
+
+{% if request.user.is_superuser %}
+<div class="row mb-3">
+    <div class="col text-right">
+        <a href="{% url 'products:new_offer_product' %}" class="btn btn-lg btn-gradient-primary">New Offer</a>
+    </div>
+</div>
+{% endif %}
+
+<div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Offers</h4>
+                {% if object_list %}
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover border" style="width:100%;">
+                        <thead>
+                            <tr>
+                                <th> # </th>
+                                <th> product </th>
+                                <th> offer_price </th>
+                                <th> offer_startdate </th>
+                                <th> offer_enddate </th>
+                                {% if request.user.is_superuser %}<th> Actions </th>{% endif %}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for object in object_list %}
+                            <tr>
+                                <td>{{forloop.counter}}</td>
+                                <td> {{object.product}} </td>
+                                <td> {{object.offer_price}} </td>
+                                <td> {{object.offer_startdate}} </td>
+                                <td> {{object.offer_enddate}} </td>
+                                {% if request.user.is_superuser %}
+                                <td>
+                                    <a href="{{object.get_update_url}}" class="btn btn-sm btn-circle btn-info"><i class="mdi mdi-pencil"></i></a>
+                                    <a href="{{object.get_delete_url}}" class="btn btn-sm btn-circle btn-danger"><i class="mdi mdi-delete"></i></a>
+                                </td>
+                                {% endif %}
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% else %}
+                <p class="mb-0">No Offer exists.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock content %}

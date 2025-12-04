@@ -1,0 +1,50 @@
+/*================================================================================================
+    Start Breadcrumbs CSS
+===================================================================================================*/
+.ed-breadcrumbs {
+  padding: 90px 0px;
+}
+.ed-breadcrumbs__content {
+  text-align: center;
+}
+.ed-breadcrumbs__title {
+  font-size: 36px;
+  margin-bottom: 24px;
+  line-height: 30px;
+}
+.ed-breadcrumbs__menu {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+.ed-breadcrumbs__menu li {
+  color: var(--ed-paragraph-color);
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.ed-breadcrumbs__menu li.active a {
+  color: #1D65B0;
+  font-weight: 500;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991.99px) {
+  .ed-breadcrumbs {
+    padding: 80px 0px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .ed-breadcrumbs {
+    padding: 56px 0px;
+  }
+  .ed-breadcrumbs__title {
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+}
+
+/*================================================================================================
+    End Breadcrumbs CSS
+===================================================================================================*/

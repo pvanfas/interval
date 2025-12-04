@@ -1,0 +1,43 @@
+/*================================================================================================
+    Start Apply CSS
+===================================================================================================*/
+.ed-apply {
+  padding: 60px 0px;
+}
+.ed-apply__main {
+  z-index: 2;
+}
+.ed-apply__main .ed-contact__form-sm-title {
+  margin-bottom: 16px;
+}
+.ed-apply__main .ed-contact__form-head {
+  margin-bottom: 32px;
+}
+.ed-apply__main .ed-contact__form-main .form-group {
+  margin-bottom: 24px;
+}
+.ed-apply__shapes .shape-1 {
+  position: absolute;
+  z-index: -1;
+  bottom: -5%;
+  right: -25%;
+}
+.ed-apply__shapes .shape-2 {
+  position: absolute;
+  bottom: 80px;
+  right: -16%;
+  z-index: -1;
+}
+.ed-apply__main .ed-contact__form {
+  margin: 0;
+  padding: 50px;
+}
+.ed-apply__main .ed-contact__form-btn {
+  margin-top: 32px;
+}
+
+
+
+/*================================================================================================
+    End Apply CSS
+===================================================================================================*/

@@ -1,0 +1,66 @@
+{% extends 'web/base.html' %}
+{% load static tags %}
+
+{% block meta %}
+    <!-- Primary Meta Tags -->
+    <title>{% get_value 'news_meta_title' %}</title>
+    <meta name="title" content="{% get_value 'news_meta_title' %}" />
+    <meta name="description" content="{% get_value 'news_meta_desc' %}" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{og_url}}" />
+    <meta property="og:title" content="{% get_value 'news_meta_title' %}" />
+    <meta property="og:description" content="{% get_value 'news_meta_desc' %}" />
+    <meta property="og:image" content="https://www.intervaledu.com/static/web/images/main/preview.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="{{og_url}}" />
+    <meta property="twitter:title" content="{% get_value 'news_meta_title' %}" />
+    <meta property="twitter:description" content="{% get_value 'news_meta_desc' %}" />
+    <meta property="twitter:image" content="https://www.intervaledu.com/static/web/images/main/preview.png" />
+{% endblock %}
+
+{% block content %}
+
+<div class="edu-event-area event-area-1 edu-section-gap">
+    <div class="container edublink-animated-shape">
+        <div class="section-title section-center sal-animate" data-sal-delay="150" data-sal="slide-up"
+            data-sal-duration="800">
+            <h2 class="title">News and Events </h2>
+            <span class="shape-line"><i class="icon-19"></i></span>
+        </div>
+        <div class="row g-5">
+            <!-- Start Event Grid  -->
+            {% for news in newses %}
+            <div class="col-lg-4 col-md-6 sal-animate" data-sal-delay="100" data-sal="slide-up" data-sal-duration="800">
+                <div class="bdrs bradius edu-event event-style-1 shadow">
+                    <div class="inner">
+                        <div class="thumbnail shadow">
+                            <a href="{{news.get_absolute_url}}">
+                                <img class="lazy" data-src="{{news.image.url}}" alt="Blog Images"
+                                    style="height: 250px;object-fit: cover;">
+                            </a>
+                        </div>
+                        <div class="content">
+                            <div class="event-date">
+                                <span class="day">{{news.date|date:"d"}}</span>
+                                <span class="month">{{news.date|date:"M"|upper}}</span>
+                            </div>
+                            <h5 class="title"><a href="{{news.get_absolute_url}}">{{news.title}}</a></h5>
+                            <div class="read-more-btn">
+                                <a class="edu-btn btn-small btn-secondary" href="{{news.get_absolute_url}}">Learn More <i class="icon-4"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% include 'web/partials/cta.html' %}
+
+{% endblock %}

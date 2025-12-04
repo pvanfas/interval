@@ -1,0 +1,129 @@
+{% extends 'web/base.html' %}
+{% load static tags %}
+
+{% block meta %}
+    <!-- Primary Meta Tags -->
+    <title>{% get_value 'courses_meta_title' %}</title>
+    <meta name="title" content="{% get_value 'courses_meta_title' %}" />
+    <meta name="description" content="{% get_value 'courses_meta_desc' %}" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{og_url}}" />
+    <meta property="og:title" content="{% get_value 'courses_meta_title' %}" />
+    <meta property="og:description" content="{% get_value 'courses_meta_desc' %}" />
+    <meta property="og:image" content="https://www.intervaledu.com/static/web/images/main/preview.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="{{og_url}}" />
+    <meta property="twitter:title" content="{% get_value 'courses_meta_title' %}" />
+    <meta property="twitter:description" content="{% get_value 'courses_meta_desc' %}" />
+    <meta property="twitter:image" content="https://www.intervaledu.com/static/web/images/main/preview.png" />
+{% endblock %}
+
+{% block content %}
+
+<div class="hero-banner hero-style-7 bgc1 pb-0" style="padding:60px 0 0 0">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <div class="banner-content text-start mb-0">
+                    <h1 class="h3 title sal-animate">Personalized Learning for Academic Success</h1>
+                    <ul class="list-unstyled">
+                        <li class="mt-2 mb-0">👨‍🏫 Dedicated teachers guide every student’s journey</li>
+                        <li class="mt-2 mb-0">🕒 Convenient and flexible courses for all learning needs</li>
+                        <li class="mt-2 mb-0">👩‍🏫 Expert educators dedicated to individual growth</li>
+                        <li class="mt-2 mb-0">📅 Flexible scheduling for a seamless learning experience</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="thumb">
+                    <img src="/static/web/images/main/courses.png" alt="" style="max-height:400px;object-fit:contain;object-position:bottom;">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="edu-course-area course-area-2 gap-tb-text section_padding">
+    <div class="container">
+        
+        <div class="row g-5">
+            {% for program in academic_courses %}
+            <div class="col-md-6 col-lg-4">
+                <div class="edu-course course-style-2 hover-button-bg-white shadow">
+                    <div class="inner">
+                        <div class="thumbnail">
+                            <a href="{{program.get_absolute_url}}">
+                                <img class="lazy" data-src="{{program.image.url}}" alt="{{program.title}}"
+                                    style="height:220px;object-fit:cover;">
+                            </a>
+                            {% if program.logo %}
+                            <div class="time-top">
+                                <span class="duration">
+                                    <img class="lazy" data-src="{{program.logo.url}}" alt="" style="max-height: 50px;">
+                                </span>
+                            </div>
+                            {% endif %}
+                        </div>
+                        <div class="content">
+                            <h5 class="title">
+                                <a href="{{program.get_absolute_url}}">{{program.title}}</a>
+                            </h5>
+                            <p class="mb-1">
+                                {{program.description|truncatechars:110}}
+                            </p>
+
+                            <ul class="course-meta">
+                                <li><i class="icon-24"></i>{{program.lessons|default:"0"}} Lessons</li>
+                                <li>
+                                    <div class="course-rating mb-0">
+                                        <div class="rating">
+                                            <i class="icon-23"></i>
+                                            <i class="icon-23"></i>
+                                            <i class="icon-23"></i>
+                                            <i class="icon-23"></i>
+                                            <i class="icon-23"></i>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="course-hover-content-wrapper">
+                        <button class="wishlist-btn"><i class="icon-22"></i></button>
+                    </div>
+                    <div class="course-hover-content">
+                        <div class="content">
+                            <h5 class="title">
+                                <a href="{{program.get_absolute_url}}">{{program.title}}</a>
+                            </h5>
+                            <div class="course-rating">
+                                <div class="rating">
+                                    <i class="icon-23"></i>
+                                    <i class="icon-23"></i>
+                                    <i class="icon-23"></i>
+                                    <i class="icon-23"></i>
+                                    <i class="icon-23"></i>
+                                </div>
+                            </div>
+                            <p>{{program.description}}</p>
+                            <ul class="course-meta">
+                                <li><i class="icon-24"></i>{{program.lessons|default:"0"}} Lessons</li>
+                            </ul>
+                            <a href="{{program.get_absolute_url}}" class="edu-btn btn-secondary btn-small">View Details
+                                <i class="icon-4"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

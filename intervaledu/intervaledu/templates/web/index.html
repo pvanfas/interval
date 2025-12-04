@@ -1,0 +1,671 @@
+{% extends 'web/base.html' %}
+{% load static tags %}
+
+{% block meta %}
+    <!-- Primary Meta Tags -->
+    <title>{% get_value 'home_meta_title' %}</title>
+    <meta name="title" content="{% get_value 'home_meta_title' %}" />
+    <meta name="description" content="{% get_value 'home_meta_desc' %}" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{og_url}}" />
+    <meta property="og:title" content="{% get_value 'home_meta_title' %}" />
+    <meta property="og:description" content="{% get_value 'home_meta_desc' %}" />
+    <meta property="og:image" content="https://www.intervaledu.com/static/web/images/main/preview.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="{{og_url}}" />
+    <meta property="twitter:title" content="{% get_value 'home_meta_title' %}" />
+    <meta property="twitter:description" content="{% get_value 'home_meta_desc' %}" />
+    <meta property="twitter:image" content="https://www.intervaledu.com/static/web/images/main/preview.png" />
+
+    <link rel="preload" as="image" href="{{first_slider.image.url}}">
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="hero-banner hero-style-2 bg-image">
+    <div class="container">
+        <div class="row row--45 align-items-center">
+            <div class="col-lg-7">
+                <div class="banner-content">
+                    <h1 class="title" data-sal-delay="100" data-sal="slide-up" data-sal-duration="1000">
+                        Helping your child <br> become a future <span id="dynamic-text"
+                            class="color-secondary letters flip-in">{{first_slider.title}}</span>.
+                    </h1>
+                    <p>
+                        Presenting to you the best online learning platform your child 
+                        will ever need to fully invest in their learning journey
+                    </p>
+                    <div class="banner-btn" data-sal-delay="400" data-sal="slide-up" data-sal-duration="1000">
+                        <a role="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="edu-btn">Get Started<i class="icon-4"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="banner-gallery">
+                    <div class="thumbnail thumbnail-1">
+                        <img id="dynamic-image" type="image/webp" class="flip-in" src="{{first_slider.image.url}}" alt="slider" style="width:470px;height:470px;object-fit:contain;" fetchpriority="high">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="edu-categorie-area categorie-area-1 edu-section-gap">
+    <div class="container">
+        <div class="section-title section-center" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+            <h2 class="title">We help <span class="color-primary">you</span> to learn better.</h2>
+            <span class="shape-line"><i class="icon-19"></i></span>
+        </div>
+        <div class="row g-5">
+            
+            <div class="col-lg-3 col-sm-6 col-6" data-sal-delay="100" data-sal="slide-up" data-sal-duration="800">
+                <a href="{% url 'web:academic_courses' %}" class="w-100">
+                    <div class="categorie-grid categorie-style-1 color-primary-style edublink-svg-animate">
+                        <div class="icon">
+                            <img class="svgInject" src="{% static 'web/images/main/online-degree.svg' %}" alt="">
+                        </div>
+                        <div class="content">
+                            <h5 class="title mb-0">Academic Courses</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-6" data-sal-delay="200" data-sal="slide-up" data-sal-duration="800">
+                <a href="{% url 'web:nonacademics' %}" class="w-100">
+                    <div class="categorie-grid categorie-style-1 color-secondary-style edublink-svg-animate">
+                        <div class="icon">
+                            <img class="svgInject" src="{% static 'web/images/main/non-degree-programs.svg' %}" alt="">
+                        </div>
+                        <div class="content">
+                            <h5 class="title mb-0">Non Academic Courses</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-6" data-sal-delay="300" data-sal="slide-up" data-sal-duration="800">
+                <a href="{% url 'web:clubs' %}" class="w-100">
+                    <div class="categorie-grid categorie-style-1 color-extra08-style edublink-svg-animate">
+                        <div class="icon">
+                            <img class="svgInject" src="{% static 'web/images/main/off-campus-programs.svg' %}" alt="">
+                        </div>
+                        <div class="content">
+                            <h5 class="title mb-0">Academic Clubs</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-6" data-sal-delay="400" data-sal="slide-up" data-sal-duration="800">
+                <a href="{% url 'web:language_courses' %}" class="w-100">
+                    <div class="categorie-grid categorie-style-1 color-extra05-style edublink-svg-animate">
+                        <div class="icon">
+                            <img class="svgInject" src="{% static 'web/images/main/hybrid-distance-programs.svg' %}" alt="">
+                        </div>
+                        <div class="content">
+                            <h5 class="title mb-0">Language Courses</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="gap-bottom-equal edu-about-area about-style-2">
+    <div class="container edublink-animated-shape">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-5">
+                <div class="about-image-gallery">
+                    <img class="main-img-1" src="/static/web/images/main/about-03.webp" alt="About Image" style="height:285px;width: 100%;object-fit:cover;" loading="lazy">
+
+                    <div class="award-status bounce-slide">
+                        <div class="inner">
+                            <div class="icon">
+                                <i class="icon-30"></i>
+                            </div>
+                            <div class="content">
+                                <h6 class="title">50K+</h6>
+                                <span class="subtitle">Enrolled Learners</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="about-content">
+                    <div class="section-title section-left" data-sal-delay="150" data-sal="slide-up"
+                        data-sal-duration="800">
+                        <h2 class="title">The Best 
+                            <span class="color-secondary">Online Learning Platform</span>
+                            That Is Ready To Assist Your Kid In All Ways
+                        </h2>
+                        <span class="shape-line"><i class="icon-19"></i></span>
+                    </div>
+                    <ul class="features-list" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                        <li class="w-50">Personalized Attention </li>
+                        <li class="w-50">Customized Learning </li>
+                        <li class="w-50">Continuous Progress Tracking </li>
+                        <li class="w-50">Hybrid  Learning Model</li>
+                        <li class="w-50">Real-time Doubt Clearance</li>
+                        <li class="w-50">Regular Evaluations </li>
+                    </ul>
+                    <div class="content mt-5">
+                        <h6>
+                            Together, these elements create a supportive environment for students to succeed academically and grow personally.
+                        </h6>
+                        <a href="javascript:void(0);" role="button" data-bs-toggle="modal" data-bs-target="#demoBackdrop" class="edu-btn btn-large">Book a demo class today<i class="icon-4"></i></a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ul class="shape-group">
+            <li class="shape-1 circle scene" data-sal-delay="500" data-sal="fade" data-sal-duration="200">
+                <span data-depth="-2.3"></span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="edu-brand-area brand-area-2 bg-image">
+    <div class="container edublink-animated-shape">
+        <div class="section-title section-center" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+            <h2 class="title">Our <span class="color-primary">Worldwide</span> Achievements.</h2>
+            <span class="shape-line"><i class="icon-19"></i></span>
+        </div>
+        <div class="brand-grid-wrap brand-style-2">
+            {% for achievement in achievements %}
+            <div class="brand-grid {% if forloop.counter > 12 %} hidden {% endif %}" style="{% if forloop.counter > 12 %} display:none; {% endif %}"><img class="lazy" data-src="{{achievement.image.url}}" alt="{{achievement.title}}"></div>
+            {% endfor %}
+        </div>
+        {% if forloop.counter > 12 %}
+        <div class="expand_container">
+            <a href="javascript:void(0);" role="button" class="expand_btn" id="expand_btn">
+                <span id="change_text" data-expanded="Collapse All" data-collapsed="Expand All">Expand All</span>
+                <svg style="display: block;margin: 0 auto;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-compact-down" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1.553 6.776a.5.5 0 0 1 .67-.223L8 9.44l5.776-2.888a.5.5 0 1 1 .448.894l-6 3a.5.5 0 0 1-.448 0l-6-3a.5.5 0 0 1-.223-.67"/>
+                </svg>
+            </a>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+
+<div class="counterup-area-5 edu-section-gap">
+    <div class="container">
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="p-relative">
+                    <div class="thumb">
+                        <img src="/static/web/images/main/worldmap.svg" class="w-100" alt="" loading="lazy">
+                    </div>
+                    <video autoplay muted loop playsinline class="map_video">
+                        <source src="/static/web/video/map.webm" type="video/webm">
+                    </video>
+                </div>
+            </div>
+        </div>
+        <div class="row g-5">
+            <div class="col-lg-3 col-sm-6" data-sal-delay="50" data-sal="slide-up" data-sal-duration="800">
+                <div class="edu-counterup counterup-style-5 primary-color">
+                    <h2 class="counter-item count-number">
+                        <span class="odometer" data-odometer-final="54">.</span><span>+</span>
+                    </h2>
+                    <h6 class="title">Countries we Serve</h6>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6" data-sal-delay="100" data-sal="slide-up" data-sal-duration="800">
+                <div class="edu-counterup counterup-style-5 secondary-color">
+                    <h2 class="counter-item count-number">
+                        <span class="odometer" data-odometer-final="50">.</span><span>K+</span>
+                    </h2>
+                    <h6 class="title">Total students enrolled</h6>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                <div class="edu-counterup counterup-style-5 extra02-color">
+                    <h2 class="counter-item count-number">
+                        <span class="odometer" data-odometer-final="1">.</span><span>M+</span>
+                    </h2>
+                    <h6 class="title">Total Class Hours</h6>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6" data-sal-delay="200" data-sal="slide-up" data-sal-duration="800">
+                <div class="edu-counterup counterup-style-5 extra05-color">
+                    <h2 class="counter-item count-number">
+                        <span class="odometer" data-odometer-final="5">.</span><span>K+</span>
+                    </h2>
+                    <h6 class="title">Total Strength</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="testimonial-area-5 gap-lg-bottom-equal">
+    <div class="container">
+        <div class="row g-lg-5">
+            <div class="col-lg-4">
+                <div class="testimonial-heading-area">
+                    <div class="section-title section-left" data-sal-delay="150" data-sal="slide-up"
+                        data-sal-duration="800">
+                        <span class="pre-title">Testimonials</span>
+                        <h2 class="title">What the Parents Have To Say</h2>
+                        <span class="shape-line"><i class="icon-19"></i></span>
+                        <p>At the heart of every child's growth is the support and trust of their parents. We take
+                            immense pride in hearing from families who have experienced the positive impact of our
+                            program.</p>
+                        <a href="{% url 'web:testimonials' %}" class="edu-btn btn-large">View All<i class="icon-4"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="swiper-testimonial-slider-wrapper swiper testimonial-coverflow">
+                    <div class="swiper-wrapper">
+                        {% for testimonial in testimonials %}
+                        <div class="swiper-slide">
+                            <div class="testimonial-grid border">
+                                <div class="thumbnail video-gallery">
+                                    <img class="lazy" data-src="{{testimonial.image.url}}" style="height:220px;object-fit:cover;width:100%" alt="Testimonial">
+                                    <span class="qoute-icon"><i class="icon-26"></i></span>
+                                </div>
+                                <div class="content">
+                                    <p>
+                                        {{testimonial.content|linebreaksbr}}
+                                    </p>
+                                    <div class="rating-icon">
+                                        <i class="icon-23"></i>
+                                        <i class="icon-23"></i>
+                                        <i class="icon-23"></i>
+                                        <i class="icon-23"></i>
+                                        <i class="icon-23"></i>
+                                    </div>
+                                    <h6 class="title h5">{{testimonial.name}}</h6>
+                                    <span class="subtitle">{{testimonial.designation}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="edu-course-area course-area-2 gap-tb-text bg-lighten03">
+    <div class="container">
+        <div class="section-title section-center" data-sal-delay="100" data-sal="slide-up" data-sal-duration="800">
+            <h2 class="title">Programs we offer</h2>
+            <span class="shape-line"><i class="icon-19"></i></span>
+        </div>
+        <div class="row g-5">
+            {% for program in ac_programs %}
+            <div class="col-md-6 col-lg-4" data-sal-delay="100" data-sal="slide-up" data-sal-duration="800">
+                <div class="edu-course course-style-2 hover-button-bg-white">
+                    <div class="inner">
+                        <div class="thumbnail">
+                            <a href="{{program.get_absolute_url}}">
+                                <img class="lazy" data-src="{{program.image.url}}" alt="{{program.title}}"
+                                    style="height:220px;object-fit:cover;">
+                            </a>
+                            {% if program.logo %}
+                            <div class="time-top">
+                                <span class="duration">
+                                    <img class="lazy" data-src="{{program.logo.url}}" alt="" style="max-height: 50px;">
+                                </span>
+                            </div>
+                            {% endif %}
+                        </div>
+                        <div class="content">
+                            <h5 class="title">
+                                <a href="{{program.get_absolute_url}}">{{program.title}}</a>
+                            </h5>
+                            <p class="mb-1">
+                                {{program.description|truncatechars:140}}
+                            </p>
+
+                            <ul class="course-meta">
+                                <li><i class="icon-24"></i>{{program.lessons|default:0}} Lessons</li>
+                                <li>
+                                    <div class="course-rating mb-0">
+                                        <div class="rating">
+                                            <i class="icon-23"></i>
+                                            <i class="icon-23"></i>
+                                            <i class="icon-23"></i>
+                                            <i class="icon-23"></i>
+                                            <i class="icon-23"></i>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="course-hover-content-wrapper">
+                        <button class="wishlist-btn" aria-label="wishlist"><i class="icon-22"></i></button>
+                    </div>
+                    <div class="course-hover-content">
+                        <div class="content">
+                            <h5 class="title">
+                                <a href="{{program.get_absolute_url}}">{{program.title}}</a>
+                            </h5>
+                            <div class="course-rating">
+                                <div class="rating">
+                                    <i class="icon-23"></i>
+                                    <i class="icon-23"></i>
+                                    <i class="icon-23"></i>
+                                    <i class="icon-23"></i>
+                                    <i class="icon-23"></i>
+                                </div>
+                            </div>
+                            <p>{{program.description}}</p>
+                            <ul class="course-meta">
+                                <li><i class="icon-24"></i>{{program.lessons|default:0}} Lessons</li>
+                            </ul>
+                            <a href="{{program.get_absolute_url}}" class="edu-btn btn-secondary btn-small">View Details
+                                <i class="icon-4"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="course-view-all" data-sal-delay="100" data-sal="slide-up" data-sal-duration="1200">
+            <a href="{% url 'web:academic_courses' %}" class="edu-btn">Browse more courses <i class="icon-4"></i></a>
+        </div>
+    </div>
+</div>
+
+
+<div class="edu-faq-area faq-style-1">
+    <div class="container">
+        <div class="row g-5 row--45">
+            <div class="col-lg-5">
+                <div class="edu-faq-gallery">
+                    <div class="row g-5">
+                        <video autoplay muted loop playsinline class="">
+                            <source src="/static/web/video/pencil.webm" type="video/webm">
+                        </video>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="edu-faq-content">
+                    <div class="section-title section-left" data-sal-delay="100" data-sal="slide-up"
+                        data-sal-duration="800">
+                        <h2 class="title">Over 10 Years in <span class="color-secondary">Distant <br>
+                                Skill</span> Development</h2>
+                        <span class="shape-line"><i class="icon-19"></i></span>
+                        <p>
+                            With more than a decade of expertise in providing remote learning opportunities,
+                            we have empowered individuals across the globe to unlock their potential. Our
+                            focus on distant skill development ensures that no matter where you are, you can
+                            access world-class education, personalized training, and the tools necessary to
+                            thrive in today’s fast-paced world
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="faq-accordion" id="faq-accordion" data-sal-delay="100" data-sal="slide-up"
+                    data-sal-duration="800">
+                    <div class="accordion">
+                        {% for faq in faqs %}
+                        <div class="accordion-item">
+                            <h5 class="accordion-header">
+                                <button class="accordion-button {% if not forloop.first %}collapsed{% endif %}"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{faq.pk}}"
+                                    aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}">
+                                    {{faq.question}}
+                                </button>
+                            </h5>
+                            <div id="collapse{{faq.pk}}"
+                                class="accordion-collapse collapse {% if forloop.first %}show{% endif %}"
+                                data-bs-parent="#faq-accordion">
+                                <div class="accordion-body">
+                                    <p>{{faq.answer}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+                    </div>
+                </div>
+                <ul class="shape-group">
+                    <li class="shape-bg sal-animate" data-sal-delay="500" data-sal="fade" data-sal-duration="200">
+                        <img src="/static/web/images/main/bg-image-36.svg" alt="Shape Images" loading="lazy">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<section class="why-choose-area-3 edu-section-gap">
+    <div class="container">
+        <div class="row row--45">
+            <div class="section-title-flex section-title sal-animate" data-sal-delay="150" data-sal="slide-up"
+                data-sal-duration="800">
+                <div class="left-content">
+                    <h2 class="title"> <span class="color-secondary">Personalized education </span> that  fits  every child’s educational needs</h2>
+                    <span class="shape-line"><i class="icon-19"></i></span>
+                </div>
+                <div class="right-content">
+                    <p class="text-start">
+                        Personalized online education goes beyond a series of virtual classes and uninspiring instructions 
+                        that often miss the mark. At Interval, we believe in bridging the gap between knowledge and 
+                        accessibility. Our approach is centred on providing education that’s customized to meet the 
+                        unique needs of every child.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-5">
+            {% for feat in features %}
+            <div class="col-lg-4 sal-animate mt--90" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                <div class="why-choose-box-2 features-box color-primary-style">
+                    <div class="icon">
+                        <i class="icon-45"></i>
+                    </div>
+                    <div class="content">
+                        <h6 class="title h4">{{feat.title}}</h6>
+                        <p>
+                            {{feat.description}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <ul class="shape-group">
+        <li class="shape-1 scene"><span data-depth=".8"></span></li>
+        <li class="shape-2 scene"><img data-depth="-2" src="/static/web/images/main/shape2.png" alt="shape" loading="lazy"></li>
+    </ul>
+</section>
+
+
+<div class="edu-event-area event-area-1 edu-section-gap bg-lighten03">
+    <div class="container edublink-animated-shape">
+        <div class="section-title sal-animate d-flex justify-content-between flex-wrap align-items-center" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+            <div class="column">
+                <h2 class="title">News and Events </h2>
+                <span class="shape-line"><i class="icon-19"></i></span>
+            </div>
+            <div class="column">
+                <a href="{% url 'web:news' %}" class="btn-border edu-btn">View All <i class="icon-4"></i></a>
+            </div>
+        </div>
+        <div class="row g-5">
+            <!-- Start Event Grid  -->
+            {% for news in newses %}
+            <div class="col-lg-4 col-md-6 sal-animate" data-sal-delay="100" data-sal="slide-up" data-sal-duration="800">
+                <div class="bdrs bradius edu-event event-style-1 shadow">
+                    <div class="inner">
+                        <div class="thumbnail shadow">
+                            <a href="{{news.get_absolute_url}}">
+                                <img class="lazy" data-src="{{news.image.url}}" alt="Blog Images"
+                                    style="height: 250px;object-fit: cover;">
+                            </a>
+                        </div>
+                        <div class="content">
+                            <div class="event-date">
+                                <span class="day">{{news.date|date:"d"}}</span>
+                                <span class="month">{{news.date|date:"M"|upper}}</span>
+                            </div>
+                            <h6 class="title h5"><a href="{{news.get_absolute_url}}">{{news.title}}</a></h6>
+                            <div class="read-more-btn">
+                                <a class="edu-btn btn-small btn-secondary" href="{{news.get_absolute_url}}">Learn More <i class="icon-4"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+<div class="edu-blog-area blog-area-2 svg-image--2 bg-image gap-bottom-equal edu-section-gap">
+    <div class="container">
+        <div class="section-title section-center" data-sal-delay="100" data-sal="slide-up" data-sal-duration="800">
+            <h2 class="title">As Featured on</h2>
+            <span class="shape-line"><i class="icon-19"></i></span>
+        </div>
+        <div class="row g-5">
+            {% for feature in media_features %}
+            <div class="col-lg-4 col-md-6 col-12" data-sal-delay="100" data-sal="slide-up" data-sal-duration="800">
+                <div class="edu-blog blog-style-1">
+                    <div class="inner mb-4">
+                        <div class="thumbnail border">
+                            <div style="height:240px">
+                                <img class="lazy" data-src="{{feature.image.url}}" alt="Blog Images">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-3">
+                        <h6>{{feature.title}}</h6>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+{% include 'web/partials/cta.html' %}
+
+{% endblock %}
+
+
+{% block scripts %}
+    <style>
+        /* Flipping animation for dynamic text and image */
+        #dynamic-text {
+            display: inline-block;
+            perspective: 1000px;
+        }
+        
+        #dynamic-image {
+            perspective: 1000px;
+        }
+        
+        .flip-out {
+            animation: flipOut 0.6s ease-in forwards;
+        }
+        
+        .flip-in {
+            animation: flipIn 0.6s ease-out forwards;
+        }
+        
+        @keyframes flipOut {
+            0% {
+                transform: rotateX(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: rotateX(90deg);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes flipIn {
+            0% {
+                transform: rotateX(-90deg);
+                opacity: 0;
+            }
+            100% {
+                transform: rotateX(0deg);
+                opacity: 1;
+            }
+        }
+    </style>
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Array of words and corresponding images
+        const texts = {{ slider_texts|safe }};
+        const images = {{ slider_images|safe }};
+        let currentIndex = 0;
+    
+        // Elements for dynamic text and image
+        const dynamicText = document.getElementById('dynamic-text');
+        const dynamicImage = document.getElementById('dynamic-image');
+    
+        // Set initial content
+        const initializeContent = () => {
+            dynamicText.innerText = texts[0];
+            dynamicImage.src = images[0];
+            dynamicImage.alt = texts[0];
+            dynamicText.classList.add('flip-in');
+            dynamicImage.classList.add('flip-in');
+        };
+    
+        // Function to change text and image
+        const changeTextAndImage = () => {
+            // Start flip-out animation for both text and image
+            dynamicText.classList.remove('flip-in');
+            dynamicText.classList.add('flip-out');
+            dynamicImage.classList.remove('flip-in');
+            dynamicImage.classList.add('flip-out');
+    
+            // Wait for flip-out to complete before updating content
+            setTimeout(() => {
+                currentIndex = (currentIndex + 1) % texts.length; // Update index
+                dynamicText.innerText = texts[currentIndex];
+                dynamicImage.src = images[currentIndex];
+                dynamicImage.alt = texts[currentIndex];
+    
+                // Remove flip-out and trigger flip-in animation for both
+                dynamicText.classList.remove('flip-out');
+                dynamicText.classList.add('flip-in');
+                dynamicImage.classList.remove('flip-out');
+                dynamicImage.classList.add('flip-in');
+            }, 300); // Half of animation duration (600ms / 2)
+        };
+    
+        // Initialize the first content
+        initializeContent();
+    
+        // Change content every 2 seconds
+        setInterval(changeTextAndImage, 2000);
+    });
+    </script>
+{% endblock %}

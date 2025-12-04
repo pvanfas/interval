@@ -1,0 +1,188 @@
+{% extends 'web/base.html' %}
+{% load static tags %}
+
+
+{% block meta %}
+    <!-- Primary Meta Tags -->
+    <title>{% get_value 'cbse_calculator_12_meta_title' %}</title>
+    <meta name="title" content="{% get_value 'cbse_calculator_12_meta_title' %}" />
+    <meta name="description" content="{% get_value 'cbse_calculator_12_meta_desc' %}" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{og_url}}" />
+    <meta property="og:title" content="{% get_value 'cbse_calculator_12_meta_title' %}" />
+    <meta property="og:description" content="{% get_value 'cbse_calculator_12_meta_desc' %}" />
+    <meta property="og:image" content="https://www.intervaledu.com/static/web/images/main/preview.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="{{og_url}}" />
+    <meta property="twitter:title" content="{% get_value 'cbse_calculator_12_meta_title' %}" />
+    <meta property="twitter:description" content="{% get_value 'cbse_calculator_12_meta_desc' %}" />
+    <meta property="twitter:image" content="https://www.intervaledu.com/static/web/images/main/preview.png" />
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="hero-banner hero-style-7 bgc1 p-0">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-12">
+                <div class="banner-content text-start mb-0" style="padding:60px 0 10px 0">
+                    <h1 class="h3 title sal-animate">CBSE Class 12 CGPA to Percentage Calculator</h1>
+                    <p>
+                        This tool helps you convert your CBSE Class 12 CGPA into a percentage. Based on the official formula by CBSE, 
+                        you simply multiply your CGPA by 9.5 to get an estimated percentage.
+                    </p>
+                    <h2 class="h4 mb-2">Free Online CGPA to Percentage Converter</h2>
+                    <p>
+                        Enter your grade points in each subject, and we’ll calculate both your CGPA and overall percentage for you.
+                        Quick, easy, and accurate!
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-12 mb--60">
+                <form id="cgpaForm" class="border bradius p-5">
+                    <div class="row g-3">
+                        <script>
+                            const subjects = ["English", "Physics", "Chemistry", "Mathematics", "Computer Science"];
+                            subjects.forEach((subject, index) => {
+                                document.write(`
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="subject${index}" class="form-label">${subject} Grade Point (0-10)</label>
+                                            <input type="number" step="0.1" min="0" max="10" required class="form-control border" style="height:50px" id="subject${index}" name="subject${index}">
+                                        </div>
+                                    </div>
+                                `);
+                            });
+                        </script>
+                    </div>
+                    <div class="mt-4">
+                        <button type="button" class="edu-btn btn-large" onclick="calculateCGPA()">Calculate CGPA & Percentage</button>
+                    </div>
+                </form>
+                <div class="mt-4">
+                    <div class="border p-5 result_container text-center text-success bradius">
+                        <h4 id="cgpaResult" class="mb-2 fs-3"></h4>
+                        <h4 id="percentageResult" class="mb-0 fs-3"></h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12 mb-5">
+                <div class="alert alert-info p-5" role="alert">
+                    <h4 class="alert-heading">Disclaimer</h4>
+                    <p class="mb-0">This calculator is for estimation only and uses the official CBSE formula. Always verify with your school or official mark sheet.</p>
+                </div>
+                <div class="border bradius p-5">
+                    <h4>How to Calculate Your CGPA and Percentage</h4>
+                    <p>Here’s a simple example:</p>
+                    <ul>
+                        <li>Subject 1: 9</li>
+                        <li>Subject 2: 8</li>
+                        <li>Subject 3: 7</li>
+                        <li>Subject 4: 8</li>
+                        <li>Subject 5: 8</li>
+                    </ul>
+                    <p class="mb-2"><strong>Step 1:</strong> Add all grade points = 40</p>
+                    <p class="mb-2"><strong>Step 2:</strong> Divide by 5 = CGPA = 8.0</p>
+                    <p class="mb-2"><strong>Step 3:</strong> Multiply CGPA by 9.5 → 8.0 × 9.5 = <strong>76%</strong></p>
+                    <p class="mb-2"><strong>Formula:</strong> <code>Percentage = CGPA × 9.5</code></p>
+                </div>
+            </div>
+
+            <div class="col-md-12 mb--60">
+                <div class="faq-accordion sal-animate" id="faq-accordion" data-sal-delay="100" data-sal="slide-up" data-sal-duration="800">
+                    <div class="accordion">
+                        <div class="accordion-item">
+                            <h5 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true">
+                                    What is CGPA?
+                                </button>
+                            </h5>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faq-accordion">
+                                <div class="accordion-body">
+                                    <p>CGPA stands for Cumulative Grade Point Average. It represents the average of grade points in all main subjects.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h5 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    How is CGPA converted to percentage?
+                                </button>
+                            </h5>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faq-accordion">
+                                <div class="accordion-body">
+                                    <p>The formula is: <code>Percentage = CGPA × 9.5</code>. This is the official method provided by CBSE.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h5 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    Can I calculate subject-wise percentage?
+                                </button>
+                            </h5>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faq-accordion">
+                                <div class="accordion-body">
+                                    <p>Yes! Just multiply the subject grade point by 9.5. For example, a grade point of 9 means 9 × 9.5 = 85.5%.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h5 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    What is the highest CGPA possible?
+                                </button>
+                            </h5>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faq-accordion">
+                                <div class="accordion-body">
+                                    <p>The highest CGPA is 10, which equals 95% as per the formula.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+    function calculateCGPA() {
+        let totalPoints = 0;
+        let valid = true;
+        for (let i = 0; i < 5; i++) {
+            const input = document.getElementById(`subject${i}`);
+            const value = parseFloat(input.value);
+            if (isNaN(value) || value < 0 || value > 10) {
+                alert("Please enter valid grade points between 0 and 10 for all subjects.");
+                valid = false;
+                break;
+            }
+            totalPoints += value;
+        }
+
+        if (!valid) return;
+
+        const cgpa = totalPoints / 5;
+        const percentage = cgpa * 9.5;
+
+        document.getElementById("cgpaResult").innerText = `CGPA: ${cgpa.toFixed(2)}`;
+        document.getElementById("percentageResult").innerText = `Estimated Percentage: ${percentage.toFixed(2)}%`;
+    }
+</script>
+{% endblock %}

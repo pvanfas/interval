@@ -1,0 +1,187 @@
+/*================================================================================================
+    Start Sidebars CSS
+===================================================================================================*/
+.ed-sidebar {
+  border: none !important;
+}
+.offcanvas-backdrop.show {
+  opacity: 0.5;
+  background: var(--ed-secondary-color);
+}
+.ed-sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px;
+  border-bottom: 1px solid var(--ed-border-color);
+  background: var(--ed-offwhite-color);
+}
+.ed-sidebar-header-title {
+  font-size: 28px;
+  margin: 0;
+}
+.ed-sidebar-logo {
+  max-width: 140px;
+  height: 34px;
+  object-fit: contain;
+  display: inline-block;
+}
+
+.ed-sidebar-header button {
+  width: 32px;
+  height: 32px;
+  background: #d73b3e;
+  color: var(--ed-white-color) !important;
+  border-radius: 100%;
+  font-size: 12px;
+  padding: 0;
+  line-height: 35px;
+  transition: all 0.4s ease;
+}
+.ed-sidebar-header button:hover {
+  background: var(--ed-secondary-color);
+}
+.ed-sidebar-body {
+  padding: 24px;
+  overflow-y: scroll;
+  margin-bottom: 156px;
+}
+.ed-sidebar-widget-title {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.ed-sidebar-social {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.ed-sidebar-widget {
+  margin-bottom: 40px;
+}
+.ed-sidebar-widget .ed-contact__info-item {
+  margin-bottom: 24px;
+}
+.ed-sidebar-subscribe input {
+  width: 100%;
+  height: 52px;
+  border: 1px solid var(--ed-primary-color);
+  border-radius: 42px;
+  padding: 12px 20px;
+}
+
+.ed-sidebar-subscribe .ed-btn {
+  margin-top: 16px;
+}
+
+/* Sidebar Cart  */
+
+.ed-sidebar-cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgb(1 28 26 / 0.1);
+}
+.ed-sidebar-cart-item:last-child {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+.ed-sidebar-cart-main {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.ed-sidebar-cart-img img {
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.ed-sidebar-cart-info a {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 6px;
+}
+.ed-sidebar-cart-info a:hover {
+  color: var(--ed-primary-color);
+}
+.ed-sidebar-cart-info strong {
+  font-weight: 600;
+  color: var(--ed-primary-color);
+}
+
+.ed-sidebar-cart-remove button {
+  width: 24px;
+  height: 24px;
+  border: 1px solid rgba(1, 28, 26, 0.1) !important;
+  padding: 0;
+  border-radius: 100%;
+  font-size: 9px;
+  background: var(--ed-offwhite-color);
+  color: #d73b3e;
+  line-height: 25px;
+}
+.ed-sidebar-cart-remove button:hover {
+  background: #d73b3e;
+  color: var(--ed-white-color);
+  border: 1px solid transparent !important;
+}
+
+.ed-sidebar-cart-subtotal {
+  position: absolute;
+  bottom: 0;
+  background: var(--ed-offwhite-color);
+  border-top: 1px solid var(--ed-border-color);
+  text-align: center;
+  width: 100%;
+  left: 0;
+  padding: 24px 52px;
+}
+
+.ed-sidebar-cart-subtotal p {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 20px;
+  color: var(--ed-title-color);
+  font-weight: 600;
+}
+
+.ed-sidebar-cart-btn {
+  background: var(--ed-primary-color);
+  display: inline-block;
+  width: 100%;
+  height: 50px;
+  line-height: 52px;
+  color: var(--ed-white-color);
+  border-radius: 52px;
+  margin-top: 24px;
+}
+
+.ed-sidebar-cart-btn:hover {
+  background: var(--ed-secondary-color);
+  color: var(--ed-white-color);
+}
+
+.ed-sidebar-cart-btn {
+  font-weight: 500;
+}
+@media only screen and (max-width: 767px) {
+  .ed-sidebar-widget {
+    margin-bottom: 32px;
+  }
+  .ed-sidebar-header-title {
+    font-size: 24px;
+  }
+}
+/*================================================================================================
+    End Sidebars CSS
+===================================================================================================*/

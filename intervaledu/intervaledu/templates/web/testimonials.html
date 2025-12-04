@@ -1,0 +1,74 @@
+{% extends 'web/base.html' %}
+{% load static tags %}
+
+{% block meta %}
+    <!-- Primary Meta Tags -->
+    <title>{% get_value 'testimonials_meta_title' %}</title>
+    <meta name="title" content="{% get_value 'testimonials_meta_title' %}" />
+    <meta name="description" content="{% get_value 'testimonials_meta_desc' %}" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{og_url}}" />
+    <meta property="og:title" content="{% get_value 'testimonials_meta_title' %}" />
+    <meta property="og:description" content="{% get_value 'testimonials_meta_desc' %}" />
+    <meta property="og:image" content="https://www.intervaledu.com/static/web/images/main/preview.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="{{og_url}}" />
+    <meta property="twitter:title" content="{% get_value 'testimonials_meta_title' %}" />
+    <meta property="twitter:description" content="{% get_value 'testimonials_meta_desc' %}" />
+    <meta property="twitter:image" content="https://www.intervaledu.com/static/web/images/main/preview.png" />
+{% endblock %}
+
+
+{% block content %}
+
+<div class="video-area-5 gap-bottom-equal edu-section-gap">
+    <div class="container">
+        <div class="container edublink-animated-shape">
+            <div class="section-title section-center sal-animate" data-sal-delay="150" data-sal="slide-up"
+                data-sal-duration="800">
+                <h2 class="title">Testimonials </h2>
+                <span class="shape-line"><i class="icon-19"></i></span>
+            </div>
+            <div class="row g-5 justify-content-center">
+                {% for testimonial in testimonials %}
+                <div class="col-md-6">
+                    <div class="edu-blog blog-style-list" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                        <div class="inner mb-5">
+                            <div class="video-gallery w-100">
+                                <div class="thumbnail me-0">
+                                    <img class="lazy" data-src="{{testimonial.image.url}}" alt="Thumb" style="height:360px;max-width:100%;object-fit:cover;">
+                                    <a href="https://www.youtube.com/watch?v={{testimonial.video_id}}" class="video-play-btn video-popup-activation">
+                                        <i class="icon-18"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="content">
+                            <p class="mb-4">{{testimonial.content}}</p>
+                            <div class="rating-icon">
+                                <i class="icon-23"></i>
+                                <i class="icon-23"></i>
+                                <i class="icon-23"></i>
+                                <i class="icon-23"></i>
+                                <i class="icon-23"></i>
+                            </div>
+                            <h5 class="title mb-0">{{testimonial.name}}</h5>
+                            <span class="subtitle">{{testimonial.designation}}</span>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% include 'web/partials/cta.html' %}
+
+{% endblock %}

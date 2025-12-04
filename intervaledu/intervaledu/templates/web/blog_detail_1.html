@@ -1,0 +1,285 @@
+{% extends 'web/base.html' %}
+
+{% block meta %}
+<!-- Primary Meta Tags -->
+<title>{{blog.meta_title}}</title>
+<meta name="title" content="{{blog.meta_title}}" />
+<meta name="description" content="{{blog.meta_description}}" />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{og_url}}" />
+<meta property="og:title" content="{{blog.meta_title}}" />
+<meta property="og:description" content="{{blog.meta_description}}" />
+<meta property="og:image" content="{{domain}}{{blog.image.url}}" />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content="{{og_url}}" />
+<meta property="twitter:title" content="{{blog.meta_title}}" />
+<meta property="twitter:description" content="{{blog.meta_description}}" />
+<meta property="twitter:image" content="{{domain}}{{blog.image.url}}" />
+{% endblock %}
+
+
+{% block stylesheet %}
+<style>
+@media (max-width: 1024px) {
+    .whatsapp_link {
+      bottom: 55px;
+    }
+}
+</style>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="blog-details-area section-gap-equal">
+    <div class="container">
+        <div class="row row--30">
+            <div class="col-lg-8">
+                <div class="blog-details-content">
+                    <div class="entry-content">
+                        <span class="category">{{blog.category}}</span>
+                        <h1 class="title h3">{{blog.title}}</h1>
+                        <ul class="blog-meta">
+                            <li><i class="icon-27"></i>{{blog.date}}</li>
+                        </ul>
+                        <div class="thumbnail mb--30">
+                            <img src="{{blog.image.url}}" alt="{{blog.meta_title}}" class="shadow-sm">
+                        </div>
+                    </div>
+
+                    <div id="blog_container">
+                        {% for item in blog.get_contents %}
+                        <h2>{{item.title}}</h2>
+                        <div class="html_content">
+                            {{item.content|safe}}
+                        </div>
+                        {% endfor %}
+
+                        {% if blog.get_faqs %}
+                        <h2>Frequently Asked Questions</h2>
+                        <div class="faq-accordion" id="faq-accordion" data-sal-delay="100" data-sal="slide-up" data-sal-duration="800">
+                            <div class="accordion">
+                                {% for faq in blog.get_faqs %}
+                                <div class="accordion-item">
+                                    <h5 class="accordion-header">
+                                        <button class="accordion-button {% if not forloop.first %}collapsed{% endif %}"
+                                            type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{faq.pk}}"
+                                            aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}">
+                                            {{faq.question}}
+                                        </button>
+                                    </h5>
+                                    <div id="collapse{{faq.pk}}"
+                                        class="accordion-collapse collapse {% if forloop.first %}show{% endif %}"
+                                        data-bs-parent="#faq-accordion">
+                                        <div class="accordion-body">
+                                            <p>{{faq.answer}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+    
+                            </div>
+                        </div>
+                        {% endif %}
+
+                    </div>
+                    
+                    
+                    <div class="blog-share-area">
+                        <div class="row align-items-center">
+                            <div class="col-md-7">
+                                {% if blog.tags.all %}
+                                <div class="blog-tags">
+                                    <h6 class="title">Tags:</h6>
+                                    <div class="tag-list">
+                                        {% for tag in blog.tags.all %}
+                                        <a href="{{tag.get_absolute_url}}">{{tag}}</a>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="sharethis-sticky-share-buttons"></div>
+                    </div>
+                </div>
+
+                <div class="blog-author">
+                    <div class="thumbnail">
+                        <img src="{{blog.author.image.url}}" alt="Author Images" style="width:100px;height:100px;object-fit:cover;">
+                    </div>
+                    <div class="author-content">
+                        <h5 class="title">{{blog.author.name}}</h5>
+                        <p>{{blog.author.bio}}</p>
+                        <ul class="social-share">
+                            {% for item in blog.author_social_medias %}
+                            <li><a href="{{item.url}}"><i style="font-size: 14px;;" class="{{item.icon}}"></i></a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="blog-pagination">
+                    <div class="row g-5">
+                        <div class="col-lg-6">
+                            {% if previous_post %}
+                            <div class="blog-pagination-list prev-post">
+                                <a href="{{previous_post.get_absolute_url}}">
+                                    <i class="icon-west"></i>
+                                    <span>{{previous_post.title}}</span>
+                                </a>
+                            </div>
+                            {% endif %}
+                        </div>
+
+                        <div class="col-lg-6">
+                            {% if next_post %}
+                            <div class="blog-pagination-list next-post">
+                                <a href="{{next_post.get_absolute_url}}">
+                                    <span>{{next_post.title}}</span>
+                                    <i class="icon-east"></i>
+                                </a>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Start Comment Area  -->
+                
+
+            </div>
+            <div class="col-lg-4">
+                <div class="edu-blog-sidebar pt-0">
+
+                    <div class="edu-blog-widget widget-categories pb-0 pe-0">
+                        <div class="inner">
+                            <h4 class="widget-title mb-4">Table of Contents</h4>
+                            <nav id="toc"></nav>
+                        </div>
+                    </div>
+
+                    {% if related_posts %}
+                    <div class="edu-blog-widget widget-latest-post">
+                        <div class="inner">
+                            <h4 class="widget-title">Related Post</h4>
+                            <div class="content latest-post-list">
+                                {% for blog in related_posts %}
+                                <div class="latest-post">
+                                    <div class="thumbnail">
+                                        <a href="{{blog.get_absolute_url}}">
+                                            <img class="lazy" data-src="{{blog.image.url}}" alt="Blog Images" style="width:100px;height:60px;object-fit:cover;">
+                                        </a>
+                                    </div>
+                                    <div class="post-content">
+                                        <h6 class="title"><a href="{{blog.get_absolute_url}}">{{blog.title}}</a></h6>
+                                        <ul class="blog-meta">
+                                            <li><i class="icon-27"></i>{{blog.date}}</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {% if categories %}
+                    <div class="edu-blog-widget widget-categories">
+                        <div class="inner">
+                            <h4 class="widget-title">Categories</h4>
+                            <div class="content">
+                                <ul class="category-list">
+                                    {% for category in categories %}
+                                    <li><a href="{{category.get_absolute_url}}">{{category.name}}<span class="ms-3">({{category.blog_count}})</span></a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include 'web/partials/cta.html' %}
+
+
+{% endblock %}
+
+
+
+
+{% block css_plugins %}
+<link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css"/>
+{% endblock %}
+
+{% block js_plugins %}
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    $((function(){var o="#toc",t=$(o);Toc.init({$nav:t,$scope:$("#blog_container"),startLevel:2}),$("body").scrollspy({target:o})}));   
+</script>
+<script>
+    const ctas = {{ blog.get_ctas|safe }};
+    ctas.forEach(cta => {
+        const div = document.createElement('div');
+        div.className = 'blog-cta';
+
+        const a = document.createElement('a');
+        a.href = 'javascript:void(0);';
+        a.setAttribute('role', 'button');
+        a.setAttribute('data-bs-toggle', 'modal');
+        a.setAttribute('data-bs-target', '#staticBackdrop');
+
+        const img = document.createElement('img');
+        img.src = cta.image;
+        img.alt = cta.title;
+        img.style.width = '100%';
+        img.style.height = 'auto';
+
+        // Append image inside anchor
+        a.appendChild(img);
+        div.appendChild(a);
+
+        // Insert the div just after the element found via XPath
+        const xpath = cta.xpath;
+        const element = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+        if (element) {
+            element.parentNode.insertBefore(div, element.nextSibling);
+        }
+    });
+</script>
+<script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=6836b0e87c84420012f17a6e&product=sticky-share-buttons&source=platform" async="async"></script>
+{% endblock %}
+
+
+{% block popup_script %}{% endblock %}
+
+{% block datalayer %}
+<script>
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+        event: "blogDataReady",
+        canonicalUrl: "{{og_url}}",
+        title: "{{blog.title}}",
+        description: "{{blog.summary|striptags|linebreaksbr|cut:"\n"|cut:"\r"}}",
+        datePublished: "{{blog.date|date:'c'}}",
+        dateModified: "{{blog.date|date:'c'}}",
+        wordCount: {{blog.get_word_count}},
+        thumbnailUrl: "{{domain}}{{blog.image.url}}",
+        imageWidth: {{blog.get_image_dimensions.0}},
+        imageHeight: {{blog.get_image_dimensions.1}},
+        imageCaption: "{{blog.meta_title}}",
+    });
+</script>
+{% endblock %}

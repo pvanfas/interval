@@ -1,0 +1,29 @@
+{% extends 'web/base.html' %}
+
+{% block robots %}
+<meta name="robots" content="noindex">
+{% endblock %}
+    
+
+{% block content %}
+
+<section class="section-gap-equal error-page-area">
+    <div class="container">
+        <div class="edu-error">
+
+            <div class="p-relative">
+                <video autoplay muted loop playsinline class="" style="max-height:240px">
+                    <source src="/static/web/video/map.webm" type="video/webm">
+                </video>
+            </div>
+        
+            <div class="content">
+                <h2 class="title">Page Not Found</h2>
+                <h4 class="subtitle">The page you are looking for does not exist.</h4>
+                <a href="/" class="edu-btn"><i class="icon-west"></i>Back to Homepage</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

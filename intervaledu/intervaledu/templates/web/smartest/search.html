@@ -1,0 +1,83 @@
+{% extends 'web/smartest/base.html' %}
+{% load honeypot %}
+
+{% block content %}
+
+
+<div class="edu-categorie-area categorie-area-2 edu-section-gap">
+    <div class="container">
+        <div class="row justify-content-between">
+            
+            <div class="col-md-4">
+                <div class="" style="min-height:calc(100vh - 330px)">
+                    <div class="card" style="max-width:500px;margin: 0 auto;border-radius:16px;">
+                        <div class="card-header">
+                            <h4 class="card-title text-center">Search Tests</h4>
+                        </div>
+                        <div class="card-body p-5">
+                            <form action="" method="get" class="enquiry_form selection_form">
+                                <div class="" >
+                                    <div class="row mb-4">
+        
+                                        <div class="col-md-12 mb-3">
+                                            <div class="form-group text-start">
+                                                <label class="mb-0" for="{{form.board.id_for_label}}">{{form.board.label}}</label>
+                                                {{form.board}}
+                                            </div>
+                                        </div>
+        
+                                        <div class="col-md-12 mb-3">
+                                            <div class="form-group text-start">
+                                                <label class="mb-0"
+                                                    for="{{form.standard.id_for_label}}">{{form.standard.label}}</label>
+                                                {{form.standard}}
+                                            </div>
+                                        </div>
+        
+                                        <div class="col-md-12 mb-3">
+                                            <div class="form-group text-start">
+                                                <label class="mb-0"
+                                                    for="{{form.subject.id_for_label}}">{{form.subject.label}}</label>
+                                                {{form.subject}}
+                                            </div>
+                                        </div>
+        
+                                    </div>
+                                    <button type="submit" class="edu-btn">Search<i class="icon-4"></i></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-7">
+                {% if tests %}
+                <div class="row">
+                    {% for test in tests %}
+                    <div class="col-md-6">
+                        <a href="{{test.link}}">
+                            <div class="card p-0 shadow-sm" style="border-radius:16px;">
+                                <img src="/static/web/images/bg/pattern.svg" alt="" style="border-radius:16px 16px 0 0;height: 140px;">
+                                <div class="p-4">
+                                    <h4 class="card-title">{{test}}</h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <div>
+                    <h4 class="card-title">No Tests Found</h4>
+                    <p class="card-text">No tests found for the selected criteria.</p>
+                </div>
+                {% endif %}
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+

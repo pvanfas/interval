@@ -1,0 +1,51 @@
+{% extends 'app/base.html' %}
+{% load static i18n crispy_forms_tags django_tables2 humanize %}
+{% block title %}Home: {{app_settings.site_title}}{% endblock %}
+
+{% block content %}
+
+<div class="side-app main-container">
+
+    <div class="page-header d-xl-flex d-block">
+        <div class="page-leftheader">
+            <div class="page-title">Manage Import</div>
+        </div>
+        <div class="page-rightheader ms-md-auto">
+            <div class="btn-list">
+                <a href="/static/app/config/StudentRegistrationTemplate.xlsx" class="btn btn-sm btn-white"> Download
+                    Template </a>
+                <a href="https://docs.google.com/spreadsheets/d/1GBxwn2Xe1UWjpAekWAvs78Zftm_F_lQBECfew6MjTtw/edit?usp=sharing"
+                    target="_blank" class="btn btn-sm btn-white"> Open Sample </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    {% for message in messages %}
+                    <p>{{ message }}</p>
+                    {% endfor %}
+
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <div class="preview_table mb-4">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="previewTable">
+                                </table>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" id="confirmButton">Continue</button>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

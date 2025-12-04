@@ -1,0 +1,176 @@
+/*================================================================================================
+    Start Funfact CSS
+===================================================================================================*/
+.ed-funfact {
+  margin-top: -178px;
+  position: relative;
+}
+.ed-funfact__inner {
+  background: var(--ed-primary-color);
+  border-radius: 8px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  padding: 20px 80px 20px 20px;
+}
+
+.ed-funfact__counter h4 {
+  color: var(--ed-white-color);
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -0.36px;
+  margin-bottom: 18px;
+  line-height: 100%;
+}
+
+.ed-funfact__counter p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+}
+.ed-funfact__img img {
+  width: 554px;
+  height: 316px;
+  max-width: 554px;
+  border-radius: 8px 8px 136px 8px;
+  object-fit: cover;
+}
+.ed-funfact__shape-1 {
+  position: absolute;
+  left: 49%;
+  top: 40%;
+  z-index: 2;
+}
+.ed-funfact__shape-2 {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  z-index: 2;
+}
+
+/* Funfact Style 2 */
+.ed-funfact.ed-funfact--style2 {
+  margin-top: 0;
+}
+.ed-funfact--style2 .ed-funfact__inner {
+  display: block;
+  border-radius: 8px;
+  background: var(--ed-white-color);
+  box-shadow: 5px 20px 51.3px 61px rgba(9, 2, 49, 0.06);
+  padding: 40px 80px 80px 80px;
+}
+.ed-funfact--style2 .ed-funfact__counter {
+  text-align: center;
+  margin-top: 40px;
+}
+.ed-funfact--style2 .ed-funfact__counter h4 {
+  font-size: 54px;
+  letter-spacing: -0.54px;
+  line-height: 40px;
+}
+.ed-funfact--style2 .ed-funfact__counter .color-text-1 {
+  color: #1D65B0;
+}
+.ed-funfact--style2 .ed-funfact__counter .color-text-2 {
+  color: #1D65B0;
+}
+.ed-funfact--style2 .ed-funfact__counter .color-text-3 {
+  color: #f39200;
+}
+.ed-funfact--style2 .ed-funfact__counter .color-text-4 {
+  color: #1D65B0;
+}
+.ed-funfact--style2 .ed-funfact__counter p {
+  color: var(--ed-paragraph-color);
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  .ed-funfact__img img {
+    width: 50%;
+    min-width: 100%;
+    max-width: 100%;
+  }
+  .ed-funfact__inner {
+    gap: 50px;
+  }
+  .ed-funfact__content {
+    width: 50%;
+    min-width: 50%;
+  }
+
+  .ed-funfact__img {
+    min-width: 50%;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991.99px) {
+  .ed-funfact__img img {
+    width: 100%;
+    height: 380px;
+    max-width: 100%;
+  }
+  .ed-funfact__inner {
+    padding: 32px;
+    display: block;
+  }
+  .ed-funfact__shape-1 {
+    left: auto;
+    top: 53%;
+    right: 11%;
+  }
+  .ed-funfact__content {
+    margin-top: 40px;
+  }
+  .ed-funfact__counter.mg-btm-80 {
+    margin-bottom: 40px;
+  }
+  .ed-funfact--style2 .ed-funfact__inner {
+    padding: 40px 80px 80px 40px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .ed-funfact {
+    margin-top: 0;
+  }
+  .ed-funfact__img img {
+    width: 100%;
+    height: 220px;
+  }
+  .ed-funfact__inner {
+    padding: 24px;
+    display: block;
+  }
+  .ed-funfact__counter h4 {
+    font-size: 30px;
+    margin-bottom: 12px;
+  }
+  .ed-funfact__counter.mg-btm-80 {
+    margin-bottom: 32px;
+  }
+  .ed-funfact__content {
+    margin-top: 24px;
+  }
+
+  .ed-funfact__shape-1 {
+    left: 74%;
+  }
+  .ed-funfact--style2 .ed-funfact__inner {
+    padding: 20px 24px 40px 24px;
+  }
+  .ed-funfact--style2 .ed-funfact__counter h4 {
+    font-size: 40px;
+  }
+  .ed-funfact--style2 .ed-funfact__counter p {
+    font-size: 14px !important;
+  }
+  .ed-funfact--style2 .ed-funfact__counter {
+    margin-top: 20px;
+  }
+}
+
+/*================================================================================================
+    End Funfact CSS
+===================================================================================================*/

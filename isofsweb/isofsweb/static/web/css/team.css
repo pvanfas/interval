@@ -1,0 +1,231 @@
+/*================================================================================================
+    Start Team CSS
+===================================================================================================*/
+
+.ed-team__card {
+  margin-top: 30px;
+}
+
+.ed-team__img img {
+  width: 100%;
+  height: 412px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.ed-team__cover {
+  position: relative;
+  overflow: hidden;
+}
+
+.ed-team__cover::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 0%;
+  bottom: 0;
+  left: 0;
+  border-radius: 8px;
+  background: linear-gradient(
+    180deg,
+    rgba(1, 28, 26, 0) 0%,
+    rgba(1, 28, 26, 0.65) 100%
+  );
+  transition: all 0.4s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+.ed-team__card:hover .ed-team__cover::before {
+  opacity: 1;
+  visibility: visible;
+  height: 100%;
+}
+.ed-team__social {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  transition: all 0.4s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+.ed-team__card:hover .ed-team__social {
+  opacity: 1;
+  visibility: visible;
+  bottom: 28px;
+}
+.ed-team__social li {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.ed-team__social li img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+.ed-team__social li img:hover {
+  transform: translateY(-3px);
+}
+.ed-team__info {
+  margin-top: 28px;
+}
+
+.ed-team__designation {
+  color: #5f5d5d;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: -0.28px;
+}
+
+.ed-team__name {
+  color: var(--ed-title-color);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 22px;
+  margin: 0;
+  margin-top: 14px;
+}
+.ed-team__name:hover {
+  color: var(--ed-primary-color);
+}
+
+/* Team Details  */
+
+.ed-team__details-top {
+  display: flex;
+  align-items: center;
+  gap: 110px;
+}
+.ed-team__details-info span {
+  margin-bottom: 16px;
+  display: block;
+}
+
+.ed-team__details-info h4 {
+  margin-bottom: 20px;
+}
+.ed-team__details-main-img img {
+  width: 488px;
+  height: 450px;
+  object-fit: cover;
+  max-width: 488px;
+  border-radius: 8px;
+}
+.ed-team__details-image {
+  position: relative;
+}
+.ed-team__details-image .ed-course__lesson {
+  margin: 0;
+}
+.ed-team__details-image .ed-team__details-meta {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  border-radius: 8px;
+  background: var(--ed-white-color);
+  display: inline-block;
+  padding: 16px 20px;
+}
+.ed-team__details-image .ed-course__rattings ul li i {
+  top: 0;
+}
+.ed-team__details-info .ed-team__details-info-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 46px;
+  border-top: 1px solid rgba(1, 28, 26, 0.25);
+  padding-top: 30px;
+  margin-top: 30px;
+}
+.ed-team__details-info .ed-team__details-info-social {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 40px;
+}
+.ed-team__details-info .ed-contact__info-item {
+  margin: 0;
+}
+.ed-team__details-info .ed-contact__info-content a {
+  font-weight: 600;
+}
+
+.ed-team__details-bottom {
+  margin-top: 45px;
+}
+.ed-team__details-bottom h5 {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  margin-bottom: 16px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199.99px) {
+  .ed-team__img img {
+    height: 340px;
+  }
+  .ed-team__details-top {
+    gap: 40px;
+  }
+  .ed-team__details-top .ed-contact__info-item {
+    display: block;
+  }
+  .ed-team__details-top .ed-contact__info-content {
+    margin-top: 24px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991.99px) {
+  .ed-team.ed-team__page {
+    padding: 50px 0px 80px;
+  }
+  .ed-team__details-top {
+    display: block;
+  }
+  .ed-team__details-info {
+    margin-top: 40px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .ed-team__details-top {
+    display: block;
+  }
+  .ed-team__img img {
+    height: 320px;
+  }
+  .ed-team__page.section-gap {
+    padding: 50px 0px 80px;
+  }
+  .ed-team__details-main-img img {
+    width: 100%;
+    height: 320px;
+    max-width: 100%;
+  }
+  .ed-team__details-info h4 {
+    margin-bottom: 12px;
+    font-size: 28px;
+  }
+  .ed-team__details-info span {
+    margin-bottom: 12px;
+  }
+  .ed-team__details-info .ed-contact__info-item {
+    margin-bottom: 24px;
+  }
+  .ed-team__details-bottom {
+    margin-top: 32px;
+  }
+  .ed-team__details-info {
+    margin-top: 40px;
+  }
+  .ed-team__details-info .ed-team__details-info-wrapper {
+    display: block;
+  }
+}
+
+/*================================================================================================
+    End Team CSS
+===================================================================================================*/

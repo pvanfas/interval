@@ -1,0 +1,279 @@
+{% extends 'web/base.html' %} {% block content %}
+<main>
+    <!-- Start Hero Area -->
+    <div class="section-bg background-image section-gap" style="background-image: url('/static/web/images/section-bg-1.png');">
+        <!-- Start About Area -->
+        <section class="ed-about section-gap position-relative">
+            <div class="container ed-container">
+                <div class="row align-items-center">
+                    <div class="col-lg-5 col-12">
+                        <!-- About Images  -->
+                        <div class="ed-about__images">
+                            <div class="ed-about__main-img">
+                                <img src="/static/web/images/about/about-1/about-img.png" alt="about-img" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-12 order-class">
+                        <!-- About Content  -->
+                        <div class="ed-about__content">
+                            <div class="ed-section-head">
+                                <span class="ed-section-head__sm-title">Interval School of Future Skills</span>
+                                <h3 class="ed-section-head__title ed-split-text left">
+                                    Your Path to Creative Excellence
+                                </h3>
+                                <p class="ed-section-head__text">
+                                    Transform your future with our expertly crafted courses, designed to equip you with the skills and knowledge needed for career excellence. At ISOFS, we focus on practical, industry-relevant learning that
+                                    empowers you to tackle real-world challenges and achieve your professional goals.
+                                </p>
+                            </div>
+                            <div class="ed-about__feature">
+                                <ul class="ed-about__features-list">
+                                    <li><img src="/static/web/images/icons/icon-check-blue.svg" alt="icon-check-blue" />Industry-Leading Mentors</li>
+                                    <li><img src="/static/web/images/icons/icon-check-blue.svg" alt="icon-check-blue" />Comprehensive Syllabus</li>
+                                    <li><img src="/static/web/images/icons/icon-check-blue.svg" alt="icon-check-blue" />Career-Focused Curriculum</li>
+                                    <li><img src="/static/web/images/icons/icon-check-blue.svg" alt="icon-check-blue" />Industrial Exposure</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img class="ed-about__shape-4" src="/static/web/images/abstracts/abstract-element-regular.svg" alt="shape-4" />
+        </section>
+
+        <!-- Start Category Area -->
+        <section class="ed-category section-gap pt-0 pb-0">
+            <div class="container ed-container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="ed-section-head d-flex-between">
+                            <div class="ed-section-head__info">
+                                <span class="ed-section-head__sm-title">COURSE CATEGORIES</span>
+                                <h3 class="ed-section-head__title m-0 ed-split-text left">
+                                    Categories to choose from
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="ed-category__wrapper">
+                            {% for category in skill_categories %}
+                            <a href="javascript:void(0);" class="ed-category__card wow fadeInUp" data-wow-delay=".3s" data-wow-duration="1s">
+                                <div class="ed-category__icon bg-1">
+                                    <img src="{{category.icon.url}}" alt="icon" />
+                                </div>
+                                <div class="ed-category__info">
+                                    <h4>{{category.title}}</h4>
+                                    <p>{{category.subtitle}}</p>
+                                </div>
+                            </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Start Features Area -->
+    <section class="ed-features position-relative">
+        <div class="container ed-container">
+            <div class="row">
+                <!-- Single Features Card  -->
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="ed-features__card wow fadeInUp" data-wow-delay=".3s" data-wow-duration="1s">
+                        <div class="ed-features__icon icon-bg bg-1">
+                            <img src="/static/web/images/features/features-1/1.svg" alt="icon" />
+                        </div>
+                        <div class="ed-features__info">
+                            <h4>Experienced Educators</h4>
+                            <p>
+                                Learn from seasoned professionals with years of real-world experience, ensuring you receive practical insights and expert guidance.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Features Card  -->
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="ed-features__card wow fadeInUp" data-wow-delay=".5s" data-wow-duration="1s">
+                        <div class="ed-features__icon icon-bg bg-2">
+                            <img src="/static/web/images/features/features-1/2.svg" alt="icon" />
+                        </div>
+                        <div class="ed-features__info">
+                            <h4>Industry Exposure</h4>
+                            <p>
+                                Gain firsthand knowledge from industry leaders through live sessions, projects, and partnerships that bridge the gap between theory and practice.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Features Card  -->
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="ed-features__card wow fadeInUp" data-wow-delay=".7s" data-wow-duration="1s">
+                        <div class="ed-features__icon icon-bg bg-3">
+                            <img src="/static/web/images/features/features-1/3.svg" alt="icon" />
+                        </div>
+                        <div class="ed-features__info">
+                            <h4>Advanced Curriculum</h4>
+                            <p>
+                                Our cutting-edge curriculum is designed to equip you with the latest skills and knowledge, keeping you ahead in a rapidly evolving job market.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Start Course Area -->
+    <section class="ed-course section-gap section-bg-1 position-relative" id="courseSection">
+        <div class="container ed-container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-8 col-12">
+                    <div class="ed-section-head text-center">
+                        <span class="ed-section-head__sm-title">REFINE & ELEVATE YOUR SKILLS</span>
+                        <h3 class="ed-section-head__title ed-split-text left">
+                            Start Your Learning Journey
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                {% for course in courses %}
+                <div class="col-lg-6 col-xl-6 col-md-6 col-12">
+                    <div class="ed-course__card ed-course__card--style2 wow fadeInUp" data-wow-delay=".3s" data-wow-duration="1s">
+                        <div class="ed-course__head position-relative">
+                            <a href="{{course.get_absolute_url}}" class="ed-course__img">
+                                <img src="{{course.image.url}}" alt="course-img" />
+                            </a>
+                            <a href="{{course.get_absolute_url}}" class="ed-course__tag">{{course.skill_category}}</a>
+                            <a href="{{course.get_absolute_url}}" class="ed-course__bookmarked"><i class="fi fi-rr-bookmark"></i></a>
+                        </div>
+                        <div class="ed-course__body">
+                            <a href="{{course.get_absolute_url}}" class="ed-course__title">
+                                <h5>{{course.title}}</h5>
+                                <p>{{course.description|truncatechars:110}}</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Start Why Choose Area -->
+    <section class="ed-why-choose section-gap background-image position-relative" style="background-image: url('/static/web/images/section-bg-2.png');">
+        <div class="container ed-container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-12">
+                    <div class="ed-w-choose__content">
+                        <div class="ed-section-head">
+                            <span class="ed-section-head__sm-title">WHY CHOOSE US</span>
+                            <h3 class="ed-section-head__title ed-split-text left">
+                                Develop real-world expertise for your professional growth
+                            </h3>
+                            <p class="ed-section-head__text mb-3">
+                                At ISOFS, we believe in learning by doing. Our courses are crafted to provide you with the practical skills and knowledge that go beyond textbooks, equipping you with hands-on experience directly relevant to
+                                the industries you're aiming to excel in. With a focus on real-world scenarios, you’ll tackle challenges that prepare you to make an immediate impact in your career, giving you an edge in today’s competitive
+                                job market.
+                            </p>
+                            <p class="ed-section-head__text">
+                                By immersing yourself in practical learning, you’ll not only sharpen your existing skills but also gain the confidence to take on new challenges and responsibilities. Our programs are designed to accelerate
+                                your professional growth, ensuring you are well-prepared to step into high-impact roles and advance in your career with purpose and expertise.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-12">
+                    <div class="ed-w-choose__images position-relative">
+                        <!-- Why Choose Image  -->
+                        <div class="ed-w-choose__main-img">
+                            <img src="/static/web/images/why-choose/why-choose-1/why-choose-img.png" alt="why-choose-img" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Start Funfact Area -->
+    <section class="ed-funfact">
+        <div class="container ed-container position-relative overflow-hidden">
+            <div class="ed-funfact__shapes">
+                <img class="ed-funfact__shape-2 rotate-ani" src="/static/web/images/funfact/funfact-1/shape-2.svg" alt="shape-1" />
+            </div>
+            <div class="ed-funfact__inner">
+                <div class="ed-funfact__img">
+                    <img src="/static/web/images/funfact/funfact-1/funfact-img.png" alt="funfact-img" />
+                </div>
+                <div class="ed-funfact__content">
+                    <div class="row">
+                        <!-- Single Counter  -->
+                        <div class="col-lg-6 col-md-6 col-6">
+                            <div class="ed-funfact__counter mg-btm-80">
+                                <h4><span class="counter">50</span>+</h4>
+                                <p>Bright Minds Onboard</p>
+                            </div>
+                        </div>
+
+                        <!-- Single Counter  -->
+                        <div class="col-lg-6 col-md-6 col-6">
+                            <div class="ed-funfact__counter mg-btm-80">
+                                <h4><span class="counter">100</span>+</h4>
+                                <p>Knowledge Hours</p>
+                            </div>
+                        </div>
+
+                        <!-- Single Counter  -->
+                        <div class="col-lg-6 col-md-6 col-6">
+                            <div class="ed-funfact__counter">
+                                <h4><span class="counter">30</span>+</h4>
+                                <p>Success Stories</p>
+                            </div>
+                        </div>
+
+                        <!-- Single Counter  -->
+                        <div class="col-lg-6 col-md-6 col-6">
+                            <div class="ed-funfact__counter">
+                                <h4><span class="counter">10</span>+</h4>
+                                <p>Passionate Mentors</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Start Partner Area -->
+    <section class="ed-partner section-gap">
+        <div class="container ed-container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="ed-partner__section-head">
+                        <h3 class="ed-partner__section-head-title">Get mentored by <span>Industry Experts</span> from</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="owl-carousel ed-partner__slider">
+                        <!-- Single Slider  -->
+                        {% for ie in industry_experts %}
+                        <div class="ed-parnet__brand-logo">
+                            <img src="{{ie.logo.url}}" alt="{{ie.name}}" />
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}

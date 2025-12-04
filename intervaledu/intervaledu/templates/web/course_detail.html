@@ -1,0 +1,246 @@
+{% extends 'web/base.html' %}
+
+
+{% block meta %}
+<!-- Primary Meta Tags -->
+<title>{{course.meta_title}}</title>
+<meta name="title" content="{{course.meta_title}}" />
+<meta name="description" content="{{course.meta_description}}" />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{og_url}}" />
+<meta property="og:title" content="{{course.meta_title}}" />
+<meta property="og:description" content="{{course.meta_description}}" />
+<meta property="og:image" content="https://intervaledu.com/static/web/images/main/preview.png" />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content="{{og_url}}" />
+<meta property="twitter:title" content="{{course.meta_title}}" />
+<meta property="twitter:description" content="{{course.meta_description}}" />
+<meta property="twitter:image" content="https://intervaledu.com/static/web/images/main/preview.png" />
+{% endblock %}
+
+
+{% block content %}
+
+<div class="edu-breadcrumb-area breadcrumb-style-3">
+    <div class="container">
+        <div class="breadcrumb-inner">
+            <div class="page-title mt--60">
+                <h1 class="title">{{course.title}}</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<section class="pt-5 edu-section-gap course-details-area">
+    <div class="container">
+        <div class="row row--30">
+            <div class="col-lg-8">
+                <div class="course-details-content course-details-2">
+                    
+                    <div class="course-overview mb--40">
+                        <blockquote>
+                            {{course.description|default:""}}
+                        </blockquote>
+                    </div>
+
+                    <div class="course-overview mb-5">
+                        <div class="html_content">
+                            {{course.content|default:""|safe}}
+                        </div>
+                    </div>
+                </div>
+
+                {% if course.get_features %}
+                <div class="features-area-5">
+                    <div class="row g-5 features pt-5">
+                        {% for feature in course.get_features %}
+                        <div class="col-lg-6 col-md-6 mt-3">
+                            <div class="feature_card">
+                                <h5 class="title m-0">{{feature}}</h5>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
+
+            </div>
+
+            <div class="col-lg-4">
+                <div class="course-sidebar-3">
+                    <div class="edu-course-widget widget-course-summery">
+                        <div class="inner">
+                            <div class="thumbnail">
+                                <img src="{{course.image.url}}" alt="Courses">
+                                {% if course.preview_video_id %}
+                                <a href="https://www.youtube.com/watch?v={{course.preview_video_id}}" class="play-btn video-popup-activation"><i class="icon-18"></i></a>
+                                {% endif %}
+                            </div>
+                            <div class="content">
+                                <ul class="course-item">
+                                    {% if course.duration %}
+                                    <li>
+                                        <span class="label"><i class="icon-61"></i>Duration:</span>
+                                        <span class="value">{{course.duration}}</span>
+                                    </li>
+                                    {% endif %}
+                                    {% if course.lessons %}
+                                    <li>
+                                        <span class="label"><img class="svgInject" src="/static/web/images/svg-icons/books.svg" alt="book icon">Lessons:</span>
+                                        <span class="value">{{course.lessons}}</span>
+                                    </li>
+                                    {% endif %}
+                                    {% if course.language %}
+                                    <li>
+                                        <span class="label"><i class="icon-59"></i>Language:</span>
+                                        <span class="value">{{course.language}}</span>
+                                    </li>
+                                    {% endif %}
+                                </ul>
+                                <div class="read-more-btn mb-0">
+                                    <a href="javascript:void(0);" role="button" data-bs-toggle="modal" data-bs-target="#demoBackdrop" class="edu-btn">Send Enquiry <i class="icon-4"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% if course.get_benefits %}
+<section class="section-gap-large pt-0">
+    <div class="container">
+
+        <div class="section-title section-center sal-animate" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+            <h2 class="title">Included <span class="color-secondary">Benefits</span></h2>
+            <span class="shape-line"><i class="icon-19"></i></span>
+        </div>
+
+        <div class="row g-5">
+            {% for benefit in course.get_benefits %}
+            <div class="col-lg-6 sal-animate" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                <div class="why-choose-box border features-box color-primary-style">
+                    <div class="content">
+                        <h4 class="title mb-3">{{benefit.title}}</h4>
+                        <p>{{benefit.description}}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+
+{% if course.get_faqs %}
+<div class="edu-faq-area faq-style-1 pt-0">
+    <div class="container">
+        <div class="row g-5 row--45">
+            <div class="col-lg-5">
+                <div class="edu-faq-gallery">
+                    <div class="row g-5">
+                        <video autoplay muted loop playsinline class="">
+                            <source src="/static/web/video/pencil.webm" type="video/webm">
+                        </video>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="edu-faq-content">
+                    <div class="section-title section-left" data-sal-delay="100" data-sal="slide-up"
+                        data-sal-duration="800">
+                        <h2 class="title">Over 10 Years in <span class="color-secondary">Distant <br>
+                                Skill</span> Development</h2>
+                        <span class="shape-line"><i class="icon-19"></i></span>
+                        <p>
+                            With more than a decade of expertise in providing remote learning opportunities,
+                            we have empowered individuals across the globe to unlock their potential. Our
+                            focus on distant skill development ensures that no matter where you are, you can
+                            access world-class education, personalized training, and the tools necessary to
+                            thrive in today’s fast-paced world
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="faq-accordion" id="faq-accordion" data-sal-delay="100" data-sal="slide-up"
+                    data-sal-duration="800">
+                    <div class="accordion">
+                        {% for faq in course.get_faqs %}
+                        <div class="accordion-item">
+                            <h5 class="accordion-header">
+                                <button class="accordion-button {% if not forloop.first %}collapsed{% endif %}"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{faq.pk}}"
+                                    aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}">
+                                    {{faq.question}}
+                                </button>
+                            </h5>
+                            <div id="collapse{{faq.pk}}"
+                                class="accordion-collapse collapse {% if forloop.first %}show{% endif %}"
+                                data-bs-parent="#faq-accordion">
+                                <div class="accordion-body">
+                                    <p>{{faq.answer}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+                    </div>
+                </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+
+{% include 'web/partials/cta.html' %}
+
+
+{% endblock %}
+
+
+
+{% block scripts %}
+<script>
+    const ctas = {{ course.get_ctas|safe }};
+    ctas.forEach(cta => {
+        const div = document.createElement('div');
+        div.className = 'course-cta';
+
+        const a = document.createElement('a');
+        a.href = 'javascript:void(0);';
+        a.setAttribute('role', 'button');
+        a.setAttribute('data-bs-toggle', 'modal');
+        a.setAttribute('data-bs-target', '#staticBackdrop');
+
+        const img = document.createElement('img');
+        img.src = cta.image;
+        img.alt = cta.title;
+        img.style.width = '100%';
+        img.style.height = 'auto';
+
+        // Append image inside anchor
+        a.appendChild(img);
+        div.appendChild(a);
+
+        // Insert the div just after the element found via XPath
+        const xpath = cta.xpath;
+        const element = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+        if (element) {
+            element.parentNode.insertBefore(div, element.nextSibling);
+        }
+    });
+</script>
+{% endblock %}

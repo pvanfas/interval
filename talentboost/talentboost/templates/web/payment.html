@@ -1,0 +1,108 @@
+{% extends "web/base.html" %}
+{% block content %}
+<!-- FEATURES -->
+<section class="home-destination section_padding d-flex align-items-center"
+   style="background-color: #FDF4FF;min-height:92vh">
+   <div class="container section_padding">
+      <div class="destination-section">
+         {% if registration.is_paid %}
+         <div class="row align-items-center">
+            <div class="col-xl-6 col-lg-6 col-md-6">
+               <article class="destination-item">
+                  <div class="destination-content flip-container">
+                     <div class="counter-no mb-3 flip">
+                        <img src="/static/web/images/talent.png" alt="" style="height: 60px">
+                     </div>
+                     <h3>Registration Complete</h3>
+                     <p>Your Registration for the Interval Talent Boost Project has been successfully completed.
+                        You will receive an email with further instructions shortly.
+                     </p>
+                  </div>
+               </article>
+            </div>
+         </div>
+         {% else %}
+         <div class="row align-items-center">
+            <div class="col-xl-8 col-lg-8 col-md-8">
+               <h3>Make the Payment and Complete the Registration</h3>
+               <div class="registration_table">
+                  <div class="table-container">
+                     <table class="table table-bordered">
+                        {% if registration.name %}<tr><th>Name</th><td>{{registration.name}}</td></tr>{% endif %}
+                        {% if registration.student_class %}<tr><th>Student Class</th><td>{{registration.student_class}}</td></tr>{% endif %}
+                        {% if registration.syllabus %}<tr><th>Syllabus</th><td>{{registration.syllabus}}</td></tr>{% endif %}
+                        {% if registration.school_name %}<tr><th>School Name</th><td>{{registration.school_name}}</td></tr>{% endif %}
+                        {% if registration.school_place %}<tr><th>School Place</th><td>{{registration.school_place}}</td></tr>{% endif %}
+                     </table>
+                  </div>
+               </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4">
+               <article class="destination-item">
+                  <div class="destination-content flip-container">
+                     
+
+                     {% if razorpay_amount == 0 %}
+
+                     <form action="" method="post" enctype="multipart/form-data">
+                     {% csrf_token %}
+                        <div class="destination-content flip-container">
+                           <button class="btn btn-block btn-dark mb-3 mt-3 round-btn w-100" type="submit">Complete
+                              Enrollment</button>
+                        </div>
+                     </form>
+
+                     {% else %}
+
+                     <div class="destination-content flip-container">
+                        <button class="btn btn-block btn-dark mb-3 mt-3 round-btn w-100" type="button" id="paymentBtn">PAY {{pay_amount}} Rupees</button>
+                     </div>
+                     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+                     <script>
+                        var options = {
+                           key: "{{razorpay_merchant_key}}",
+                           amount: "{{razorpay_amount}}",
+                           currency: "{{currency}}",
+                           name: "{{registration.name}}",
+                           order_id: "{{razorpay_order_id}}",
+                           callback_url: "{{callback_url}}",
+                           description: "ORDER: {{order.order_id}}",
+                           image: "https://talentboost.prospello.in/static/web/images/logo/talentboost.png",
+                           prefill: {
+                              "name": "{{registration.name}}",
+                              "email": "{{registration.email_id}}",
+                              "contact": "{{registration.mobile}}"
+                           },
+                           notes: {
+                              "register_number": "{{registration.register_number}}"
+                           }
+                        };
+                        var rzp1 = new Razorpay(options);
+                        document.getElementById("paymentBtn").onclick = function (e) {
+                           rzp1.open();
+                           e.preventDefault();
+                        };
+                     </script>
+
+                     <form action="">
+                        <div class="form-group">
+                           <label for="name">Coupon Code</label>
+                           <div class="d-flex mb-2 coupon_column">
+                              <input type="text" class="form-control" id="coupon_code" name="coupon_code"
+                                 value="{{request.GET.coupon_code}}">
+                              <button type="submit" class="round-btn py-2 ms-2" id="apply_btn">Apply</button>
+                           </div>
+                           <p>{{message|default:""}}</p>
+                        </div>
+                     </form>
+
+                     {% endif  %}
+                  </div>
+               </article>
+            </div>
+         </div>
+         {% endif %}
+      </div>
+   </div>
+</section>
+{% endblock content %}

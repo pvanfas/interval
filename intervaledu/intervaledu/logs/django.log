@@ -1,0 +1,762 @@
+2025-12-02 22:40:22,410 [INFO] django.utils.autoreload Watching for file changes with StatReloader
+2025-12-02 22:40:27,656 [ERROR] django.security.DisallowedHost Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/sentry_sdk/integrations/django/middleware.py", line 177, in __call__
+    return f(*args, **kwargs)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/middleware/security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+2025-12-02 22:40:27,942 [ERROR] django.security.DisallowedHost Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/sentry_sdk/integrations/django/middleware.py", line 177, in __call__
+    return f(*args, **kwargs)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/middleware/security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 164, in get_exception_response
+    response = callback(request, exception=exception)
+  File "/Users/admin/srv/interval/intervaledu/intervaledu/web/views.py", line 527, in bad_request
+    response = render(request, template_name)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/sentry_sdk/utils.py", line 1783, in runner
+    return sentry_patched_function(*args, **kwargs)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/sentry_sdk/integrations/django/templates.py", line 105, in render
+    return real_render(request, template_name, context, *args, **kwargs)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/base.py", line 173, in render
+    with context.bind_template(self):
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/contextlib.py", line 117, in __enter__
+    return next(self.gen)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/context.py", line 254, in bind_template
+    updates.update(processor(self.request))
+  File "/Users/admin/srv/interval/intervaledu/intervaledu/web/context_processors.py", line 61, in main_context
+    domain = "https://" + request.get_host()
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/sentry_sdk/integrations/django/middleware.py", line 177, in __call__
+    return f(*args, **kwargs)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/utils/deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 134, in response_for_exception
+    response = get_exception_response(
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 167, in get_exception_response
+    response = handle_uncaught_exception(request, resolver, sys.exc_info())
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 185, in handle_uncaught_exception
+    return callback(request)
+  File "/Users/admin/srv/interval/intervaledu/intervaledu/web/views.py", line 557, in server_error
+    response = render(request, template_name)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/sentry_sdk/utils.py", line 1783, in runner
+    return sentry_patched_function(*args, **kwargs)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/sentry_sdk/integrations/django/templates.py", line 105, in render
+    return real_render(request, template_name, context, *args, **kwargs)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/base.py", line 173, in render
+    with context.bind_template(self):
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/contextlib.py", line 117, in __enter__
+    return next(self.gen)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/context.py", line 254, in bind_template
+    updates.update(processor(self.request))
+  File "/Users/admin/srv/interval/intervaledu/intervaledu/web/context_processors.py", line 61, in main_context
+    domain = "https://" + request.get_host()
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+2025-12-02 22:40:27,989 [ERROR] django.security.DisallowedHost Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/sentry_sdk/integrations/django/middleware.py", line 177, in __call__
+    return f(*args, **kwargs)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/middleware/security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 164, in get_exception_response
+    response = callback(request, exception=exception)
+  File "/Users/admin/srv/interval/intervaledu/intervaledu/web/views.py", line 527, in bad_request
+    response = render(request, template_name)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/sentry_sdk/utils.py", line 1783, in runner
+    return sentry_patched_function(*args, **kwargs)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/sentry_sdk/integrations/django/templates.py", line 105, in render
+    return real_render(request, template_name, context, *args, **kwargs)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/base.py", line 173, in render
+    with context.bind_template(self):
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/contextlib.py", line 117, in __enter__
+    return next(self.gen)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/context.py", line 254, in bind_template
+    updates.update(processor(self.request))
+  File "/Users/admin/srv/interval/intervaledu/intervaledu/web/context_processors.py", line 61, in main_context
+    domain = "https://" + request.get_host()
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/sentry_sdk/integrations/django/middleware.py", line 177, in __call__
+    return f(*args, **kwargs)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/utils/deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 134, in response_for_exception
+    response = get_exception_response(
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 167, in get_exception_response
+    response = handle_uncaught_exception(request, resolver, sys.exc_info())
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 185, in handle_uncaught_exception
+    return callback(request)
+  File "/Users/admin/srv/interval/intervaledu/intervaledu/web/views.py", line 557, in server_error
+    response = render(request, template_name)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/sentry_sdk/utils.py", line 1783, in runner
+    return sentry_patched_function(*args, **kwargs)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/sentry_sdk/integrations/django/templates.py", line 105, in render
+    return real_render(request, template_name, context, *args, **kwargs)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/base.py", line 173, in render
+    with context.bind_template(self):
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/contextlib.py", line 117, in __enter__
+    return next(self.gen)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/context.py", line 254, in bind_template
+    updates.update(processor(self.request))
+  File "/Users/admin/srv/interval/intervaledu/intervaledu/web/context_processors.py", line 61, in main_context
+    domain = "https://" + request.get_host()
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 164, in get_exception_response
+    response = callback(request, exception=exception)
+  File "/Users/admin/srv/interval/intervaledu/intervaledu/web/views.py", line 527, in bad_request
+    response = render(request, template_name)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/sentry_sdk/utils.py", line 1783, in runner
+    return sentry_patched_function(*args, **kwargs)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/sentry_sdk/integrations/django/templates.py", line 105, in render
+    return real_render(request, template_name, context, *args, **kwargs)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/base.py", line 173, in render
+    with context.bind_template(self):
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/contextlib.py", line 117, in __enter__
+    return next(self.gen)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/context.py", line 254, in bind_template
+    updates.update(processor(self.request))
+  File "/Users/admin/srv/interval/intervaledu/intervaledu/web/context_processors.py", line 61, in main_context
+    domain = "https://" + request.get_host()
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/sentry_sdk/integrations/django/middleware.py", line 177, in __call__
+    return f(*args, **kwargs)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/utils/deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 134, in response_for_exception
+    response = get_exception_response(
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 167, in get_exception_response
+    response = handle_uncaught_exception(request, resolver, sys.exc_info())
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 185, in handle_uncaught_exception
+    return callback(request)
+  File "/Users/admin/srv/interval/intervaledu/intervaledu/web/views.py", line 557, in server_error
+    response = render(request, template_name)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/sentry_sdk/utils.py", line 1783, in runner
+    return sentry_patched_function(*args, **kwargs)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/sentry_sdk/integrations/django/templates.py", line 105, in render
+    return real_render(request, template_name, context, *args, **kwargs)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/base.py", line 173, in render
+    with context.bind_template(self):
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/contextlib.py", line 117, in __enter__
+    return next(self.gen)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/context.py", line 254, in bind_template
+    updates.update(processor(self.request))
+  File "/Users/admin/srv/interval/intervaledu/intervaledu/web/context_processors.py", line 61, in main_context
+    domain = "https://" + request.get_host()
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+2025-12-02 22:40:28,084 [ERROR] django.server "GET / HTTP/1.1" 500 59
+2025-12-02 22:40:39,163 [ERROR] django.security.DisallowedHost Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/sentry_sdk/integrations/django/middleware.py", line 177, in __call__
+    return f(*args, **kwargs)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/middleware/security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+2025-12-02 22:40:39,193 [ERROR] django.security.DisallowedHost Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/sentry_sdk/integrations/django/middleware.py", line 177, in __call__
+    return f(*args, **kwargs)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/middleware/security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 164, in get_exception_response
+    response = callback(request, exception=exception)
+  File "/Users/admin/srv/interval/intervaledu/intervaledu/web/views.py", line 527, in bad_request
+    response = render(request, template_name)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/sentry_sdk/utils.py", line 1783, in runner
+    return sentry_patched_function(*args, **kwargs)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/sentry_sdk/integrations/django/templates.py", line 105, in render
+    return real_render(request, template_name, context, *args, **kwargs)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/base.py", line 173, in render
+    with context.bind_template(self):
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/contextlib.py", line 117, in __enter__
+    return next(self.gen)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/context.py", line 254, in bind_template
+    updates.update(processor(self.request))
+  File "/Users/admin/srv/interval/intervaledu/intervaledu/web/context_processors.py", line 61, in main_context
+    domain = "https://" + request.get_host()
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/sentry_sdk/integrations/django/middleware.py", line 177, in __call__
+    return f(*args, **kwargs)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/utils/deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 134, in response_for_exception
+    response = get_exception_response(
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 167, in get_exception_response
+    response = handle_uncaught_exception(request, resolver, sys.exc_info())
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 185, in handle_uncaught_exception
+    return callback(request)
+  File "/Users/admin/srv/interval/intervaledu/intervaledu/web/views.py", line 557, in server_error
+    response = render(request, template_name)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/sentry_sdk/utils.py", line 1783, in runner
+    return sentry_patched_function(*args, **kwargs)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/sentry_sdk/integrations/django/templates.py", line 105, in render
+    return real_render(request, template_name, context, *args, **kwargs)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/base.py", line 173, in render
+    with context.bind_template(self):
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/contextlib.py", line 117, in __enter__
+    return next(self.gen)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/context.py", line 254, in bind_template
+    updates.update(processor(self.request))
+  File "/Users/admin/srv/interval/intervaledu/intervaledu/web/context_processors.py", line 61, in main_context
+    domain = "https://" + request.get_host()
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+2025-12-02 22:40:39,229 [ERROR] django.security.DisallowedHost Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/sentry_sdk/integrations/django/middleware.py", line 177, in __call__
+    return f(*args, **kwargs)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/middleware/security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 164, in get_exception_response
+    response = callback(request, exception=exception)
+  File "/Users/admin/srv/interval/intervaledu/intervaledu/web/views.py", line 527, in bad_request
+    response = render(request, template_name)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/sentry_sdk/utils.py", line 1783, in runner
+    return sentry_patched_function(*args, **kwargs)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/sentry_sdk/integrations/django/templates.py", line 105, in render
+    return real_render(request, template_name, context, *args, **kwargs)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/base.py", line 173, in render
+    with context.bind_template(self):
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/contextlib.py", line 117, in __enter__
+    return next(self.gen)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/context.py", line 254, in bind_template
+    updates.update(processor(self.request))
+  File "/Users/admin/srv/interval/intervaledu/intervaledu/web/context_processors.py", line 61, in main_context
+    domain = "https://" + request.get_host()
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/sentry_sdk/integrations/django/middleware.py", line 177, in __call__
+    return f(*args, **kwargs)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/utils/deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 134, in response_for_exception
+    response = get_exception_response(
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 167, in get_exception_response
+    response = handle_uncaught_exception(request, resolver, sys.exc_info())
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 185, in handle_uncaught_exception
+    return callback(request)
+  File "/Users/admin/srv/interval/intervaledu/intervaledu/web/views.py", line 557, in server_error
+    response = render(request, template_name)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/sentry_sdk/utils.py", line 1783, in runner
+    return sentry_patched_function(*args, **kwargs)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/sentry_sdk/integrations/django/templates.py", line 105, in render
+    return real_render(request, template_name, context, *args, **kwargs)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/base.py", line 173, in render
+    with context.bind_template(self):
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/contextlib.py", line 117, in __enter__
+    return next(self.gen)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/context.py", line 254, in bind_template
+    updates.update(processor(self.request))
+  File "/Users/admin/srv/interval/intervaledu/intervaledu/web/context_processors.py", line 61, in main_context
+    domain = "https://" + request.get_host()
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 164, in get_exception_response
+    response = callback(request, exception=exception)
+  File "/Users/admin/srv/interval/intervaledu/intervaledu/web/views.py", line 527, in bad_request
+    response = render(request, template_name)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/sentry_sdk/utils.py", line 1783, in runner
+    return sentry_patched_function(*args, **kwargs)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/sentry_sdk/integrations/django/templates.py", line 105, in render
+    return real_render(request, template_name, context, *args, **kwargs)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/base.py", line 173, in render
+    with context.bind_template(self):
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/contextlib.py", line 117, in __enter__
+    return next(self.gen)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/context.py", line 254, in bind_template
+    updates.update(processor(self.request))
+  File "/Users/admin/srv/interval/intervaledu/intervaledu/web/context_processors.py", line 61, in main_context
+    domain = "https://" + request.get_host()
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/sentry_sdk/integrations/django/middleware.py", line 177, in __call__
+    return f(*args, **kwargs)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/utils/deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 134, in response_for_exception
+    response = get_exception_response(
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 167, in get_exception_response
+    response = handle_uncaught_exception(request, resolver, sys.exc_info())
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 185, in handle_uncaught_exception
+    return callback(request)
+  File "/Users/admin/srv/interval/intervaledu/intervaledu/web/views.py", line 557, in server_error
+    response = render(request, template_name)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/sentry_sdk/utils.py", line 1783, in runner
+    return sentry_patched_function(*args, **kwargs)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/sentry_sdk/integrations/django/templates.py", line 105, in render
+    return real_render(request, template_name, context, *args, **kwargs)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/base.py", line 173, in render
+    with context.bind_template(self):
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/contextlib.py", line 117, in __enter__
+    return next(self.gen)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/context.py", line 254, in bind_template
+    updates.update(processor(self.request))
+  File "/Users/admin/srv/interval/intervaledu/intervaledu/web/context_processors.py", line 61, in main_context
+    domain = "https://" + request.get_host()
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+2025-12-02 22:40:39,313 [ERROR] django.server "GET / HTTP/1.1" 500 59
+2025-12-02 22:40:51,622 [ERROR] django.security.DisallowedHost Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/sentry_sdk/integrations/django/middleware.py", line 177, in __call__
+    return f(*args, **kwargs)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/middleware/security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+2025-12-02 22:40:51,652 [ERROR] django.security.DisallowedHost Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/sentry_sdk/integrations/django/middleware.py", line 177, in __call__
+    return f(*args, **kwargs)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/middleware/security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 164, in get_exception_response
+    response = callback(request, exception=exception)
+  File "/Users/admin/srv/interval/intervaledu/intervaledu/web/views.py", line 527, in bad_request
+    response = render(request, template_name)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/sentry_sdk/utils.py", line 1783, in runner
+    return sentry_patched_function(*args, **kwargs)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/sentry_sdk/integrations/django/templates.py", line 105, in render
+    return real_render(request, template_name, context, *args, **kwargs)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/base.py", line 173, in render
+    with context.bind_template(self):
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/contextlib.py", line 117, in __enter__
+    return next(self.gen)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/context.py", line 254, in bind_template
+    updates.update(processor(self.request))
+  File "/Users/admin/srv/interval/intervaledu/intervaledu/web/context_processors.py", line 61, in main_context
+    domain = "https://" + request.get_host()
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/sentry_sdk/integrations/django/middleware.py", line 177, in __call__
+    return f(*args, **kwargs)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/utils/deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 134, in response_for_exception
+    response = get_exception_response(
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 167, in get_exception_response
+    response = handle_uncaught_exception(request, resolver, sys.exc_info())
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 185, in handle_uncaught_exception
+    return callback(request)
+  File "/Users/admin/srv/interval/intervaledu/intervaledu/web/views.py", line 557, in server_error
+    response = render(request, template_name)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/sentry_sdk/utils.py", line 1783, in runner
+    return sentry_patched_function(*args, **kwargs)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/sentry_sdk/integrations/django/templates.py", line 105, in render
+    return real_render(request, template_name, context, *args, **kwargs)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/base.py", line 173, in render
+    with context.bind_template(self):
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/contextlib.py", line 117, in __enter__
+    return next(self.gen)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/context.py", line 254, in bind_template
+    updates.update(processor(self.request))
+  File "/Users/admin/srv/interval/intervaledu/intervaledu/web/context_processors.py", line 61, in main_context
+    domain = "https://" + request.get_host()
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+2025-12-02 22:40:51,688 [ERROR] django.security.DisallowedHost Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/sentry_sdk/integrations/django/middleware.py", line 177, in __call__
+    return f(*args, **kwargs)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/middleware/security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 164, in get_exception_response
+    response = callback(request, exception=exception)
+  File "/Users/admin/srv/interval/intervaledu/intervaledu/web/views.py", line 527, in bad_request
+    response = render(request, template_name)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/sentry_sdk/utils.py", line 1783, in runner
+    return sentry_patched_function(*args, **kwargs)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/sentry_sdk/integrations/django/templates.py", line 105, in render
+    return real_render(request, template_name, context, *args, **kwargs)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/base.py", line 173, in render
+    with context.bind_template(self):
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/contextlib.py", line 117, in __enter__
+    return next(self.gen)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/context.py", line 254, in bind_template
+    updates.update(processor(self.request))
+  File "/Users/admin/srv/interval/intervaledu/intervaledu/web/context_processors.py", line 61, in main_context
+    domain = "https://" + request.get_host()
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/sentry_sdk/integrations/django/middleware.py", line 177, in __call__
+    return f(*args, **kwargs)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/utils/deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 134, in response_for_exception
+    response = get_exception_response(
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 167, in get_exception_response
+    response = handle_uncaught_exception(request, resolver, sys.exc_info())
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 185, in handle_uncaught_exception
+    return callback(request)
+  File "/Users/admin/srv/interval/intervaledu/intervaledu/web/views.py", line 557, in server_error
+    response = render(request, template_name)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/sentry_sdk/utils.py", line 1783, in runner
+    return sentry_patched_function(*args, **kwargs)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/sentry_sdk/integrations/django/templates.py", line 105, in render
+    return real_render(request, template_name, context, *args, **kwargs)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/base.py", line 173, in render
+    with context.bind_template(self):
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/contextlib.py", line 117, in __enter__
+    return next(self.gen)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/context.py", line 254, in bind_template
+    updates.update(processor(self.request))
+  File "/Users/admin/srv/interval/intervaledu/intervaledu/web/context_processors.py", line 61, in main_context
+    domain = "https://" + request.get_host()
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 164, in get_exception_response
+    response = callback(request, exception=exception)
+  File "/Users/admin/srv/interval/intervaledu/intervaledu/web/views.py", line 527, in bad_request
+    response = render(request, template_name)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/sentry_sdk/utils.py", line 1783, in runner
+    return sentry_patched_function(*args, **kwargs)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/sentry_sdk/integrations/django/templates.py", line 105, in render
+    return real_render(request, template_name, context, *args, **kwargs)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/base.py", line 173, in render
+    with context.bind_template(self):
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/contextlib.py", line 117, in __enter__
+    return next(self.gen)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/context.py", line 254, in bind_template
+    updates.update(processor(self.request))
+  File "/Users/admin/srv/interval/intervaledu/intervaledu/web/context_processors.py", line 61, in main_context
+    domain = "https://" + request.get_host()
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/sentry_sdk/integrations/django/middleware.py", line 177, in __call__
+    return f(*args, **kwargs)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/utils/deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 134, in response_for_exception
+    response = get_exception_response(
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 167, in get_exception_response
+    response = handle_uncaught_exception(request, resolver, sys.exc_info())
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 185, in handle_uncaught_exception
+    return callback(request)
+  File "/Users/admin/srv/interval/intervaledu/intervaledu/web/views.py", line 557, in server_error
+    response = render(request, template_name)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/sentry_sdk/utils.py", line 1783, in runner
+    return sentry_patched_function(*args, **kwargs)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/sentry_sdk/integrations/django/templates.py", line 105, in render
+    return real_render(request, template_name, context, *args, **kwargs)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/base.py", line 173, in render
+    with context.bind_template(self):
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/contextlib.py", line 117, in __enter__
+    return next(self.gen)
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/template/context.py", line 254, in bind_template
+    updates.update(processor(self.request))
+  File "/Users/admin/srv/interval/intervaledu/intervaledu/web/context_processors.py", line 61, in main_context
+    domain = "https://" + request.get_host()
+  File "/Users/admin/srv/venv/lib/python3.9/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+2025-12-02 22:40:51,763 [ERROR] django.server "GET / HTTP/1.1" 500 59
+2025-12-02 22:40:56,058 [INFO] django.utils.autoreload Watching for file changes with StatReloader
+2025-12-02 22:40:58,340 [ERROR] django.server You're accessing the development server over HTTPS, but it only supports HTTP.
+2025-12-02 22:40:58,341 [ERROR] django.server You're accessing the development server over HTTPS, but it only supports HTTP.
+2025-12-02 22:41:00,320 [ERROR] django.server You're accessing the development server over HTTPS, but it only supports HTTP.
+2025-12-02 22:41:00,321 [ERROR] django.server You're accessing the development server over HTTPS, but it only supports HTTP.
+2025-12-02 22:41:00,322 [ERROR] django.server You're accessing the development server over HTTPS, but it only supports HTTP.
+2025-12-02 22:41:00,323 [ERROR] django.server You're accessing the development server over HTTPS, but it only supports HTTP.
+2025-12-02 22:45:07,805 [INFO] django.utils.autoreload /Users/admin/srv/interval/intervaledu/intervaledu/intervaledu/settings.py changed, reloading.
+2025-12-02 22:45:08,718 [INFO] django.utils.autoreload Watching for file changes with StatReloader
+2025-12-02 22:52:01,839 [INFO] django.utils.autoreload /Users/admin/srv/interval/intervaledu/intervaledu/intervaledu/settings.py changed, reloading.
+2025-12-02 22:52:02,810 [INFO] django.utils.autoreload Watching for file changes with StatReloader

@@ -1,0 +1,102 @@
+{% extends 'web/base.html' %}
+
+{% block content %}
+
+<main>
+
+    <!-- Start Course Area -->
+    <section class="ed-course section-gap position-relative background-image" style="background-image: url('https://eduna-template.vercel.app/eduna/assets/images/section-bg-9.png');">
+        <div class="container section-gap ed-container">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="ed-section-head d-flex-between mb-0">
+                            <div class="ed-section-head__info">
+                                <h3 class="ed-section-head__title m-0 ed-split-text left">
+                                    Exclusive Events & Exciting Opportunities Ahead
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    {% for event in events %}
+                    <div class="col-lg-6 col-xl-4 col-md-6 col-12">
+                        <div class="ed-course__card ed-course__card--style3 ed-course__card--style4 wow fadeInUp" data-wow-delay=".3s" data-wow-duration="1s">
+                            <div class="ed-course__cover">
+                                <a href="{{event.registration_link|default:'javascript:void(0);'}}" class="ed-course__img">
+                                    <img src="{{event.image.url}}" alt="course-img" />
+                                </a>
+                            </div>
+                            <div class="ed-course__body">
+                                <a href="{{event.registration_link|default:'javascript:void(0);'}}" class="ed-course__title">
+                                    <h5>{{event.title}}</h5>
+                                    <p class="mb-3 fs-14">
+                                        {{event.description|truncatechars:150}}
+                                    </p>
+                                </a>
+                                <div class="ed-course__lesson m-0">
+                                    <div class="ed-course__part">
+                                        <i class="fi-rr-calendar-days"></i>
+                                        <p>{{event.date}}</p>
+                                    </div>
+                                    <div class="ed-course__students">
+                                        <i class="fi-rr-calendar-clock"></i>
+                                        <p>{{event.time|date:"h:i A"}}</p>
+                                    </div>
+                                    <div class="ed-course__students">
+                                        <i class="icofont-location-pin"></i>
+                                        <p>{{event.location}}</p>
+                                    </div>
+                                </div>
+                                <div class="ed-course__bottom">
+                                    <div class="ed-course__teacher">
+                                        <img src="{{event.speaker.image.url}}" alt="course-instructor-thumb" />
+                                        <a href="{{event.registration_link|default:'javascript:void(0);'}}">{{event.speaker}}</a>
+                                    </div>
+                                    {% if event.registration_link %}
+                                    <a href="{{event.registration_link|default:'javascript:void(0);'}}" class="ed-course__price">REGISTER</a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Start Partner Area -->
+    <section class="ed-partner ed-partner--style2 section-gap">
+        <div class="container ed-container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 col-12">
+                    <div class="ed-section-head">
+                        <h3 class="ed-section-head__title m-0">Get mentored by <br> <span>Industry Experts</span> from</h3>
+                    </div>
+                </div>
+
+                <div class="col-lg-7 col-12">
+                    <div class="ed-partner__slider--style2">
+                        <div class="swiper ed-partner__slider-2">
+                            <div class="swiper-wrapper ease-linear">
+                                {% for ie in industry_experts %}
+                                <div class="swiper-slide">
+                                    <a href="#" target="_blank" class="ed-parnet__brand-logo">
+                                        <img src="{{ie.logo.url}}" alt="{{ie.name}}" />
+                                    </a>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Partner Area -->
+
+</main>
+
+{% endblock %}

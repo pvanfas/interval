@@ -1,0 +1,481 @@
+{% extends 'web/base.html' %}
+
+{% block meta %}
+<!-- Primary Meta Tags -->
+<title>{{location.meta_title}}</title>
+<meta name="title" content="{{location.meta_title}}" />
+<meta name="description" content="{{location.meta_description}}" />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{og_url}}" />
+<meta property="og:title" content="{{location.meta_title}}" />
+<meta property="og:description" content="{{location.meta_description}}" />
+<meta property="og:image" content="https://intervaledu.com/static/web/images/main/preview.png" />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content="{{og_url}}" />
+<meta property="twitter:title" content="{{location.meta_title}}" />
+<meta property="twitter:description" content="{{location.meta_description}}" />
+<meta property="twitter:image" content="https://intervaledu.com/static/web/images/main/preview.png" />
+{% endblock %}
+
+{% block content %}
+
+<div class="edu-breadcrumb-area breadcrumb-style-3">
+    <div class="container">
+        <div class="breadcrumb-inner">
+            <div class="page-title mt--100 w-100 text-center">
+                <h1 class="title h2">{{location.page_title}}</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="edu-section-gap edu-about-area about-style-8">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-6">
+                <div class="about-content">
+                    <div class="section-title section-left" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                        <h2 class="title">We Provide The <br> Best <span class="color-secondary">Online Tuition</h2>
+                        <span class="shape-line"><i class="icon-19"></i></span>
+                        <p>{{location.meta_description}}</p>
+                    </div>
+                    <div class="about-mission">
+                        <div class="single-item" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                            <div class="content">
+                                <h4 class="title">Our Vision</h4>
+                                <p>Making Quality Education Accessible, Personalised and Effective, Nurturing a Lifelong Passion for Learning and Fostering Versatile Skills.</p>
+                            </div>
+                        </div>
+                        <div class="single-item" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                            <div class="content">
+                                <h4 class="title">Our Mission</h4>
+                                <p>A world where education adapts to each learners unique needs and aspirations</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="about-image-gallery">
+                    <div class="row g-5" id="masonry-gallery">
+                        <div class="col-12 masonry-item">
+                            <div class="thumbnail thumbnail-1" data-sal-delay="50" data-sal="slide-down" data-sal-duration="1000">
+                                <img src="{{location.banner_image.url}}" alt="About Images" style="max-height:400px">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="counterup-area-5 edu-section-gap">
+    <div class="container">
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="p-relative">
+                    <video autoplay muted loop playsinline class="map_video">
+                        
+                        <source src="/static/web/video/map.webm" type="video/webm">
+                    </video>
+                </div>
+            </div>
+        </div>
+        <div class="row g-5">
+            <div class="col-lg-3 col-sm-6" data-sal-delay="50" data-sal="slide-up" data-sal-duration="800">
+                <div class="edu-counterup counterup-style-5 primary-color">
+                    <h2 class="counter-item count-number">
+                        <span class="odometer" data-odometer-final="54">.</span><span>+</span>
+                    </h2>
+                    <h6 class="title">Countries we Serve</h6>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6" data-sal-delay="100" data-sal="slide-up" data-sal-duration="800">
+                <div class="edu-counterup counterup-style-5 secondary-color">
+                    <h2 class="counter-item count-number">
+                        <span class="odometer" data-odometer-final="50">.</span><span>K+</span>
+                    </h2>
+                    <h6 class="title">Total students enrolled</h6>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                <div class="edu-counterup counterup-style-5 extra02-color">
+                    <h2 class="counter-item count-number">
+                        <span class="odometer" data-odometer-final="1">.</span><span>M+</span>
+                    </h2>
+                    <h6 class="title">Total Class Hours</h6>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6" data-sal-delay="200" data-sal="slide-up" data-sal-duration="800">
+                <div class="edu-counterup counterup-style-5 extra05-color">
+                    <h2 class="counter-item count-number">
+                        <span class="odometer" data-odometer-final="5">.</span><span>K+</span>
+                    </h2>
+                    <h6 class="title">Total Strength</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="gap-bottom-equal edu-about-area about-style-2 section_padding">
+    <div class="container edublink-animated-shape">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-5">
+                <div class="about-image-gallery">
+                    <img class="main-img-1" src="/static/web/images/main/about-03.webp" alt="About Image">
+
+                    <div class="award-status bounce-slide">
+                        <div class="inner">
+                            <div class="icon">
+                                <i class="icon-30"></i>
+                            </div>
+                            <div class="content">
+                                <h6 class="title">50K+</h6>
+                                <span class="subtitle">Enrolled Learners</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="about-content">
+                    <div class="section-title section-left" data-sal-delay="150" data-sal="slide-up"
+                        data-sal-duration="800">
+                        <h2 class="title">The Best 
+                            <span class="color-secondary">Online Learning Platform</span>
+                            That Is Ready To Assist Your Kid In All Ways
+                        </h2>
+                        <span class="shape-line"><i class="icon-19"></i></span>
+                    </div>
+                    <ul class="features-list" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                        <li class="w-50">One teacher for a student concept</li>
+                        <li class="w-50">Blended model of online tutoring</li>
+                        <li class="w-50">Individualized online class</li>
+                        <li class="w-50">Live doubt solving</li>
+                        <li class="w-50">Constant progress tracking</li>
+                        <li class="w-50">Tight evaluations</li>
+                    </ul>
+                    <div class="content mt-5">
+                        <h6>
+                            Together all these things ensure a proper breeding ground for
+                            excellent academic as well as student personal progress!
+                        </h6>
+                        <a href="javascript:void(0);" role="button" data-bs-toggle="modal" data-bs-target="#demoBackdrop" class="edu-btn btn-large">Book a demo class today<i class="icon-4"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ul class="shape-group">
+            <li class="shape-1 circle scene" data-sal-delay="500" data-sal="fade" data-sal-duration="200">
+                <span data-depth="-2.3"></span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="edu-brand-area section_padding pt-0">
+    <div class="container">
+        <div class="html_content">
+            {{location.content|safe}}
+        </div>
+    </div>
+</div>
+
+
+<div class="edu-brand-area brand-area-2 bg-image">
+    <div class="container edublink-animated-shape">
+        <div class="section-title section-center" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+            <h2 class="title">Our <span class="color-primary">worldwide</span> achievements.</h2>
+            <span class="shape-line"><i class="icon-19"></i></span>
+        </div>
+        <div class="brand-grid-wrap brand-style-2">
+            {% for achievement in achievements %}
+            <div class="brand-grid {% if forloop.counter > 12 %} hidden {% endif %}"><img src="{{achievement.image.url}}" alt="{{achievement.title}}"></div>
+            {% endfor %}
+            {% if forloop.counter > 12 %}
+            <div class="expand_container">
+                <a href="javascript:void(0);" role="button" class="expand_btn" id="expand_btn">
+                    <span id="change_text" data-expanded="Collapse All" data-collapsed="Expand All">Expand All</span>
+                    <svg style="display: block;margin: 0 auto;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-compact-down" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1.553 6.776a.5.5 0 0 1 .67-.223L8 9.44l5.776-2.888a.5.5 0 1 1 .448.894l-6 3a.5.5 0 0 1-.448 0l-6-3a.5.5 0 0 1-.223-.67"/>
+                    </svg>
+                </a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+
+
+<div class="testimonial-area-5 gap-lg-bottom-equal section_padding">
+    <div class="container">
+        <div class="row g-lg-5">
+            <div class="col-lg-4">
+                <div class="testimonial-heading-area">
+                    <div class="section-title section-left" data-sal-delay="150" data-sal="slide-up"
+                        data-sal-duration="800">
+                        <span class="pre-title">Testimonials</span>
+                        <h2 class="title">What the Parents Have To Say</h2>
+                        <span class="shape-line"><i class="icon-19"></i></span>
+                        <p>At the heart of every child's growth is the support and trust of their parents. We take
+                            immense pride in hearing from families who have experienced the positive impact of our
+                            program.</p>
+                        <a href="{% url 'web:testimonials' %}" class="edu-btn btn-large">View All<i
+                                class="icon-4"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="swiper-testimonial-slider-wrapper swiper testimonial-coverflow">
+                    <div class="swiper-wrapper">
+                        {% for testimonial in testimonials %}
+                        <div class="swiper-slide">
+                            <div class="testimonial-grid border">
+                                <div class="thumbnail video-gallery">
+                                    <img src="{{testimonial.image.url}}"
+                                        style="height:220px;object-fit:cover;width:100%" alt="Testimonial">
+                                    <span class="qoute-icon"><i class="icon-26"></i></span>
+                                </div>
+                                <div class="content">
+                                    <p>
+                                        {{testimonial.content|linebreaksbr}}
+                                    </p>
+                                    <div class="rating-icon">
+                                        <i class="icon-23"></i>
+                                        <i class="icon-23"></i>
+                                        <i class="icon-23"></i>
+                                        <i class="icon-23"></i>
+                                        <i class="icon-23"></i>
+                                    </div>
+                                    <h5 class="title">{{testimonial.name}}</h5>
+                                    <span class="subtitle">{{testimonial.designation}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="why-choose-area-3 edu-section-gap">
+    <div class="container">
+        <div class="row row--45">
+            <div class="section-title-flex section-title sal-animate" data-sal-delay="150" data-sal="slide-up"
+                data-sal-duration="800">
+                <div class="left-content">
+                    <h2 class="title"> <span class="color-secondary">Personalized education </span> that  fits  every child’s educational needs</h2>
+                    <span class="shape-line"><i class="icon-19"></i></span>
+                </div>
+                <div class="right-content">
+                    <p class="text-start">
+                        Personalized Online education is not simply a chain of online classes and a few bland
+                        instructions that fail to catch our attention instead online education bridges the
+                        gap between knowledge and accessibility. At Interval, our philosophy is to deliver
+                        education that is tailored to meet every child for their best.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-5">
+            {% for feat in features %}
+            <div class="col-lg-4 sal-animate mt--90" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                <div class="why-choose-box-2 features-box color-primary-style">
+                    <div class="icon">
+                        <i class="icon-45"></i>
+                    </div>
+                    <div class="content">
+                        <h4 class="title">{{feat.title}}</h4>
+                        <p>
+                            {{feat.description}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <ul class="shape-group">
+        <li class="shape-1 scene"><span data-depth=".8"></span></li>
+        <li class="shape-2 scene"><img data-depth="-2" src="/static/web/images/main/shape2.png" alt="shape"></li>
+    </ul>
+</section>
+
+
+<div class="edu-faq-area faq-style-1">
+    <div class="container">
+        <div class="row g-5 row--45">
+            <div class="col-lg-5">
+                <div class="edu-faq-gallery">
+                    <div class="row g-5">
+                        <video autoplay muted loop playsinline>
+                            <source src="/static/web/video/pencil.webm" type="video/webm">
+                        </video>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="edu-faq-content">
+                    <div class="section-title section-left" data-sal-delay="100" data-sal="slide-up"
+                        data-sal-duration="800">
+                        <h2 class="title">Over 10 Years in <span class="color-secondary">Distant <br>
+                                Skill</span> Development</h2>
+                        <span class="shape-line"><i class="icon-19"></i></span>
+                        <p>
+                            With more than a decade of expertise in providing remote learning opportunities,
+                            we have empowered individuals across the globe to unlock their potential. Our
+                            focus on distant skill development ensures that no matter where you are, you can
+                            access world-class education, personalized training, and the tools necessary to
+                            thrive in today’s fast-paced world
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="faq-accordion" id="faq-accordion" data-sal-delay="100" data-sal="slide-up"
+                    data-sal-duration="800">
+                    <div class="accordion">
+                        {% for faq in location.get_faqs %}
+                        <div class="accordion-item">
+                            <h5 class="accordion-header">
+                                <button class="accordion-button {% if not forloop.first %}collapsed{% endif %}"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{faq.pk}}"
+                                    aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}">
+                                    {{faq.question}}
+                                </button>
+                            </h5>
+                            <div id="collapse{{faq.pk}}"
+                                class="accordion-collapse collapse {% if forloop.first %}show{% endif %}"
+                                data-bs-parent="#faq-accordion">
+                                <div class="accordion-body">
+                                    <p>{{faq.answer}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+                    </div>
+                </div>
+                <ul class="shape-group">
+                    <li class="shape-bg sal-animate" data-sal-delay="500" data-sal="fade" data-sal-duration="200">
+                        <img src="/static/web/images/main/bg-image-36.svg" alt="Shape Images">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!--=====================================-->
+<div class="edu-event-area event-area-1 edu-section-gap bg-lighten03">
+    <div class="container edublink-animated-shape">
+        <div class="section-title sal-animate d-flex justify-content-between flex-wrap align-items-center"
+            data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+            <div class="column">
+                <h2 class="title">News and Events </h2>
+                <span class="shape-line"><i class="icon-19"></i></span>
+            </div>
+            <div class="column">
+                <a href="{% url 'web:news' %}" class="btn-border edu-btn">View All <i class="icon-4"></i></a>
+            </div>
+        </div>
+        <div class="row g-5">
+            <!-- Start Event Grid  -->
+            {% for news in newses %}
+            <div class="col-lg-4 col-md-6 sal-animate" data-sal-delay="100" data-sal="slide-up" data-sal-duration="800">
+                <div class="bdrs bradius edu-event event-style-1 shadow">
+                    <div class="inner">
+                        <div class="thumbnail shadow">
+                            <a href="{{news.get_absolute_url}}">
+                                <img src="{{news.image.url}}" alt="Blog Images"
+                                    style="height: 250px;object-fit: cover;">
+                            </a>
+                        </div>
+                        <div class="content">
+                            <div class="event-date">
+                                <span class="day">{{news.date|date:"d"}}</span>
+                                <span class="month">{{news.date|date:"M"|upper}}</span>
+                            </div>
+                            <h5 class="title"><a href="{{news.get_absolute_url}}">{{news.title}}</a></h5>
+                            <div class="read-more-btn">
+                                <a class="edu-btn btn-small btn-secondary" href="{{news.get_absolute_url}}">Learn More
+                                    <i class="icon-4"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% include 'web/partials/cta.html' %}
+
+{% if location.get_cities %}
+<div class="py-5">
+    <div class="container">
+        <div class="edu-cta-banner">
+            <ul class="list-unstyled row mb-0">
+                {% for city in location.get_cities %}
+                <li class="col-md-3"><a href="{{city.get_absolute_url}}">{{city.page_title}}</a></li>
+                {% endfor %}
+            </ul>
+                
+        </div>
+    </div>
+</div>
+{% endif %}
+
+{% endblock %}
+
+
+{% block scripts %}
+<script>
+    const ctas = {{ location.get_ctas|safe }};
+    ctas.forEach(cta => {
+        const div = document.createElement('div');
+        div.className = 'location-cta';
+
+        const a = document.createElement('a');
+        a.href = 'javascript:void(0);';
+        a.setAttribute('role', 'button');
+        a.setAttribute('data-bs-toggle', 'modal');
+        a.setAttribute('data-bs-target', '#staticBackdrop');
+
+        const img = document.createElement('img');
+        img.src = cta.image;
+        img.alt = cta.title;
+        img.style.width = '100%';
+        img.style.height = 'auto';
+
+        // Append image inside anchor
+        a.appendChild(img);
+        div.appendChild(a);
+
+        // Insert the div just after the element found via XPath
+        const xpath = cta.xpath;
+        const element = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+        if (element) {
+            element.parentNode.insertBefore(div, element.nextSibling);
+        }
+    });
+</script>
+{% endblock %}

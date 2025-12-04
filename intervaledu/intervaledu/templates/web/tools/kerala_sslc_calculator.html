@@ -1,0 +1,251 @@
+{% extends 'web/base.html' %}
+{% load static tags %}
+
+
+{% block meta %}
+    <!-- Primary Meta Tags -->
+    <title>{% get_value 'sslc_calculator_meta_title' %}</title>
+    <meta name="title" content="{% get_value 'sslc_calculator_meta_title' %}" />
+    <meta name="description" content="{% get_value 'sslc_calculator_meta_desc' %}" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{og_url}}" />
+    <meta property="og:title" content="{% get_value 'sslc_calculator_meta_title' %}" />
+    <meta property="og:description" content="{% get_value 'sslc_calculator_meta_desc' %}" />
+    <meta property="og:image" content="https://www.intervaledu.com/static/web/images/main/preview.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="{{og_url}}" />
+    <meta property="twitter:title" content="{% get_value 'sslc_calculator_meta_title' %}" />
+    <meta property="twitter:description" content="{% get_value 'sslc_calculator_meta_desc' %}" />
+    <meta property="twitter:image" content="https://www.intervaledu.com/static/web/images/main/preview.png" />
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="hero-banner hero-style-7 bgc1 p-0">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-12">
+                <div class="banner-content text-start mb-0" style="padding:60px 0 10px 0">
+                    <h1 class="h3 title sal-animate">Kerala SSLC Grade to Percentage Calculator 2025</h1>
+                    <p>
+                        If you're looking to estimate your Kerala SSLC exam percentage based on the grades you received, 
+                        we have an easy way to help. The Kerala SSLC grading system is grade-based, not mark-based, and 
+                        each grade has a midpoint percentage that you can use for calculation.
+                    </p>
+                    <h2 class="h4 mb-2">Try Our Free Kerala SSLC Grade to Percentage Calculator</h2>
+                    <p>
+                        Simply input the number of subjects you received each grade in, and our free calculator will give 
+                        you an estimated percentage. It’s a quick and easy way to understand your performance!
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-12 mb--60">
+                <form id="gradeForm" class="border bradius p-5">
+                    <div class="row g-3">
+                      <!-- Subjects -->
+                      <script>
+                        const subjects = [
+                          "First Language I", "First Language II", "English", "Hindi",
+                          "Social Science", "Physics", "Chemistry", "Biology",
+                          "Mathematics", "I.T"
+                        ];
+                        const grades = ["-- select grade --", "A+", "A", "B+", "B", "C+", "C", "D+", "D", "E"];
+                        subjects.forEach((subject, index) => {
+                          document.write(`
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="subject${index}" class="form-label">${subject}</label>
+                                    <select required class="bradius form-control form-control-sm form-select fs-4" id="subject${index}" name="subject${index}">
+                                        ${grades.map(grade => `<option value="${grade}">${grade}</option>`).join("")}
+                                    </select>
+                                </div>
+                            </div>
+                          `);
+                        });
+                      </script>
+                    </div>
+                    <div class="mt-4">
+                      <button type="button" class="edu-btn btn-large" onclick="calculatePercentage()">Calculate Percentage</button>
+                    </div>
+                </form>
+                <div class="mt-4">
+                    <div class="border p-5 result_container text-center text-success bradius">
+                        <h4 id="result" class="mb-0 fs-2"></h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12 mb-5">
+                <div class="alert alert-info p-5" role="alert">
+                    <h4 class="alert-heading">Disclaimer</h4>
+                    <p class="mb-0">This calculator gives an estimated percentage based on the midpoints of the grades. It may not match the official results, as the Kerala SSLC mark sheet only shows grades and not exact percentages or marks.</p>
+                </div>
+                <div class="border bradius p-5">
+                    <h4>How to Calculate Your Estimated Percentage</h4>
+                    <p>You’ll need to enter the number of subjects you scored each grade in. The following midpoint values are used for the calculation:</p>
+                    
+                    <table class="table table-bordered mb-0">
+                        <thead>
+                            <tr>
+                                <th>Grade</th>
+                                <th>Range (%)</th>
+                                <th>Midpoint Used for Calculation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>A+</td>
+                                <td>90% and above</td>
+                                <td>95%</td>
+                            </tr>
+                            <tr>
+                                <td>A</td>
+                                <td>80% – 89%</td>
+                                <td>85%</td>
+                            </tr>
+                            <tr>
+                                <td>B+</td>
+                                <td>70% – 79%</td>
+                                <td>75%</td>
+                            </tr>
+                            <tr>
+                                <td>B</td>
+                                <td>60% – 69%</td>
+                                <td>65%</td>
+                            </tr>
+                            <tr>
+                                <td>C+</td>
+                                <td>50% – 59%</td>
+                                <td>55%</td>
+                            </tr>
+                            <tr>
+                                <td>C</td>
+                                <td>40% – 49%</td>
+                                <td>45%</td>
+                            </tr>
+                            <tr>
+                                <td>D+</td>
+                                <td>30% – 39%</td>
+                                <td>35%</td>
+                            </tr>
+                            <tr>
+                                <td>D</td>
+                                <td>20% – 29%</td>
+                                <td>25%</td>
+                            </tr>
+                            <tr>
+                                <td>E</td>
+                                <td>Below 20%</td>
+                                <td>15%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="col-md-12 mb--60">
+                <div class="faq-accordion sal-animate" id="faq-accordion" data-sal-delay="100" data-sal="slide-up" data-sal-duration="800">
+                    <div class="accordion">
+                        
+                        <div class="accordion-item">
+                            <h5 class="accordion-header">
+                                <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="true">
+                                    How do I calculate my SSLC percentage using grades?
+                                </button>
+                            </h5>
+                            <div id="collapse5" class="accordion-collapse collapse show" data-bs-parent="#faq-accordion">
+                                <div class="accordion-body">
+                                    <p>To calculate your SSLC percentage, add the number of subjects you received each grade in, multiply each by the respective midpoint value, and divide the total by 10</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h5 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false">
+                                    How is the midpoint for each grade determined?
+                                </button>
+                            </h5>
+                            <div id="collapse6" class="accordion-collapse collapse " data-bs-parent="#faq-accordion">
+                                <div class="accordion-body">
+                                    <p>The midpoint is an average value used to represent each grade’s percentage range. For example, for A+ (90% and above), the midpoint used is 95.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h5 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="false">
+                                    What happens if I fail the SSLC exam?
+                                </button>
+                            </h5>
+                            <div id="collapse7" class="accordion-collapse collapse " data-bs-parent="#faq-accordion">
+                                <div class="accordion-body">
+                                    <p>If you score below a D+ grade (3 points) in any subject, you must appear for the SAY (Save A Year) exam to get another chance to pass.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h5 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8" aria-expanded="false">
+                                    Is the estimated percentage official?
+                                </button>
+                            </h5>
+                            <div id="collapse8" class="accordion-collapse collapse " data-bs-parent="#faq-accordion">
+                                <div class="accordion-body">
+                                    <p>No, this is an estimated percentage based on the midpoints of each grade. The official Kerala SSLC mark sheet will only show grades, not an exact percentage.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+
+{% block popup_script %}{% endblock %}
+
+{% block scripts %}
+<script>
+    const gradePoints = {
+      "A+": 95,
+      "A": 85,
+      "B+": 75,
+      "B": 65,
+      "C+": 55,
+      "C": 45,
+      "D+": 35,
+      "D": 25,
+      "E": 15
+    };
+  
+    function calculatePercentage() {
+  let total = 0;
+  for (let i = 0; i < 10; i++) {
+    const grade = document.getElementById(`subject${i}`).value;
+    if (grade === "-- select grade --") {
+      alert("Please select a grade for all subjects.");
+      return;
+    }
+    total += gradePoints[grade] || 0;
+  }
+  const percentage = total / 10;
+  document.getElementById("result").innerText = `Estimated Percentage: ${percentage.toFixed(2)}%`;
+  document.getElementById("resultContainer").style.display = "block";
+}
+
+</script>
+{% endblock %}

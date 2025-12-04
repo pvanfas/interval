@@ -1,0 +1,62 @@
+{% extends 'web/base.html' %}
+{% load static tags %}
+
+{% block meta %}
+    <!-- Primary Meta Tags -->
+    <title>{% get_value 'countries_meta_title' %}</title>
+    <meta name="title" content="{% get_value 'countries_meta_title' %}" />
+    <meta name="description" content="{% get_value 'countries_meta_desc' %}" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{og_url}}" />
+    <meta property="og:title" content="{% get_value 'countries_meta_title' %}" />
+    <meta property="og:description" content="{% get_value 'countries_meta_desc' %}" />
+    <meta property="og:image" content="https://www.intervaledu.com/static/web/images/main/preview.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="{{og_url}}" />
+    <meta property="twitter:title" content="{% get_value 'countries_meta_title' %}" />
+    <meta property="twitter:description" content="{% get_value 'countries_meta_desc' %}" />
+    <meta property="twitter:image" content="https://www.intervaledu.com/static/web/images/main/preview.png" />
+{% endblock %}
+
+
+{% block content %}
+
+<div class="edu-categorie-area categorie-area-2 edu-section-gap">
+    <div class="container">
+        <div class="container edublink-animated-shape">
+            <div class="section-title section-center sal-animate" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                <h2 class="title">Countries</h2>
+                <span class="shape-line"><i class="icon-19"></i></span>
+            </div>
+        </div>
+        <div class="row g-5">
+            {% for country in countries %}
+            <div class="col-lg-4 col-md-4 col-12">
+                <div class="card flag_card">
+                    <div class="card-header">
+                        <img class="lazy" data-src="{{country.flag}}" class="card-img-top shadow" alt="{{country.name}}">
+                        <h5 class="card-title mb-0">{{country.name}}</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            {% for location in country.get_listed_locations %}
+                            <li class="mb-0 mt-1"><a href="{{location.get_absolute_url}}">{{location.title}}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        
+    </div>
+</div>
+
+
+
+{% endblock %}
+

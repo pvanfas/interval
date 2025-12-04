@@ -1,0 +1,66 @@
+{% extends 'web/base.html' %}
+
+{% block robots %}
+<meta name="robots" content="noindex">
+{% endblock %}
+
+
+{% block content %}
+
+<section class="section-gap-equal">
+    <div class="container">
+        <div class="section-title section-center" data-sal-delay="100" data-sal="slide-up" data-sal-duration="800">
+            <h2 class="title">Thank You</h2>
+            <p>
+              Thank you for enrolling in {{payment_obj.course}}! Your purchase was successful <br>
+              You’re now all set to begin your learning journey. Get ready to dive into exciting content and 
+              unlock new skills.
+            </p>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block gtm_scripts %}
+<script>
+  (function() {
+    // Ensure the dataLayer exists
+    window.dataLayer = window.dataLayer || [];
+
+    // Prevent duplicate execution
+    if (!window.dataLayer.purchaseEventPushed) {
+      window.dataLayer.push({ ecommerce: null });
+      window.dataLayer.push({
+        event: "purchase",
+        ecommerce: {
+          transaction_id: "{{ payment_obj.razorpay_order_id }}",
+          value: {{ payment_obj.course.course_fee }},
+          tax: 0.00,
+          shipping: 0.00,
+          currency: "INR",
+          items: [
+            {
+              item_id: "{{ payment_obj.course.id }}",
+              item_name: "{{ payment_obj.course.title }}",
+              item_category: "NonAcademicProgram",
+              price: {{ payment_obj.course.course_fee }},
+              quantity: 1
+            }
+          ]
+        },
+        user_data: {
+          student_name: "{{ payment_obj.student_name|default:'' }}",
+          email: "{{ payment_obj.email|default:'' }}",
+          country: "{{ payment_obj.country|default:'' }}",
+          state: "{{ payment_obj.state|default:'' }}",
+          phone_number: "{{ payment_obj.phone_number|default:'' }}"
+        }
+      });
+      
+      // Mark as executed
+      window.dataLayer.purchaseEventPushed = true;
+    }
+  })();
+</script>
+{% endblock %}

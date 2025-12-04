@@ -1,0 +1,50 @@
+/*================================================================================================
+    Start Error CSS
+===================================================================================================*/
+
+.ed-error__img img {
+  max-width: 100%;
+  height: auto;
+}
+
+.ed-error__content {
+  margin-top: 60px;
+  padding: 0px 156px;
+}
+.ed-error__content-text {
+  color: var(--ed-title-color);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 32px;
+}
+
+.ed-error__btn {
+  margin-top: 45px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1199.99px) {
+  .ed-error__content {
+    margin-top: 40px;
+    padding: 0;
+  }
+  .ed-error__btn {
+    margin-top: 32px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .ed-error__content {
+    margin-top: 24px;
+    padding: 0;
+  }
+  .ed-error__content-text {
+    line-height: 28px;
+  }
+
+  .ed-error__btn {
+    margin-top: 24px;
+  }
+}
+
+/*================================================================================================
+    End Error CSS
+===================================================================================================*/

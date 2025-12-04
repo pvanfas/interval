@@ -1,0 +1,123 @@
+{% extends "web/base.html" %}
+{% block content %}
+
+
+<!-- site header html end  -->
+<main id="content" class="site-main">
+
+   <!-- CTA -->
+   <section class="home-callback bg-img-fullcallback" style="background-image: url(/static/web/images/cta.jpg);">
+      <div class="overlay"></div>
+      <div class="container">
+         <div class="row py-5">
+            <div class="col-lg-8 offset-lg-2 text-center">
+               <div class="callback-content">
+                  <h2 class="section-title">REGISTER FOR INTERVAL TALENT BOOST EXAM NOW</h2>
+                  <p>
+                     This is your moment to shine and make a mark! Don't miss out on this incredible opportunity
+                     to showcase your talent and secure financial rewards and scholarships for your education.
+                  </p>
+                  <div class="callback-btn">
+                     <a href="#schoolForm" class="round-btn">REGISTER NOW</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!-- STEPS -->
+   <div class="home-counter">
+      <div class="container">
+         <div class="negative_margin">
+
+         </div>
+         <div class="counter-wrap">
+            <div class="fw-bold px-4 text-center w-100 fz20">
+               <p>REGISTRATION STEPS</p>
+            </div>
+            <div class="counter-item">
+               <span class="counter-no">
+                  <img src="/static/web/images/touch.png" alt="" style="height: 60px">
+               </span>
+               <span class="counter-desc">
+                  click on <strong>Enroll Now</strong>
+               </span>
+            </div>
+            <div class="counter-item">
+               <span class="counter-no">
+                  <img src="/static/web/images/form.png" alt="" style="height: 60px">
+               </span>
+               <span class="counter-desc">
+                  Enter school <strong>details</strong>
+               </span>
+            </div>
+            <div class="counter-item">
+               <span class="counter-no">
+                  <img src="/static/web/images/upload.png" alt="" style="height: 60px">
+               </span>
+               <span class="counter-desc">
+                  Upload <strong>Student</strong> Details
+               </span>
+            </div>
+            <div class="counter-item">
+               <span class="counter-no">
+                  <img src="/static/web/images/submit.png" alt="" style="height: 60px">
+               </span>
+               <span class="counter-desc">
+                  Registration <strong>Completed</strong>
+               </span>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <!-- Enroll Your School Now -->
+   <section class="home-blog section_padding" id="schoolForm">
+      <div class="container">
+         <div class="mb-4">
+            <div class="heading-group">
+               <h2 class="section-title">Enroll Your School Now</h2>
+            </div>
+         </div>
+         <div class="blog-section">
+            <form action="{% url 'web:school_registration' %}" method="post" enctype="multipart/form-data">
+               {% csrf_token %}
+
+               <div class="row">
+                  {% for field in school_form %}
+                  <div class="col-md-6">
+                     <div class="form-group">
+                        {{ field.errors }}
+                        {{ field.label_tag }} {{ field }}
+                        {% if field.help_text %}
+                        <p class="help">{{ field.help_text|safe }}</p>
+                        {% endif %}
+                     </div>
+                  </div>
+                  {% endfor %}
+
+                  <div class="col-md-6">
+                     <div class="form-group">
+                        <label for="file">Details of Students as Excel/PDF:</label>
+                        <input type="file" name="file" id="file" class="form-control" multiple>
+                     </div>
+                  </div>
+
+                  <div class="col-md-12">
+                     <div class="form-group pt-4">
+                        <button type="submit" class="round-btn px-5">Enroll Now</button>
+                     </div>
+                  </div>
+               </div>
+
+               <form>
+
+         </div>
+      </div>
+   </section>
+
+
+</main>
+
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends 'web/base.html' %}
+{% load static tags %}
+{% load honeypot %}
+
+{% block meta %}
+<!-- Primary Meta Tags -->
+<title>{% get_value 'home_meta_title' %}</title>
+<meta name="title" content="{% get_value 'home_meta_title' %}" />
+<meta name="description" content="{% get_value 'home_meta_desc' %}" />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{og_url}}" />
+<meta property="og:title" content="{% get_value 'home_meta_title' %}" />
+<meta property="og:description" content="{% get_value 'home_meta_desc' %}" />
+<meta property="og:image" content="https://www.intervaledu.com/static/web/images/main/preview.png" />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content="{{og_url}}" />
+<meta property="twitter:title" content="{% get_value 'home_meta_title' %}" />
+<meta property="twitter:description" content="{% get_value 'home_meta_desc' %}" />
+<meta property="twitter:image" content="https://www.intervaledu.com/static/web/images/main/preview.png" />
+{% endblock %}
+
+
+{% block content %}
+
+<div id="main-wrapper" class="main-wrapper bg1" style="min-height: 100vh;">
+    <div class="gap-bottom-equal edu-about-area about-style-2 edu-section-gap pt-5">
+        <div class="container">
+            <div class="mansory_boxes">
+                <div class="row">
+                    <div class="col-md-5" data-sal-delay="100" data-sal="slide-up" data-sal-duration="1000">
+                        <a href="{% url 'web:littlegenie' %}">
+                            <div class="box">
+                                <h3 class="title">Little Genie</h3>
+                                <p class="description">Reading, writing, rhymes, and storytelling to build vocabulary
+                                    and literacy.</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-7" data-sal-delay="200" data-sal="slide-up" data-sal-duration="1000">
+                        <a href="{% url 'web:foundation' %}">
+                            <div class="box">
+                                <h3 class="title">Foundation</h3>
+                                <p class="description">Interactive games introducing numbers, counting, shapes, and
+                                    measurements.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

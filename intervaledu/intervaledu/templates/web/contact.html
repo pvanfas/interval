@@ -1,0 +1,137 @@
+{% extends 'web/base.html' %}
+{% load static tags %}
+{% load honeypot %}
+
+
+{% block meta %}
+    <!-- Primary Meta Tags -->
+    <title>{% get_value 'contact_meta_title' %}</title>
+    <meta name="title" content="{% get_value 'contact_meta_title' %}" />
+    <meta name="description" content="{% get_value 'contact_meta_desc' %}" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{og_url}}" />
+    <meta property="og:title" content="{% get_value 'contact_meta_title' %}" />
+    <meta property="og:description" content="{% get_value 'contact_meta_desc' %}" />
+    <meta property="og:image" content="https://www.intervaledu.com/static/web/images/main/preview.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="{{og_url}}" />
+    <meta property="twitter:title" content="{% get_value 'contact_meta_title' %}" />
+    <meta property="twitter:description" content="{% get_value 'contact_meta_desc' %}" />
+    <meta property="twitter:image" content="https://www.intervaledu.com/static/web/images/main/preview.png" />
+{% endblock %}
+
+{% block content %}
+
+<div class="edu-breadcrumb-area breadcrumb-style-2 bg-image bg-image--19"
+    style="background-image: url('/static/web/images/main/team.webp');">
+    <div class="container">
+        <div class="breadcrumb-inner">
+            <div class="page-title">
+                <h1 class="title">Contact Us</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="contact-us-area">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-xl-4 col-lg-6">
+                <div class="contact-us-info">
+                    <h3 class="heading-title">Feel Free To Contact Us!</h3>
+                    <ul class="address-list">
+                        <li>
+                            <h5 class="title">Head Office</h5>
+                            <p>Interval HQ, Pachu Arcade, Areekode-Othayi-Edavanna Rd, near Cherupuzha Bridge, Pathanapuram, Kerala 673639</p>
+                        </li>
+                        <li>
+                            <h5 class="title">Email</h5>
+                            <p><a href="mailto:hello.teaminterval@gmail.com">hello.teaminterval@gmail.com</a></p>
+                        </li>
+                        <li>
+                            <h5 class="title">Phone</h5>
+                            <p><a href="tel:+919061000827">+91 9061 000 827</a></p>
+                        </li>
+                    </ul>
+                    <ul class="social-share">
+                        {% for item in social_medias %}
+                        <li><a href="{{item.url}}" target="_blank"><i style="font-size: 20px;;" class="{{item.icon}}"></i></a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="offset-xl-2 col-lg-6">
+                <div class="contact-form form-style-2">
+                    <div class="section-title">
+                        <h4 class="title">Get In Touch</h4>
+                        <p>Fill out this form for booking a consultant advising session.</p>
+                    </div>
+                    <form method="POST" action="" class="contact_form">
+                        {% csrf_token %}
+                        {% render_honeypot_field %}
+                        
+                        {% if form.errors %}
+                            {% for field in form %}
+                                {% for error in field.errors %}
+                                    <div class="alert alert-danger">
+                                        <strong>{{ error|escape }}</strong>
+                                    </div>
+                                {% endfor %}
+                            {% endfor %}
+                            {% for error in form.non_field_errors %}
+                                <div class="alert alert-danger">
+                                    <strong>{{ error|escape }}</strong>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+
+                        <div class="row row--10">
+                            <div class="form-group col-12">
+                                {{form.name}}
+                            </div>
+                            <div class="form-group col-12">
+                                {{form.country}}
+                            </div>
+                            <div class="form-group col-12">
+                                {{form.email}}
+                            </div>
+                            <div class="form-group col-12">
+                                {{form.purpose}}
+                            </div>
+                            <div class="form-group col-12">
+                                {{form.phone_number}}
+                            </div>
+                            <div class="form-group col-12">
+                                {{form.whatsapp_number}}
+                            </div>
+                            
+                            
+                            {{form.phone_number_country_code}}
+                            {{form.whatsapp_number_country_code}}
+
+                            <div class="form-group col-12">
+                                <button class="rn-btn edu-btn btn-medium submit-btn" name="submit" type="submit">Submit Message <i class="icon-4"></i></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include 'web/partials/cta.html' %}
+
+{% endblock %}
+
+
+{% block scripts %}
+<script>
+    initializeIntlTelInput(".contact_form", "#id_phone_number", "#id_phone_number_country_code");
+    initializeIntlTelInput(".contact_form", "#id_whatsapp_number", "#id_whatsapp_number_country_code");
+</script>
+{% endblock %}

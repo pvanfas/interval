@@ -1,0 +1,101 @@
+{% extends "web/base.html" %}
+{% block content %}
+
+<!-- ***site header html end*** -->
+<main id="content" class="site-main">
+    <section class="inner-page-wrap">
+        <!-- ***Inner Banner html start form here*** -->
+        <div class="inner-banner-wrap">
+            <div class="inner-baner-container" style="background-image: url(/static/web/images/about.webp);">
+                <div class="container">
+                    <div class="inner-banner-content">
+                        <h1 class="page-title">About Us</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ***Inner Banner html end here*** -->
+        <!-- ***about section html start form here*** -->
+        <div class="inner-about-wrap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="about-content">
+                            <figure class="about-image">
+                                <img src="/static/web/images/about.webp" alt="">
+                                <div class="about-image-content">
+                                    <h3>Personalised Learning Platform</h3>
+                                </div>
+                            </figure>
+
+                            <p>
+                                Presenting to you the Best Online learning platform you'll ever need for your child to
+                                be fully investing in their learning journey. With Interval's Online learning platform
+                                helping your child every step of the way, you can experience change within your child
+                                in a matter of days. Our Online learning platform effectively includes foundational
+                                courses as well as level-based courses that not only help aid in foundational issues
+                                in their studies but also help them stay ahead of the curve.
+                            </p>
+                            <p>
+                                Interval is completely personalized in a way that it doesn't follow a one time
+                                structure.
+                                Interval is completely dependent on the need provided by the students. at interval it's
+                                learners journey to realizing what they are good at and what they do best and with team
+                                of experts who ensure this on a broader level you can see a change that truly counts.
+                            </p>
+                            <p>
+                                With over 5000+ active students and 30,000 plus overall enrollments we are growing every
+                                day with a renewed sense of purpose as we find ourselves helping and aiding students who
+                                are brilliant learners if they are given the right instructions. the most brilliant part
+                                about our teacher community and our expertise faculty is that we had dedicated
+                                professional to handle a task and impart necessary upgrades.
+                            </p>
+                            <p>
+                                At Interval we embark on superiority by admitting to being true to our mission and
+                                vision to give education that stays at it's unhinged best. with over 5000 tutors and
+                                5+ courses targeting academics from every age group and grade and helping students
+                                build prowess from where they felt themselves to have let off.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- ***about section html start form here*** -->
+        <!-- ***callback section html start form here*** -->
+        <div class="bg-img-fullcallback" style="background-image: url(/static/web/images/about.webp);">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2 text-center">
+                        <div class="callback-content">
+                            <div class="video-button">
+                                <a id="video-container" data-fancybox="video-gallery"
+                                    href="https://www.youtube.com/watch?v=tx8LFG5jZdA">
+                                    <i class="fas fa-play"></i>
+                                </a>
+                            </div>
+                            <h2 class="section-title">ARE YOU READY TO TRANSFORM?</h2>
+                            <p>
+                                Personalized learning is bound to become the level best upgrade as interval notoriously
+                                pursues personalization that never compromises on education.
+                            </p>
+                            <div class="callback-btn">
+                                <button class="round-btn" data-bs-toggle="modal" data-bs-target="#studentBackdrop">Get
+                                    Started</button>
+                                <a href="{% url 'web:school_registration' %}" class="outline-btn outline-btn-white">Enroll your
+                                    School</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ***callback section html end here*** -->
+    </section>
+</main>
+
+{% include 'web/partials/_studentBackdrop.html' %}
+
+{% endblock content %}

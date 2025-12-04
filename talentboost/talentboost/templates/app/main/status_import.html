@@ -1,0 +1,117 @@
+{% extends 'app/base.html' %}
+{% load static i18n crispy_forms_tags django_tables2 humanize custom_filters %}
+{% block title %}Home: {{app_settings.site_title}}{% endblock %}
+
+{% block content %}
+
+<div class="side-app main-container">
+
+    <div class="page-header d-xl-flex d-block">
+        <div class="page-leftheader">
+            <div class="page-title">Import Status</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="">Total Students</h5>
+                    <h3 class="mb-0 mt-auto text-primary">{{total_count}}</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="">Imported</h5>
+                    <h3 class="mb-0 mt-auto text-primary">{{object.imported_count}}</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="">Failed</h5>
+                    <h3 class="mb-0 mt-auto text-primary">{{object.failed_count}}</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="">Time Taken</h5>
+                    <h3 class="mb-0 mt-auto text-primary">{{object.time_taken|format_duration}}</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="mb-5">Message Sent</h5>
+
+                    <div class="progress mb-5">
+                        <div class="progress-bar" role="progressbar" style="width: {{sent_percent}}%;" aria-valuenow="{{sent_percent}}" aria-valuemin="0" aria-valuemax="100">{{sent_percent}}%</div>
+                    </div>
+                    {% if sent_percent != 100 %}
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        <button type="submit" class="btn p-0">
+                            <h6 class="mb-0 mt-auto btn border text-primary">START</h6>
+                        </button>
+                    </form>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% if object.failed_data %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div id="container" class="table-responsive"></div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+
+</div>
+
+{% if object.failed_data %}
+<script>
+    // Function to convert JSON data to HTML table
+    function convert() {
+        let jsonData = {{ object.failed_data| safe }};
+    let container = $("#container");
+    let table = $("<table class='table key-buttons border-bottom table-hover'>");
+    let cols = Object.keys(jsonData[0]);
+    let thead = $("<thead>");
+    let headerRow = $("<tr>");
+    $.each(cols, function (i, colName) {
+        let th = $("<th>");
+        th.text(colName);
+        headerRow.append(th);
+    });
+    thead.append(headerRow);
+    table.append(thead);
+    let tbody = $("<tbody>");
+    $.each(jsonData, function (i, item) {
+        let row = $("<tr>");
+        let values = Object.values(item);
+        $.each(values, function (i, value) {
+            let td = $("<td>");
+            td.text(value);
+            row.append(td);
+        });
+        tbody.append(row);
+    });
+    table.append(tbody);
+    container.append(table);
+    }
+    convert(); 
+</script>
+{% endif %}
+
+{% endblock content %}

@@ -1,0 +1,149 @@
+/*================================================================================================
+    Start Auth Pages CSS
+===================================================================================================*/
+
+.ed-auth__modal .modal-dialog {
+  max-width: 524px !important;
+  border: none;
+}
+
+.ed-auth__modal .modal-content {
+  background: var(--ed-white-color);
+  border: none;
+  border-radius: 8px;
+  padding: 60px 75px;
+  position: relative;
+}
+
+.ed-auth__modal-close {
+  position: absolute;
+  right: 24px;
+  top: 24px;
+  background: #d73b3e;
+  color: var(--ed-white-color);
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 100%;
+  font-size: 12px;
+  line-height: 36px;
+}
+
+.ed-auth__modal-close:hover {
+  background: var(--ed-secondary-color);
+}
+
+.ed-auth__modal-head {
+  text-align: center;
+}
+
+.ed-auth__modal-logo {
+  display: inline-block;
+  width: 116px;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+.ed-auth__modal-title {
+  font-size: 36px;
+  line-height: 42px;
+  letter-spacing: -0.36px;
+  margin-bottom: 12px;
+}
+
+.ed-auth__modal-text {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+}
+.ed-auth__modal-text button {
+  padding: 0;
+  color: var(--ed-primary-color);
+  font-weight: 500;
+}
+.ed-auth__modal-text button:hover {
+  color: var(--ed-secondary-color);
+}
+.ed-auth__modal-body {
+  margin-top: 30px;
+}
+.ed-auth__modal-form .form-group {
+  margin-bottom: 10px;
+}
+
+.ed-auth__modal-form .form-group input {
+  width: 100%;
+  height: 43px;
+  border-radius: 35px;
+  border: 1px solid #d7d7d7;
+  padding: 10px 20px;
+  font-size: 14px;
+}
+.ed-auth__modal-form .form-group input:focus {
+  border: 1px solid var(--ed-primary-color);
+}
+
+.ed-auth__form-btn {
+  margin-top: 20px;
+}
+.ed-auth__modal-footer {
+  margin-top: 32px;
+}
+.ed-auth__modal-third-party {
+  text-align: center;
+}
+
+.ed-auth__modal-third-party-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+.ed-auth__modal-third-party-list li a {
+  width: 64px;
+  height: 64px;
+  line-height: 64px;
+  border-radius: 100%;
+}
+
+.ed-auth__modal-third-party-list li a img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.ed-auth__modal-third-party-list .google-login {
+  background: #fdedeb;
+}
+
+.ed-auth__modal-third-party-list .linkedin-login {
+  background: #e6f2f8;
+}
+
+.ed-auth__modal-third-party-list .facebook-login {
+  background: #e8f2fe;
+}
+
+@media only screen and (max-width: 767px) {
+  .ed-auth__modal .modal-content {
+    padding: 32px;
+  }
+  .ed-auth__modal-title {
+    font-size: 24px;
+    line-height: 28px;
+  }
+  .ed-auth__modal-third-party-list li a {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+  }
+  .ed-auth__modal-close {
+    right: 12px;
+    top: 12px;
+  }
+}
+
+/*================================================================================================
+    End Auth Pages CSS
+===================================================================================================*/

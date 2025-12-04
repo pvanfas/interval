@@ -1,0 +1,55 @@
+<header id="header" class="ed-header ed-header--style2" data-scroll-ignore style="position: fixed; top: 0; width: 100%; z-index: 999;">
+    <div class="container">
+        <div class="ed-header__inner">
+            <div class="row align-items-center">
+                <div class="col-lg-9 col-6">
+                    <div class="ed-header__left--style2">
+                        <div class="ed-header__left-widget--style2">
+                            <!-- Logo  -->
+                            <div class="ed-topbar__logo">
+                                <a href="/">
+                                    <img src="/static/web/images/isofs_logo.png" alt="logo" />
+                                </a>
+                            </div>
+
+                        </div>
+
+                        <!-- Navigation Menu -->
+                        <nav class="ed-header__navigation">
+                            <ul class="ed-header__menu">
+                                <li class="{% if is_index %}active{% endif %}"><a href="{% url 'web:index' %}">Home</a></li>
+                                <li class="{% if is_about %}active{% endif %}"><a href="{% url 'web:about_us' %}">About Us</a></li>
+                                <li class="{% if is_learning %}active{% endif %}"><a href="{% url 'web:index' %}">Success Stories</a></li>
+                                <li class="{% if is_learning %}active{% endif %}"><a href="{% url 'web:index' %}">Our Centers</a></li>
+                                <li class="{% if is_admissions %}active{% endif %}"><a href="{% url 'web:admissions' %}">Admissions</a></li>
+                                <li class="{% if is_learning %}active{% endif %}"><a href="{% url 'web:index' %}">Contact</a></li>
+                                <li class="{% if is_resources %}active{% endif %}"><a href="{% url 'web:resources' %}">Resources</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <!-- Header Right -->
+                    <div class="ed-header__right">
+                        <div class="ed-header__action">
+                            <div class="ed-header__cart">
+                            <div class="ed-topbar__info-buttons">
+                                <button type="button" class="login-btn" data-bs-toggle="modal" data-bs-target="#loginModal">
+                                    Chat with Us
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Mobile Menu Button -->
+                        <button type="button" class="mobile-menu-offcanvas-toggler" data-bs-toggle="modal" data-bs-target="#offcanvas-modal">
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                        </button>
+                        <!-- End Mobile Menu Button -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

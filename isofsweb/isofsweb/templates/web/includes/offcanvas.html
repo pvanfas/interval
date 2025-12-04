@@ -1,0 +1,26 @@
+<div class="modal mobile-menu-modal offcanvas-modal fade" id="offcanvas-modal">
+    <div class="modal-dialog offcanvas-dialog">
+        <div class="modal-content">
+            <div class="modal-header offcanvas-header">
+                <!-- Mobile Menu Logo -->
+                <div class="offcanvas-logo">
+                    <a href="/"><img src="/static/web/images/isofs_logo.png" alt="#" /></a>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="fi fi-ss-cross"></i>
+                </button>
+            </div>
+            <div class="mobile-menu-modal-main-body">
+                <!-- Mobile Menu Navigation -->
+                <nav class="offcanvas__menu">
+                    <ul class="offcanvas__menu_ul">
+                        <li class="offcanvas__menu_li"><a class="offcanvas__menu_item {% if is_index %}active{% endif %}" href="{% url 'web:index' %}">Home</a></li>
+                        <li class="offcanvas__menu_li"><a class="offcanvas__menu_item {% if is_learning %}active{% endif %}" href="{% url 'web:resources' %}">Learning</a></li>
+                        <li class="offcanvas__menu_li"><a class="offcanvas__menu_item {% if is_admissions %}active{% endif %}" href="{% url 'web:admissions' %}">Admissions</a></li>
+                        <li class="offcanvas__menu_li"><a class="offcanvas__menu_item {% if is_about %}active{% endif %}" href="{% url 'web:about_us' %}">About</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>

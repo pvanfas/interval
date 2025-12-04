@@ -1,0 +1,127 @@
+{% extends 'web/base.html' %}
+{% load static tags %}
+
+{% block meta %}
+    <!-- Primary Meta Tags -->
+    <title>{% get_value 'clubs_meta_title' %}</title>
+    <meta name="title" content="{% get_value 'clubs_meta_title' %}" />
+    <meta name="description" content="{% get_value 'clubs_meta_desc' %}" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{og_url}}" />
+    <meta property="og:title" content="{% get_value 'clubs_meta_title' %}" />
+    <meta property="og:description" content="{% get_value 'clubs_meta_desc' %}" />
+    <meta property="og:image" content="https://www.intervaledu.com/static/web/images/main/preview.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="{{og_url}}" />
+    <meta property="twitter:title" content="{% get_value 'clubs_meta_title' %}" />
+    <meta property="twitter:description" content="{% get_value 'clubs_meta_desc' %}" />
+    <meta property="twitter:image" content="https://www.intervaledu.com/static/web/images/main/preview.png" />
+{% endblock %}
+
+
+{% block content %}
+
+<div class="hero-banner hero-style-7 bgc1 p-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 order-md-1 order-2">
+                <div class="banner-content text-start mb-0" style="padding:60px 0">
+                    <h1 class="h3 title sal-animate">Fun Online Clubs for Kids & Teens</h1>
+                    <ul class="list-unstyled">
+                        <li class="mt-2 mb-0">👨‍🏫 Dedicated teachers guide every student’s journey</li>
+                        <li class="mt-2 mb-0">🕒 Convenient and flexible courses for all learning needs</li>
+                        <li class="mt-2 mb-0">👩‍🏫 Expert educators dedicated to individual growth</li>
+                        <li class="mt-2 mb-0">📅 Flexible scheduling for a seamless learning experience</li>
+                    </ul>
+                    <!-- filters -->
+                    <h6 class="mb-1">Learner's age</h6>
+                    <div class="portfolio-menu mt-2 mb-0">
+                        <ul class="p-0 d-flex" style="gap:10px">
+                            <li class="filter_icon active" data-filter="*">All</li>
+                            {% for item in agegroups %}
+                            <li class="filter_icon " data-filter=".{{item.0}}">{{item.1}}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 order-md-2 order-1">
+                <div class="banner-content">
+                    <div class="thumb">
+                        <img src="/static/web/images/main/student.png" alt=""
+                        style="max-height:360px;object-fit:contain;object-position:bottom;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="edu-course-area course-area-2 gap-tb-text section_padding">
+    <div class="container">
+
+        <div class="row g-5 club_item">
+            {% for club in club_courses %}
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 {{club.get_age_groups}}">
+                <div class="edu-course course-style-2 hover-button-bg-white shadow">
+                    <div class="inner">
+                        <div class="thumbnail">
+                            <a href="{{club.get_absolute_url}}">
+                                <img class="lazy" data-src="{{club.image.url}}" alt="{{club.title}}"
+                                    style="height:160px;object-fit:cover;">
+                            </a>
+                        </div>
+                        <div class="content" style="padding:20px">
+                            <h5 class="title">
+                                <a href="{{club.get_absolute_url}}">{{club.title}}</a>
+                            </h5>
+                            <ul class="box_container">
+                                {% for item in club.age_groups %}
+                                <li class="box">
+                                    <span class="bolded">{{item}}</span>
+                                    <span class="regular">Yrs</span>
+                                </li>
+                                {% endfor %}
+                                <li class="box">
+                                    <span class="bolded">{{club.duration}}</span>
+                                </li>
+                                <li class="box">
+                                    <span class="bolded">&#8377;{{club.course_fee}}</span>
+                                </li>
+                            </ul>
+                            <span class="spacer"></span>
+                            <div class="absolute_down">
+                                <a href="{{club.get_absolute_url}}" class="border-btn w-100">Reserve Seat</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+
+{% block scripts %}
+<script>
+    $('.portfolio-menu ul li').click(function () {
+        $('.portfolio-menu ul li').removeClass('active');
+        $(this).addClass('active');
+
+        var selector = $(this).attr('data-filter');
+        $('.club_item').isotope({
+            filter: selector
+        });
+        return false;
+    });
+</script>
+{% endblock %}

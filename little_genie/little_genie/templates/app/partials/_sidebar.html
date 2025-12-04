@@ -1,0 +1,117 @@
+{% load static %}
+<nav class="sidebar sidebar-offcanvas" id="sidebar">
+    <ul class="nav">
+        <li class="nav-item nav-profile">
+            <a href="#" class="nav-link">
+                <div class="nav-profile-image">
+                    <img src="{% static 'app/images/dashboard/face.jpg' %}" alt="profile">
+                    <span class="login-status online"></span>
+                    <!--change to offline or busy as needed-->
+                </div>
+                <div class="nav-profile-text d-flex flex-column">
+                    <span class="font-weight-bold mb-2">{{request.user}}</span>
+                    <span class="text-secondary text-small">Project Manager</span>
+                </div>
+                <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'core:index' %}">
+                <span class="menu-title">Dashboard</span>
+                <i class="mdi mdi-home menu-icon"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-blog" aria-expanded="false" aria-controls="ui-blog">
+                <span class="menu-title">Blog</span>
+                <i class="menu-arrow"></i>
+                <i class="mdi mdi-crosshairs-gps menu-icon"></i>
+            </a>
+            <div class="collapse" id="ui-blog">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link" href="{% url 'blogs:author_list' %}">Authors</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{% url 'blogs:blog_list' %}">Blogs</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-product" aria-expanded="false" aria-controls="ui-product">
+                <span class="menu-title">Products</span>
+                <i class="menu-arrow"></i>
+                <i class="mdi mdi-crosshairs-gps menu-icon"></i>
+            </a>
+            <div class="collapse" id="ui-product">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link" href="{% url 'products:category_list' %}">Categories</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{% url 'products:product_list' %}">Products</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{% url 'products:offer_product_list' %}">Offer Products</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{% url 'products:product_enquiry_list' %}">Product Enquiries</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-course" aria-expanded="false" aria-controls="ui-course">
+                <span class="menu-title">Courses</span>
+                <i class="menu-arrow"></i>
+                <i class="mdi mdi-crosshairs-gps menu-icon"></i>
+            </a>
+            <div class="collapse" id="ui-course">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link" href="{% url 'course:course_list' %}">Courses</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{% url 'course:course_enquiry_list' %}">Course Enquiries</a></li>
+                </ul>
+            </div>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'core:testimonial_list' %}">
+                <span class="menu-title">Testimonials</span>
+                <i class="mdi mdi-apps menu-icon"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'teams:team_list' %}">
+                <span class="menu-title">Teams</span>
+                <i class="mdi mdi-apps menu-icon"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'core:gallery_list' %}">
+                <span class="menu-title">Galleries</span>
+                <i class="mdi mdi-apps menu-icon"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'core:contact_list' %}">
+                <span class="menu-title">Contacts</span>
+                <i class="mdi mdi-apps menu-icon"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'core:feature_list' %}">
+                <span class="menu-title">Features</span>
+                <i class="mdi mdi-apps menu-icon"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'core:social_list' %}">
+                <span class="menu-title">Socials</span>
+                <i class="mdi mdi-apps menu-icon"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'core:faq_list' %}">
+                <span class="menu-title">FAQs</span>
+                <i class="mdi mdi-apps menu-icon"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'core:about_list' %}">
+                <span class="menu-title">About</span>
+                <i class="mdi mdi-apps menu-icon"></i>
+            </a>
+        </li>
+
+
+    </ul>
+</nav>

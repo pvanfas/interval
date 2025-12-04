@@ -1,0 +1,74 @@
+{% extends 'web/base.html' %} {% block content %} {% load crispy_forms_tags %}
+
+<main>
+    <section class="ed-course__details">
+        <div class="container ed-container" style="margin-top: 70px;">
+            
+            <div class="row">
+                <div class="col-lg-12 col-12">
+                    <div class="ed-course__details-content mt-0">
+                        <div class="course_card">
+                            <div class=" row">
+                                <div class="col-md-8">
+                                    <div class="content">
+                                        <h3>
+                                            {{course.title}}
+                                        </h3>
+                                        <p>
+                                            {{course.summary}}
+                                        </p>
+
+                                        <div class="ed-hero__search mt-4">
+                                            <form action="{% url 'web:save_phone_request' %}" method="post" class="ed-hero__search-form">
+                                                {% csrf_token %} {{phone_request_form.phone}}
+                                                <button type="submit">Get a Callback<i class="fi-rr-call-incoming"></i></button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 p-0">
+                                    <div class="ed-course__details-img image-2 h-100">
+                                        <img class="h-100" src="{{course.image.url}}" alt="course-details-img-2" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class=" form_card">
+                <div class="ed-section-head text-center mb-8">
+                    <span class="ed-section-head__sm-title">REFINE &amp; ELEVATE YOUR SKILLS</span>
+                    <h3 class="ed-section-head__title ed-split-text left" style="perspective: 400px;"><div class="tp-split-line" style="display: block; text-align: center; position: relative;"><div style="position:relative;display:inline-block;"> <div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">S</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">t</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">a</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">r</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">t</div></div> <div style="position:relative;display:inline-block;"><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">Y</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">o</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">u</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">r</div></div> <div style="position:relative;display:inline-block;"><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">L</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">e</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">a</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">r</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">n</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">i</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">n</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">g</div></div> <div style="position:relative;display:inline-block;"><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">J</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">o</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">u</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">r</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">n</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">e</div><div style="position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">y</div></div> </div></h3>
+                </div>
+                <form action="" method="post" class="form">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-md-6">
+                            {{form.name|as_crispy_field}}
+                        </div>
+                        <div class="col-md-6">
+                            {{form.email|as_crispy_field}}
+                        </div>
+                        <div class="col-md-6">
+                            {{form.phone|as_crispy_field}}
+                        </div>
+                        <div class="col-md-6">
+                            {{form.whatsapp|as_crispy_field}}
+                        </div>
+                        <div class="col-md-12">
+                            {{form.message|as_crispy_field}}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="ed-btn-full">Submit</button>
+                    </div>
+                </form>
+            </div>
+              
+        </div>
+    </section>
+</main>
+
+{% endblock %}

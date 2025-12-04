@@ -1,0 +1,119 @@
+
+{% extends 'web/base.html' %}
+{% load static tags %}
+
+{% block meta %}
+    <!-- Primary Meta Tags -->
+    <title>{% get_value 'tools_meta_title' %}</title>
+    <meta name="title" content="{% get_value 'tools_meta_title' %}" />
+    <meta name="description" content="{% get_value 'tools_meta_desc' %}" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{og_url}}" />
+    <meta property="og:title" content="{% get_value 'tools_meta_title' %}" />
+    <meta property="og:description" content="{% get_value 'tools_meta_desc' %}" />
+    <meta property="og:image" content="https://www.intervaledu.com/static/web/images/main/preview.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="{{og_url}}" />
+    <meta property="twitter:title" content="{% get_value 'tools_meta_title' %}" />
+    <meta property="twitter:description" content="{% get_value 'tools_meta_desc' %}" />
+    <meta property="twitter:image" content="https://www.intervaledu.com/static/web/images/main/preview.png" />
+{% endblock %}
+
+
+{% block content %}
+
+<div class="edu-categorie-area categorie-area-2 edu-section-gap">
+    <div class="container">
+        
+        <div class="container edublink-animated-shape">
+            <div class="section-title section-center sal-animate" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                <h2 class="title">CGPA/Grades to Percentage Conversion Calculators</h2>
+                <p>
+                    Easily convert your CGPA or grades into percentages using our free online calculators. <br>
+                    Whether you're a CBSE or State board student, we've got you covered with quick, accurate tools.
+                </p>
+                <span class="shape-line"><i class="icon-19"></i></span>
+            </div>
+        </div>
+
+        <div class="row ">
+            <div class="col-md-3 mb-4">
+                <a href="{% url 'web:kerala_sslc_calculator' %}">
+                    <div class="card p-0 shadow-sm" style="border-radius:16px;">
+                        <img src="/static/web/images/bg/pattern.svg" alt="" style="border-radius:16px 16px 0 0;height: 140px;width:100%;">
+                        <div class="p-4">
+                            <h4 class="card-title h5">Kerala SSLC Grade to Percentage Calculator 2025</h4>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-3 mb-4">
+                <a href="{% url 'web:tamilnadu_sslc_calculator' %}">
+                    <div class="card p-0 shadow-sm" style="border-radius:16px;">
+                        <img src="/static/web/images/bg/pattern.svg" alt="" style="border-radius:16px 16px 0 0;height: 140px;width:100%;">
+                        <div class="p-4">
+                            <h4 class="card-title h5">Tamilnadu SSLC Grade to Percentage Calculator 2025</h4>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-3 mb-4">
+                <a href="{% url 'web:cbse_calculator' %}">
+                    <div class="card p-0 shadow-sm" style="border-radius:16px;">
+                        <img src="/static/web/images/bg/pattern.svg" alt="" style="border-radius:16px 16px 0 0;height: 140px;width:100%;">
+                        <div class="p-4">
+                            <h4 class="card-title h5">CBSE CGPA to Percentage Calculator for Class 10</h4>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-3 mb-4">
+                <a href="{% url 'web:kerala_hsc_calculator' %}">
+                    <div class="card p-0 shadow-sm" style="border-radius:16px;">
+                        <img src="/static/web/images/bg/pattern.svg" alt="" style="border-radius:16px 16px 0 0;height: 140px;width:100%;">
+                        <div class="p-4">
+                            <h4 class="card-title h5">Kerala Class 12 (Plus Two) Percentage Calculation</h4>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-3 mb-4">
+                <a href="{% url 'web:cbse_calculator_12' %}">
+                    <div class="card p-0 shadow-sm" style="border-radius:16px;">
+                        <img src="/static/web/images/bg/pattern.svg" alt="" style="border-radius:16px 16px 0 0;height: 140px;width:100%;">
+                        <div class="p-4">
+                            <h4 class="card-title h5">CBSE Class 12 CGPA to Percentage Calculator</h4>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-3 mb-4">
+                <a href="{% url 'web:tamilnadu_hsc_calculator' %}">
+                    <div class="card p-0 shadow-sm" style="border-radius:16px;">
+                        <img src="/static/web/images/bg/pattern.svg" alt="" style="border-radius:16px 16px 0 0;height: 140px;width:100%;">
+                        <div class="p-4">
+                            <h4 class="card-title h5">Tamilnadu Class 12 (Plus Two) Percentage Calculation</h4>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% include 'web/partials/cta.html' %}
+
+{% endblock %}
+

@@ -1,0 +1,127 @@
+{% extends 'web/base.html' %}
+
+
+{% block meta %}
+<!-- Primary Meta Tags -->
+<title>{{subject.meta_title}}</title>
+<meta name="title" content="{{subject.meta_title}}" />
+<meta name="description" content="{{subject.meta_description}}" />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{og_url}}" />
+<meta property="og:title" content="{{subject.meta_title}}" />
+<meta property="og:description" content="{{subject.meta_description}}" />
+<meta property="og:image" content="https://intervaledu.com/static/web/images/main/preview.png" />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content="{{og_url}}" />
+<meta property="twitter:title" content="{{subject.meta_title}}" />
+<meta property="twitter:description" content="{{subject.meta_description}}" />
+<meta property="twitter:image" content="https://intervaledu.com/static/web/images/main/preview.png" />
+{% endblock %}
+
+
+{% block content %}
+
+<div class="edu-breadcrumb-area breadcrumb-style-2 bg-image"
+    style="background-image: url({{subject.banner_image.url}});">
+    <div class="container">
+        <div class="breadcrumb-inner">
+            <div class="page-title">
+                <h1 class="title">{{subject.page_title}}</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="edu-brand-area section_padding">
+    <div class="container">
+        <div class="row row--45 mb-5">
+            <div class="section-title-flex section-title" data-sal-delay="150" data-sal="slide-up"
+                data-sal-duration="800">
+                <div class="left-content">
+                    <h2 class="title">We Provide The <br> Best <span class="color-secondary">Online Tuition </span>
+                        services</h2>
+                    <span class="shape-line"><i class="icon-19"></i></span>
+                </div>
+                <div class="right-content">
+                    <p>{{subject.page_description}}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="html_content">
+            {{subject.content|safe}}
+        </div>
+    </div>
+</div>
+
+<section class="why-choose-area-3 edu-section-gap section_padding bgc1">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12">
+                <h3 class="text-center">{{subject.feature_heading}}</h3>
+            </div>
+        </div>
+
+        <div class="row g-5">
+            {% for detail in subject.get_features %}
+            <div class="col-lg-6" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                <div class="why-choose-box-2 features-box color-primary-style p-5">
+                    <div class="content">
+                        <h4 class="title text-start">{{detail.title}}</h4>
+                        <p>{{detail.description}}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+<div class="edu-faq-area faq-style-1">
+    <div class="container">
+        <div class="row g-5 row--45">
+            <div class="col-12">
+                <div class="faq-accordion" id="faq-accordion" data-sal-delay="100" data-sal="slide-up"
+                    data-sal-duration="800">
+                    <div class="accordion">
+                        {% for faq in subject.get_faqs %}
+                        <div class="accordion-item">
+                            <h5 class="accordion-header">
+                                <button class="accordion-button {% if not forloop.first %}collapsed{% endif %}"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{faq.pk}}"
+                                    aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}">
+                                    {{faq.question}}
+                                </button>
+                            </h5>
+                            <div id="collapse{{faq.pk}}"
+                                class="accordion-collapse collapse {% if forloop.first %}show{% endif %}"
+                                data-bs-parent="#faq-accordion">
+                                <div class="accordion-body">
+                                    <p>{{faq.answer}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+                    </div>
+                </div>
+                <ul class="shape-group">
+                    <li class="shape-bg sal-animate" data-sal-delay="500" data-sal="fade" data-sal-duration="200">
+                        <img src="/static/web/images/main/bg-image-36.svg" alt="Shape Images">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include 'web/partials/cta.html' %}
+
+
+{% endblock %}

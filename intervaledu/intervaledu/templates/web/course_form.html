@@ -1,0 +1,107 @@
+{% extends 'web/base.html' %}
+{% block content %}
+{% load honeypot %}
+
+
+<div class="edu-cta-banner-area home-one-cta-wrapper bg-image">
+    <div class="container">
+        <div class="edu-cta-banner">
+            <div class="row justify-content-center">
+                <div class="col-lg-7">
+                    <div class="p-5 text-left" style="background: #a125c217;border-radius: 20px;">
+                        <div class="section-title section-center p-5" data-sal-delay="150" data-sal="slide-up"
+                            data-sal-duration="800">
+                            <h2 class="title"><span class="color-secondary">{{course}}</h2>
+                            <p>
+                                {{course.description}}
+                            </p>
+
+                            <div class="text-left">
+                                <form action="" method="post" class="enquiry_form">
+                                    {% csrf_token %}
+                                    {% render_honeypot_field %}
+                                    
+                                    <div class="row mb-5">
+
+                                        <div class="col-md-6 mb-3">
+                                            <div class="form-group text-start">
+                                                <label class="mb-0"
+                                                    for="{{form.student_name.id_for_label}}">{{form.student_name.label}}</label>
+                                                {{form.student_name}}
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 mb-3">
+                                            <div class="form-group text-start">
+                                                <label class="mb-0"
+                                                    for="{{form.email.id_for_label}}">{{form.email.label}}</label>
+                                                {{form.email}}
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 mb-3">
+                                            <div class="form-group text-start">
+                                                <label class="mb-0"
+                                                    for="{{form.country.id_for_label}}">{{form.country.label}}</label>
+                                                {{form.country}}
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 mb-3">
+                                            <div class="form-group text-start">
+                                                <label class="mb-0"
+                                                    for="{{form.phone_number.id_for_label}}">{{form.phone_number.label}}</label>
+                                                {{form.phone_number}}
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 mb-3">
+                                            <div class="form-group text-start">
+                                                <label class="mb-0"
+                                                    for="{{form.whatsapp_number.id_for_label}}">{{form.whatsapp_number.label}}</label>
+                                                {{form.whatsapp_number}}
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 mb-3">
+                                            <div class="form-group text-start">
+                                                <label class="mb-0"
+                                                    for="{{form.standard.id_for_label}}">{{form.standard.label}}</label>
+                                                {{form.standard}}
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 mb-3">
+                                            <div class="form-group text-start">
+                                                <label class="mb-0"
+                                                    for="{{form.state.id_for_label}}">{{form.state.label}}</label>
+                                                {{form.state}}
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 mb-3">
+                                            <div class="form-group text-start">
+                                                <label class="mb-0"
+                                                    for="{{form.referred_by.id_for_label}}">{{form.referred_by.label}}</label>
+                                                {{form.referred_by}}
+                                            </div>
+                                        </div>
+                                        {{form.phone_number_country_code}}
+                                        {{form.whatsapp_number_country_code}}
+
+                                    </div>
+
+                                    <button type="submit" class="edu-btn">Proceed to Payment<i
+                                            class="icon-4"></i></button>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

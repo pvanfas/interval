@@ -1,0 +1,127 @@
+{% load honeypot %}
+
+<div class="modal fade" id="demoBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="demoBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+            <div class="border-0 modal-header pt-5 px-5">
+                <h5 class="modal-title" id="demoBackdropLabel">Book A Demo Class</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="pb-5 px-5 pt-0">
+                    <form action="{% url 'web:save_booking' %}" method="post" class="demo_request_form">
+                        {% csrf_token %}
+                        {% render_honeypot_field %}
+
+                        {% if form.errors %}
+                            {% for field in form %}
+                                {% for error in field.errors %}
+                                    <div class="alert alert-danger">
+                                        <strong>{{ error|escape }}</strong>
+                                    </div>
+                                {% endfor %}
+                            {% endfor %}
+                            {% for error in form.non_field_errors %}
+                                <div class="alert alert-danger">
+                                    <strong>{{ error|escape }}</strong>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+
+                        <div class="form_content mb-5">
+                            
+                            <div class="row align-items-end mb-4">
+                                <div class="col-md-4">
+                                    <label class="mb-0" for="{{ demo_request_form.raised_by.id_for_label }}">{{ demo_request_form.raised_by.label }}</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        {{ demo_request_form.raised_by }}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row align-items-end mb-4">
+                                <div class="col-md-4">
+                                    <label class="mb-0" for="{{ demo_request_form.student_name.id_for_label }}">{{ demo_request_form.student_name.label }}</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        {{ demo_request_form.student_name }}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row align-items-end mb-4">
+                                <div class="col-md-4">
+                                    <label class="mb-0" for="{{ demo_request_form.email.id_for_label }}">{{ demo_request_form.email.label }}</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        {{ demo_request_form.email }}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row align-items-end mb-4">
+                                <div class="col-md-4">
+                                    <label class="mb-0" for="{{ demo_request_form.country.id_for_label }}">{{ demo_request_form.country.label }}</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        {{ demo_request_form.country }}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row align-items-end mb-4">
+                                <div class="col-md-4">
+                                    <label class="mb-0" for="{{ demo_request_form.phone_number.id_for_label }}">{{ demo_request_form.phone_number.label }}</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        {{ demo_request_form.phone_number }}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row align-items-end mb-4">
+                                <div class="col-md-4">
+                                    <label class="mb-0" for="{{ demo_request_form.whatsapp_number.id_for_label }}">{{ demo_request_form.whatsapp_number.label }}</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        {{ demo_request_form.whatsapp_number }}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row align-items-end mb-4">
+                                <div class="col-md-4">
+                                    <label class="mb-0" for="{{ demo_request_form.standard.id_for_label }}">{{ demo_request_form.standard.label }}</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        {{ demo_request_form.standard }}
+                                    </div>
+                                </div>
+                            </div>
+
+                            {{ demo_request_form.demo_phone_number_country_code }}
+                            {{ demo_request_form.demo_whatsapp_number_country_code }}
+
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="edu-btn btn-medium btn-gradient">Submit <i class="icon-4"></i></button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<a href="javascript:void(0);" role="button" data-bs-toggle="modal" data-bs-target="#demoBackdrop" class="side_buton">Book a Demo</a>

@@ -1,0 +1,68 @@
+/*================================================================================================
+    Start Features CSS
+===================================================================================================*/
+.ed-features {
+  background: var(--ed-secondary-color);
+  padding: 40px 0px 80px;
+}
+.ed-category__shape-1 {
+  position: absolute;
+  left: 108px;
+  top: 90px;
+}
+.ed-category__shape-2 {
+  position: absolute;
+  right: 100px;
+  bottom: 50px;
+}
+.ed-features__card {
+  display: flex;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.ed-features__icon {
+  width: 60px;
+  height: 60px;
+  min-width: 60px;
+  text-align: center;
+  line-height: 60px;
+}
+
+.ed-features__icon.bg-1 {
+  background: rgba(255, 205, 32, 0.09);
+}
+.ed-features__icon.bg-2 {
+  background: rgba(111, 192, 129, 0.09);
+}
+.ed-features__icon.bg-3 {
+  background: rgba(223, 67, 67, 0.09);
+}
+
+.ed-features__icon {
+  border-radius: 100%;
+}
+
+.ed-features__icon img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.ed-features__info h4 {
+  color: var(--ed-white-color);
+  font-size: 20px;
+  line-height: 26px;
+  margin-bottom: 16px;
+}
+
+.ed-features__info p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 29px;
+}
+
+/*================================================================================================
+    End Features CSS
+===================================================================================================*/

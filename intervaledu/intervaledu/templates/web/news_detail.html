@@ -1,0 +1,127 @@
+{% extends 'web/base.html' %}
+
+
+{% block meta %}
+<!-- Primary Meta Tags -->
+<title>{{news.meta_title}}</title>
+<meta name="title" content="{{news.meta_title}}" />
+<meta name="description" content="{{news.meta_description}}" />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{og_url}}" />
+<meta property="og:title" content="{{news.meta_title}}" />
+<meta property="og:description" content="{{news.meta_description}}" />
+<meta property="og:image" content="https://intervaledu.com/static/web/images/main/preview.png" />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content="{{og_url}}" />
+<meta property="twitter:title" content="{{news.meta_title}}" />
+<meta property="twitter:description" content="{{news.meta_description}}" />
+<meta property="twitter:image" content="https://intervaledu.com/static/web/images/main/preview.png" />
+{% endblock %}
+
+
+{% block content %}
+
+<div class="blog-details-area section-gap-equal">
+    <div class="container">
+        <div class="row row--30">
+            <div class="col-lg-8">
+                <div class="blog-details-content">
+                    <div class="entry-content">
+                        <h1 class="h3 title">{{news.title}}</h1>
+                        <ul class="blog-meta">
+                            <li><i class="icon-27"></i>{{news.date}}</li>
+                        </ul>
+                        <div class="thumbnail">
+                            <img src="{{news.image.url}}" alt="Blog Image">
+                        </div>
+                    </div>
+
+                    {% comment %}
+                    <blockquote class="mt--20">
+                        <p>Lorem ipsum dolor amet con sectur elitadicing elit sed do usmod tempor uincididunt enim minim veniam nostrud.</p>
+                        <h5 class="author">Simon Baker</h5>
+                    </blockquote>
+                    {% endcomment %}
+
+                    <div class="html_content">
+                        {{news.content|safe}}
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <div class="edu-blog-sidebar pt-0">
+
+                    {% if related_posts %}
+                    <div class="edu-blog-widget widget-latest-post">
+                        <div class="inner">
+                            <h4 class="widget-title">Related News</h4>
+                            <div class="content latest-post-list">
+                                {% for news in related_posts %}
+                                <div class="latest-post">
+                                    <div class="thumbnail">
+                                        <a href="{{news.get_absolute_url}}">
+                                            <img src="{{news.image.url}}" alt="Blog Images" style="width:100px;height:60px;object-fit:cover;">
+                                        </a>
+                                    </div>
+                                    <div class="post-content">
+                                        <h6 class="title"><a href="{{news.get_absolute_url}}">{{news.title}}</a></h6>
+                                        <ul class="blog-meta">
+                                            <li><i class="icon-27"></i>{{news.date}}</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% include 'web/partials/cta.html' %}
+
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+    const ctas = {{ news.get_ctas|safe }};
+    ctas.forEach(cta => {
+        const div = document.createElement('div');
+        div.className = 'news-cta';
+
+        const a = document.createElement('a');
+        a.href = 'javascript:void(0);';
+        a.setAttribute('role', 'button');
+        a.setAttribute('data-bs-toggle', 'modal');
+        a.setAttribute('data-bs-target', '#staticBackdrop');
+
+        const img = document.createElement('img');
+        img.src = cta.image;
+        img.alt = cta.title;
+        img.style.width = '100%';
+        img.style.height = 'auto';
+
+        // Append image inside anchor
+        a.appendChild(img);
+        div.appendChild(a);
+
+        // Insert the div just after the element found via XPath
+        const xpath = cta.xpath;
+        const element = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+        if (element) {
+            element.parentNode.insertBefore(div, element.nextSibling);
+        }
+    });
+</script>
+{% endblock %}

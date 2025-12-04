@@ -1,0 +1,218 @@
+/*================================================================================================
+    Start Category CSS
+===================================================================================================*/
+.ed-category__wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px 30px;
+  margin-top: 30px;
+}
+.ed-category__card {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  border-radius: 12px;
+  background: var(--ed-white-color);
+  padding: 10px;
+  transition: all 0.4s ease;
+}
+.ed-category__card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 12px 24px 0px rgba(44, 44, 84, 0.08);
+}
+.ed-category__icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 12px;
+  text-align: center;
+  line-height: 72px;
+}
+.ed-category__icon.bg-1,
+.ed-category__icon.bg-7 {
+  background: #fcebfe;
+}
+.ed-category__icon.bg-2,
+.ed-category__icon.bg-8 {
+  background: #eef7f6;
+}
+.ed-category__icon.bg-3,
+.ed-category__icon.bg-6 {
+  background: #fceeee;
+}
+.ed-category__icon.bg-4,
+.ed-category__icon.bg-5 {
+  background: #f0eefd;
+}
+
+.ed-category__icon img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.ed-category__info h4 {
+  font-size: 20px;
+  line-height: 18px;
+  margin-bottom: 16px;
+}
+.ed-category__card:hover .ed-category__info h4 {
+  color: var(--ed-primary-color);
+}
+.ed-category__info p {
+  line-height: 18px;
+  letter-spacing: -0.28px;
+}
+
+/* Category Style 2 */
+.ed-category__slider {
+  margin-left: -235px;
+  margin-right: -235px;
+}
+.ed-category__card--style2 {
+  display: block;
+  padding: 0;
+  margin-top: 30px;
+  border-radius: 0;
+  background: transparent;
+}
+
+.ed-category__card--style2 .ed-category__content {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+}
+.ed-category__card--style2:hover {
+  transform: none;
+  box-shadow: none;
+}
+.ed-category__card--style2 .ed-category__img {
+  overflow: hidden;
+  border-radius: 8px;
+}
+.ed-category__card--style2 .ed-category__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: all 0.4s ease;
+}
+.ed-category__card--style2:hover .ed-category__img img {
+  transform: scale(1.08);
+}
+.ed-category__card--style2 .ed-category__icon {
+  width: auto;
+  height: auto;
+  line-height: normal;
+}
+.ed-category__card--style2 .ed-category__info p {
+  line-height: 16px;
+  font-size: 14px;
+}
+.ed-category__card--style2 .ed-category__info h4 {
+  margin-bottom: 12px;
+}
+
+/* Slider Controls  */
+.swiper-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 65px;
+  position: relative;
+  bottom: 0px !important;
+}
+.swiper-pagination-bullet {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background: transparent;
+  opacity: 1;
+  border: 2px solid var(--ed-primary-color);
+  position: relative;
+  margin: 0 !important;
+}
+.swiper-pagination-bullet::before {
+  position: absolute;
+  content: "";
+  width: 12.44px;
+  height: 12.44px;
+  background: var(--ed-primary-color);
+  border-radius: 100%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  visibility: hidden;
+}
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  background: transparent;
+}
+
+.swiper-pagination-bullet-active::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+.ed-category__slider.swiper {
+  overflow: initial;
+}
+.slider-button-group {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  z-index: 2;
+  top: -24%;
+  right: 22%;
+}
+.slider-button-prev i,
+.slider-button-next i {
+  font-size: 28px;
+  color: #c3bcf7;
+  transition: all 0.4s ease;
+}
+.slider-button-prev i:hover,
+.slider-button-next i:hover {
+  color: var(--ed-primary-color);
+}
+
+/* Category Style 3 */
+.ed-category.ed-category--style3 {
+  padding-bottom: 360px;
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  .ed-category__wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991.99px) {
+  .ed-category__wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .ed-category__wrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .ed-category__info h4 {
+    margin-bottom: 12px;
+  }
+  .slider-button-group {
+    display: none;
+  }
+  .swiper-pagination {
+    display: flex !important;
+    margin-top: 40px;
+  }
+  .ed-category.ed-category--style3 {
+    padding-bottom: 330px;
+  }
+}
+
+/*================================================================================================
+    End Category CSS
+===================================================================================================*/

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    {% load static tags %}
+    {% load honeypot %}
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    {% block robots %}{% endblock %}
+
+    {% block meta %}
+    <!-- Primary Meta Tags -->
+    <title>Best Online Tuition Classes for all Classes | Academic &amp; Non-Academic Courses | Interval Learning</title>
+    <meta name="title" content="Best Online Tuition Classes for all Classes | Academic &amp; Non-Academic Courses | Interval Learning" />
+    <meta name="description" content="Interval Learning offers the best online tuition classes for both academic and non-academic courses. Our personalized one-on-one online tuition helps your child succeed with expert guidance and individual support." />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.intervaledu.com/" />
+    <meta property="og:title" content="Best Online Tuition Classes for all Classes | Academic &amp; Non-Academic Courses | Interval Learning" />
+    <meta property="og:description" content="Interval Learning offers the best online tuition classes for both academic and non-academic courses. Our personalized one-on-one online tuition helps your child succeed with expert guidance and individual support." />
+    <meta property="og:image" content="https://www.intervaledu.com/static/web/images/main/preview.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://www.intervaledu.com/" />
+    <meta property="twitter:title" content="Best Online Tuition Classes for all Classes | Academic &amp; Non-Academic Courses | Interval Learning" />
+    <meta property="twitter:description" content="Interval Learning offers the best online tuition classes for both academic and non-academic courses. Our personalized one-on-one online tuition helps your child succeed with expert guidance and individual support." />
+    <meta property="twitter:image" content="https://www.intervaledu.com/static/web/images/main/preview.png" />
+    {% endblock %}
+
+    <link rel="canonical" href="{% with request.scheme|add:'://'|add:request.get_host|add:request.path as full_url %}{{ full_url }}{% endwith %}">
+    
+    <!-- Favicon -->
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="{% static 'web/images/favicon/ms-icon-144x144.png' %}">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="apple-mobile-web-app-title" content="Team Interval">
+
+    <link rel="icon" href="{% static 'web/images/favicon/favicon.svg' %}" type="image/svg+xml">
+    <link rel="icon" href="{% static 'web/images/favicon/favicon-48x48.png' %}" sizes="48x48" type="image/png">
+    <link rel="icon" href="{% static 'web/images/favicon/favicon.ico' %}" sizes="any" type="image/x-icon">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="{% static 'web/images/favicon/apple-icon-57x57.png' %}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{% static 'web/images/favicon/apple-icon-60x60.png' %}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{% static 'web/images/favicon/apple-icon-72x72.png' %}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{% static 'web/images/favicon/apple-icon-76x76.png' %}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{% static 'web/images/favicon/apple-icon-114x114.png' %}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{% static 'web/images/favicon/apple-icon-120x120.png' %}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{% static 'web/images/favicon/apple-icon-144x144.png' %}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{% static 'web/images/favicon/apple-icon-152x152.png' %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'web/images/favicon/apple-icon-180x180.png' %}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{% static 'web/images/favicon/android-icon-192x192.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'web/images/favicon/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{% static 'web/images/favicon/favicon-96x96.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'web/images/favicon/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'web/images/favicon/manifest.json' %}">
+
+    <!-- css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'web/css/vendor/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'web/css/vendor/magnifypopup.min.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/odometer@0.4.8/themes/odometer-theme-default.min.css">
+    <link rel="stylesheet" href="{% static 'web/css/vendor/lightbox.min.css' %}">
+    <link rel="stylesheet" href="{% static 'web/css/vendor/animation.min.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-ui@1.14.0/themes/base/theme.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8.0.7/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.0/build/css/intlTelInput.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="{% static 'web/css/vendor/tipped.min.css' %}">
+    
+    {% block css_plugins %}{% endblock %}
+
+    <!-- Site Stylesheet -->
+    <link rel="stylesheet" href="{% static 'web/css/app.min.css' %}?v=1.2">
+    <link rel="stylesheet" href="{% static 'web/css/custom.min.css' %}?v=1.2">
+    {% block stylesheet %}{% endblock %}
+    
+</head>
+
+<body data-spy="scroll">
+    {% block content %}
+    
+    {% endblock %}
+
+    <!-- js -->
+    <script type="text/javascript" src="{% static 'web/js/vendor/bundle.min.js' %}"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.plugins.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.0/build/js/intlTelInput.min.js"></script>
+    <script type="text/javascript" src="{% static 'web/plugins/grt-youtube/grt-youtube-popup.js' %}"></script>
+    <script type="text/javascript" src="{% static 'web/js/app.js' %}"></script>
+    {% block js_plugins %}{% endblock %}
+    <script type="text/javascript" src="{% static 'web/js/script.js' %}?v=1.2"></script>
+    
+    <script>
+        const initializeIntlTelInput = (formSelector, inputName, outputName) => {
+        const $inputElement = $(`[name='${inputName}']`);
+        const $outputElement = $(`[name='${outputName}']`);
+
+        $inputElement.on("input", function () {
+            let sanitizedValue = $(this).val().replace(/[^0-9]/g, '');
+            if (sanitizedValue.startsWith('0')) {
+                sanitizedValue = sanitizedValue.slice(1);
+            }
+            if (sanitizedValue.length > 10) {
+                sanitizedValue = sanitizedValue.slice(0, 10);
+            }
+            $(this).val(sanitizedValue);
+
+            if (sanitizedValue.length < 10) {
+                $(this).closest(".form-group").addClass("has-error");
+                console.log("Invalid Phone number");
+                $(formSelector).find('button[type="submit"]').prop('disabled', true);
+
+                if ($(this).closest(".form-group").find(".error").length === 0) {
+                    $(this).closest(".form-group").append('<span class="error" style="font-size: 12px;padding-left: 15px;color: red;">* Invalid Phone number</span>');
+                }
+            } else {
+                $(this).closest(".form-group").removeClass("has-error");
+                console.log("Valid Phone number");
+                $(formSelector).find('button[type="submit"]').prop('disabled', false);
+                $(this).closest(".form-group").find(".error").remove();
+            }
+        });
+
+        const iti = window.intlTelInput($inputElement[0], {
+            utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.0/build/js/utils.js",
+            initialCountry: "auto",
+            geoIpLookup: callback => {
+                fetch("https://ipapi.co/json")
+                    .then(res => res.json())
+                    .then(data => callback(data.country_code))
+                    .catch(() => callback("in"));
+            },
+            separateDialCode: true,
+            preferredCountries: ["in", "ae", "sa", "qa", "om", "bh", "kw"],
+            formatOnDisplay: true,
+            customPlaceholder: () => ""
+        });
+
+        const countryCode = iti.getSelectedCountryData().dialCode;
+        if ($outputElement.length) {
+            $outputElement.val(countryCode);
+        }
+
+        $inputElement.on("countrychange", function () {
+            const updatedCountryCode = iti.getSelectedCountryData().dialCode;
+            if ($outputElement.length) {
+                $outputElement.val(updatedCountryCode);
+            }
+        });
+    };
+    </script>
+    <script>
+        $(function () {$('.lazy').Lazy()});
+        $(".youtube-link").grtyoutube();
+    </script>
+    {% block scripts %} {% endblock %}
+    
+</body>
+
+</html>

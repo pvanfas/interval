@@ -1,0 +1,375 @@
+/*================================================================================================
+    Start Contact CSS
+===================================================================================================*/
+.ed-contact__shape-1,
+.ed-contact__shape-2,
+.ed-contact__shape-3 {
+  position: absolute;
+}
+.ed-contact__shape-1 {
+  right: 18%;
+  top: 26%;
+}
+.ed-contact__shape-2 {
+  bottom: 38%;
+  left: 5%;
+}
+.ed-contact__shape-3 {
+  right: 14%;
+  bottom: 22%;
+}
+
+.ed-contact__info-title {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: -0.36px;
+  margin-bottom: 40px;
+}
+
+.ed-contact__info-item {
+  margin-bottom: 36px;
+  display: flex;
+  gap: 24px;
+}
+.ed-contact__info-item:last-child {
+  margin: 0;
+}
+.ed-contact__info-icon img {
+  width: 28px;
+  min-width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.ed-contact__info-content span {
+  display: block;
+  margin-bottom: 12px;
+}
+
+.ed-contact__info-content a {
+  color: var(--ed-title-color);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 22px;
+}
+.ed-contact__info-content a:hover {
+  color: var(--ed-primary-color);
+}
+
+/* Contact Form  */
+.ed-contact {
+  padding-top: 345px;
+}
+.ed-contact__bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+  height: 700px;
+}
+
+.ed-contact__bg img {
+  width: 100%;
+  height: 700px;
+  object-fit: cover;
+}
+
+.ed-contact__form {
+  border-radius: 8px;
+  background: var(--ed-white-color);
+  box-shadow: 0px 0px 50px 42px rgba(14, 5, 72, 0.04);
+  padding: 60px;
+}
+.ed-contact__form-head {
+  margin-bottom: 50px;
+}
+.ed-contact__form-sm-title {
+  display: block;
+  margin-bottom: 32px;
+  line-height: 20px;
+}
+
+.ed-contact__form-big-title {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 50px;
+  letter-spacing: -0.36px;
+  margin: 0;
+}
+.ed-contact__form-main .form-group {
+  margin-bottom: 40px;
+}
+
+.ed-contact__form-main .form-group input,
+.ed-contact__form-main .form-group textarea {
+  width: 100%;
+  height: auto;
+  border: none;
+  border-bottom: 1px solid #bfc6c5;
+  border-radius: 0;
+  padding: 20px 0px;
+  padding-top: 0;
+}
+.ed-contact__form-main .form-group input:focus,
+.ed-contact__form-main .form-group textarea:focus {
+  border-bottom: 1px solid var(--ed-primary-color);
+}
+.ed-contact__form-btn {
+  margin-top: 40px;
+}
+
+.ed-contact__form-btn {
+  margin-top: 40px;
+}
+
+.form-check-label {
+  line-height: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.form-check-label strong {
+  margin-left: 6px;
+  font-weight: 600;
+}
+
+.form-check-input {
+  vertical-align: middle !important;
+  width: 16px;
+  height: 16px;
+  border-radius: 100% !important;
+  border: 1px solid rgba(1, 28, 26, 0.75);
+  margin: 0 !important;
+  position: relative;
+  margin-right: 10px !important;
+  float: initial !important;
+  cursor: pointer;
+}
+.form-check-input:focus {
+  border-color: rgba(1, 28, 26, 0.75);
+  outline: 0;
+  box-shadow: none;
+}
+.form-check {
+  min-height: auto;
+  padding: 0;
+  margin: 0;
+}
+
+.form-check-input:checked {
+  background-color: var(--ed-primary-color);
+  border-color: transparent;
+}
+
+/* Contact Style 2  */
+.ed-contact--style2 .ed-contact__inner {
+  display: flex;
+  align-items: center;
+  gap: 90px;
+}
+.ed-contact--style2 .ed-contact__img img {
+  width: 620px;
+  height: 620px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.ed-contact--style2 .ed-contact__form {
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+}
+
+.ed-contact--style2 .ed-contact__form-sm-title {
+  margin-bottom: 18px;
+  line-height: 16px;
+}
+
+/* Contact Page  */
+.ed-contact__card {
+  padding-top: 70px;
+}
+.ed-contact__card-item {
+  border-radius: 8px;
+  background: var(--ed-offwhite-color);
+  padding: 44px 35px;
+  margin-top: 40px;
+}
+
+.ed-contact__card-icon img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+
+.ed-contact__card-icon {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background: var(--ed-primary-color);
+  line-height: 100px;
+  text-align: center;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+.ed-contact__card-info a {
+  display: block;
+  color: var(--ed-title-color);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 38px;
+}
+.ed-contact__card-info a:hover {
+  color: var(--ed-primary-color);
+}
+@media only screen and (min-width: 1201px) and (max-width: 1600px) {
+  .ed-contact__shape-3 {
+    right: 4%;
+  }
+  .ed-contact__shape-1 {
+    right: 10%;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199.99px) {
+  .ed-contact__info-content a {
+    font-size: 18px;
+  }
+  .ed-contact--style2 .ed-contact__inner {
+    gap: 40px;
+  }
+  .ed-contact__card-icon {
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+  }
+  .ed-contact__card-info a {
+    font-size: 18px;
+    line-height: 30px;
+  }
+  .ed-contact__form-big-title br {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991.99px) {
+  .ed-contact__info-wrapper {
+    margin-top: 40px;
+  }
+  .ed-contact__bg img {
+    height: 300px;
+  }
+  .ed-contact__bg {
+    height: 300px;
+  }
+  .ed-contact {
+    padding-top: 160px;
+  }
+  .ed-contact__shape-1 {
+    right: 12%;
+    top: 10%;
+  }
+  .ed-contact__shape-2 {
+    left: 2%;
+  }
+  .ed-contact--style2 .ed-contact__inner {
+    display: block;
+  }
+  .ed-contact--style2 .ed-contact__img img {
+    width: 100%;
+    height: 520px;
+  }
+  .ed-contact--style2 .ed-contact__form {
+    margin-top: 40px;
+  }
+  .ed-contact__form-head {
+    margin-bottom: 40px;
+  }
+  .ed-contact__card {
+    padding-top: 40px;
+  }
+  .ed-contact__card-icon {
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    margin-bottom: 24px;
+  }
+  .ed-contact__card-info a {
+    font-size: 20px;
+    line-height: 32px;
+  }
+  .ed-contact__card-item {
+    padding: 40px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .ed-contact--style2 .ed-contact__img img {
+    width: 100%;
+    height: 320px;
+  }
+  .ed-contact--style2 .ed-contact__form {
+    margin-top: 40px;
+  }
+  .ed-contact__form-big-title {
+    font-size: 28px;
+    line-height: 36px;
+  }
+  .ed-contact__form-head {
+    margin-bottom: 32px;
+  }
+  .ed-contact__form-main .form-group {
+    margin-bottom: 24px;
+  }
+  .ed-contact--style2 .ed-contact__inner {
+    display: block;
+  }
+  .ed-contact__bg img {
+    height: 280px;
+  }
+  .ed-contact__form {
+    padding: 32px;
+    margin-top: -224px;
+  }
+  .ed-contact__shape-2 {
+    display: none;
+  }
+  .ed-contact__shape-3 {
+    display: none;
+  }
+  .ed-contact__shape-1 {
+    right: 5%;
+    top: 6%;
+  }
+  .ed-contact__info-title {
+    font-size: 30px;
+    margin-bottom: 24px;
+  }
+  .ed-contact__info-wrapper {
+    margin-top: 40px;
+  }
+  .ed-contact__form-sm-title {
+    margin-bottom: 16px;
+  }
+  .ed-contact__card {
+    padding-top: 40px;
+  }
+  .ed-contact__card-icon {
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    margin-bottom: 16px;
+  }
+  .ed-contact__card-info a {
+    font-size: 18px;
+    line-height: 32px;
+  }
+  .ed-contact__card-item {
+    padding: 40px;
+  }
+}
+/*================================================================================================
+    End Contact CSS
+===================================================================================================*/

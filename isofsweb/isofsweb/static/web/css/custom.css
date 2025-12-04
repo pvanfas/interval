@@ -1,0 +1,239 @@
+.mb-6 {
+    margin-bottom: 3rem !important;
+}
+
+.mb-7 {
+    margin-bottom: 3.5rem !important;
+}
+
+.mb-8 {
+    margin-bottom: 4rem !important;
+}
+
+.mb-9 {
+    margin-bottom: 4.5rem !important;
+}
+
+.mb-10 {
+    margin-bottom: 5rem !important;
+}
+
+.title {
+    margin-top: 60px;
+    padding: 60px 0;
+    background: rgb(255 0 72 / 3%);
+    ;
+}
+
+.title h1 {
+    font-size: 2.2em;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.html_content h2 {
+    font-size: 1.6em;
+    font-weight: 700;
+    margin-bottom: 10px;
+    margin-top: 40px;
+}
+
+.html_content h3 {
+    font-size: 1.4em;
+    font-weight: 700;
+    margin-bottom: 10px;
+    margin-top: 40px;
+}
+
+.html_content h4 {
+    font-size: 1.2em;
+    font-weight: 700;
+    margin-bottom: 10px;
+    margin-top: 40px;
+}
+
+.html_content h5 {
+    font-size: 1em;
+    font-weight: 700;
+    margin-bottom: 10px;
+    margin-top: 40px;
+}
+
+.html_content h6 {
+    font-size: 0.9em;
+    font-weight: 700;
+    margin-bottom: 10px;
+    margin-top: 40px;
+}
+
+.html_content ul {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+
+}
+
+.html_content ul li {
+    margin-bottom: 10px;
+    list-style: disc;
+    font-size: 14px;
+}
+
+.html_content p {
+    font-size: 14px !important;
+}
+
+.page .ed-about__tab-info-card {
+    border-radius: 8px;
+    background: var(--ed-white-color);
+    text-align: center;
+    padding: 30px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.list-group.list-group-flush {
+    padding-left: 20px;
+}
+
+.list-group.list-group-flush li {
+    list-style: disc;
+    margin-bottom: 5px;
+}
+
+.ticket {
+    border-radius: 8px;
+    background: var(--ed-white-color);
+    padding: 40px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.ticket img {
+    width: 100px;
+    height: 100%;
+    object-fit: contain;
+
+}
+
+.ticker {
+    display: inline-block;
+    border: 1px solid red;
+    padding: 3px 8px;
+    border-radius: 9px;
+    margin-bottom: 20px;
+    color: red;
+    font-size: 13px;
+}
+
+.blink {
+    animation: blink-animation 1s steps(3, start) infinite;
+    -webkit-animation: blink-animation 1s steps(3, start) infinite;
+}
+
+@keyframes blink-animation {
+    to {
+        visibility: hidden;
+    }
+}
+
+@-webkit-keyframes blink-animation {
+    to {
+        visibility: hidden;
+    }
+}
+
+.save_tag {
+    color: #000;
+    position: absolute;
+    font-size: 11px;
+    top: -24px;
+    left: 50%;
+    background: yellow;
+    padding: 6px 10px;
+    border-radius: 5px 5px 0 0;
+    z-index: 0;
+    line-height: 1;
+    transform: translateX(-50%);
+    border: 1px solid #212529;
+}
+
+.mentor {
+    margin-bottom: 10px;
+}
+
+.mentor .thumb {
+    max-width: 400px;
+    height: 300px;
+    margin-bottom: 20px;
+}
+
+.mentor p {
+    margin-bottom: 10px;
+}
+
+.mentor .thumb img {
+    overflow: hidden;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    border: 10px solid #fff;
+    border-radius: 16px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+@media (max-width: 650px) {
+    .hackathon .ed-btn .fi-rr-arrow-small-right {
+        display: none;
+    }
+
+    .hackathon .ed-call-action__content-btn .ed-btn {
+        padding: 16px 30px 16px 30px;
+    }
+}
+
+@media (max-width: 496px) {
+    .hackathon .ed-call-action__content-btn .ed-btn {
+        display: block;
+        text-align: center;
+    }
+
+    .hackathon .ed-call-action__content-btn .ed-btn:first-child {
+        margin-bottom: 30px !important;
+    }
+
+
+}
+
+@media (max-width: 447px) {
+    .hackathon .ed-call-action__content-btn .ed-btn {
+        padding: 10px 20px 10px 20px;
+        line-height: 28px;
+        font-size: 13px;
+    }
+}
+
+.form_card {
+    margin-top: 40px;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: var(--bs-box-shadow);
+    font-size: 14px;
+}
+
+.form_card .form-control {
+    border-radius: 25px;
+    padding: 10px 15px;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.form_card .form-control:focus {
+    border-color: #1D65B0;
+    box-shadow: none;
+    outline: 0;
+}
+
+.form_card .ed-btn-full {
+    line-height: 11px;
+    min-width: 240px;
+}

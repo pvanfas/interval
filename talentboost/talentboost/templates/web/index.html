@@ -1,0 +1,503 @@
+{% extends "web/base.html" %}
+{% block content %}
+
+<!-- site header html end  -->
+<main id="content" class="site-main">
+
+   <!-- HERO -->
+   <section class="home-banner-section home-banner-slider">
+      <div class="home-banner d-flex flex-wrap align-items-center"
+         style="background-image: url(/static/web/images/desktop.png);">
+         <div class="container">
+            <div class="banner-content">
+               <div class="row align-items-end">
+                  <div class="col-lg-8">
+                     <h6 class="h5">Interval Talent Boost Exam</h6>
+                     <h2 class="banner-title">PRICE MONEY UPTO <br> <span class="highlight">10 LAKHS</span></h2>
+                     <h2 class="banner-title">SCHOLARSHIP WORTH <br> <span class="highlight">50 LAKHS</span></h2>
+                     <p>For classes 1 <sup>st</sup> - 10 <sup>th</sup> for all Syllabuses </p>
+                     <button data-bs-toggle="modal" data-bs-target="#studentBackdrop"
+                        class="outline-btn border bg-white text-primary">Register Here</button>
+                     <a href="{% url 'web:about' %}" class="outline-btn border text-white">About Us</a>
+                  </div>
+
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!-- FEATURES -->
+   <section class="home-destination section_padding" style="background-color: #FDF4FF;">
+      <div class="container">
+         <div class="destination-section">
+            <div class="row align-items-stretch">
+               <div class="col-xl-3 col-lg-3 col-md-6">
+                  <article class="destination-item">
+                     <div class="destination-content flip-container">
+                        <div class="counter-no mb-3 flip">
+                           <img src="/static/web/images/talent.png" alt="" style="height: 60px">
+                        </div>
+                        <h3>Interval Talent Boost</h3>
+                        <p>The Interval Talent Boost Project helps students gain national and international
+                           exposure for their abilities.
+                        </p>
+                     </div>
+                  </article>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6">
+                  <article class="destination-item">
+                     <div class="destination-content">
+                        <div class="counter-no mb-3">
+                           <img src="/static/web/images/reward.png" alt="" style="height: 60px">
+                        </div>
+                        <h3>Rewards</h3>
+                        <p>The Interval Talent Boost Exam offers substantial rewards. including a cash prize of
+                           10 lakh INR for the top five winners and scholarships worth 50 lakh INR for the top
+                           50 students.</p>
+                     </div>
+                  </article>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6">
+                  <article class="destination-item">
+                     <div class="destination-content text-start">
+                        <div class="counter-no mb-3">
+                           <img src="/static/web/images/opportunity.png" alt="" style="height: 60px">
+                        </div>
+                        <h3>Opportunities</h3>
+                        <ul class="p-0">
+                           <li>Google office visit</li>
+                           <li>ISRO office visit</li>
+                           <li>Scholarship worth 50 lakhs</li>
+                           <li>Other nation and international opportunities</li>
+                        </ul>
+                     </div>
+                  </article>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6">
+                  <article class="destination-item">
+                     <div class="destination-content">
+                        <div class="counter-no mb-3">
+                           <img src="/static/web/images/exam.png" alt="" style="height: 60px">
+                        </div>
+                        <h3>Exam Schedule</h3>
+                        <ul class="p-0">
+                           <li>Level 1: November 24 (for open registration)</li>
+                           <li>November 18 or 21 (for schools)</li>
+                           <li>Level 2: To be announced soon</li>
+                           <li>Level 3: To be announced soon</li>
+                        </ul>
+
+                     </div>
+                  </article>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+
+   <!-- WINNERS -->
+   <section class="home-section section_padding pb-0">
+      <div class="container">
+         <div class='embed-container'><iframe src='https://www.youtube.com/embed//{{settings.video_id}}' frameborder='0'
+               allowfullscreen></iframe></div>
+      </div>
+   </section>
+
+
+   <!-- WINNERS -->
+   <section class="home-section section_padding">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-8 offset-lg-2 text-center">
+               <div class="section-heading mb-3">
+                  <h2 class="section-title">Our Previous Year Winners</h2>
+               </div>
+            </div>
+         </div>
+         <div class="section-section section-slider">
+            {% for winner in winners %}
+            <div class="section-item">
+               <div class="section-content">
+                  <img src="{{winner.image.url}}" alt="">
+               </div>
+            </div>
+            {% endfor %}
+         </div>
+      </div>
+   </section>
+
+   <!-- CTA -->
+   <section class="home-callback bg-img-fullcallback" style="background-image: url(/static/web/images/cta.jpg);">
+      <div class="overlay"></div>
+      <div class="container">
+         <div class="row pb-5">
+            <div class="col-lg-8 offset-lg-2 text-center">
+               <div class="callback-content">
+                  <h2 class="section-title">REGISTER FOR INTERVAL TALENT BOOST EXAM NOW</h2>
+                  <p>
+                     This is your moment to shine and make a mark! Don't miss out on this incredible opportunity
+                     to showcase your talent and secure financial rewards and scholarships for your education.
+                  </p>
+                  <div class="callback-btn">
+                     <button data-bs-toggle="modal" data-bs-target="#studentBackdrop" class="round-btn">REGISTER
+                        NOW</button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!-- STEPS -->
+   <div class="home-counter">
+      <div class="container">
+         <div class="negative_margin">
+
+         </div>
+         <div class="counter-wrap">
+            <div class="fw-bold px-4 text-center w-100 fz20">
+               <p>REGISTRATION STEPS</p>
+            </div>
+            <div class="counter-item">
+               <span class="counter-no">
+                  <img src="/static/web/images/touch.png" alt="" style="height: 60px">
+               </span>
+               <span class="counter-desc">
+                  click on <strong>Register Now</strong>
+               </span>
+            </div>
+            <div class="counter-item">
+               <span class="counter-no">
+                  <img src="/static/web/images/form.png" alt="" style="height: 60px">
+               </span>
+               <span class="counter-desc">
+                  Enter your <strong>details</strong>
+               </span>
+            </div>
+            <div class="counter-item">
+               <span class="counter-no">
+                  <img src="/static/web/images/payment.png" alt="" style="height: 60px">
+               </span>
+               <span class="counter-desc">
+                  Make the <strong>Payment</strong>
+               </span>
+            </div>
+            <div class="counter-item">
+               <span class="counter-no">
+                  <img src="/static/web/images/submit.png" alt="" style="height: 60px">
+               </span>
+               <span class="counter-desc">
+                  Registration <strong>Completed</strong>
+               </span>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <!-- TEST PATTERN -->
+   <section class="home-blog section_padding">
+      <div class="container">
+         <div class="mb-4">
+            <div class="heading-group">
+               <h2 class="section-title">TEST PATTERN</h2>
+            </div>
+         </div>
+         <div class="blog-section">
+            <div class="row gx-4">
+               <div class="col-lg-4 mb-3">
+                  <article class="post">
+                     <div class="post-content">
+                        <div class="cat-meta">LEVEL 1</div>
+                        <ul class="m-0 fz13">
+                           <li>Academic - 40%</li>
+                           <li>Non-Academic - 60% <br> (GK, Current Affairs, Logical Reasoning)</li>
+                           <li>Total Marks - 80</li>
+                        </ul>
+                     </div>
+                  </article>
+               </div>
+               <div class="col-lg-4 mb-3">
+                  <article class="post">
+                     <div class="post-content">
+                        <div class="cat-meta">LEVEL 2</div>
+                        <ul class="m-0 fz13">
+                           <li>Non-Academic - 100% <br> (GK, Current Affairs, Logical Reasoning)</li>
+                           <li>Total Marks - 120</li>
+                        </ul>
+
+                     </div>
+                  </article>
+               </div>
+               <div class="col-lg-4 mb-3">
+                  <article class="post">
+                     <div class="post-content">
+                        <div class="cat-meta">LEVEL 3</div>
+                        <h4 class="mb-1">Grand finale</h4>
+                        <h3>Live Quiz Programme</h3>
+                     </div>
+                  </article>
+               </div>
+
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!-- SOCIAL LINKS -->
+   <div class="content-search-from section_padding" style="background-color: #FDF4FF;">
+      <div class="container text-center">
+         <h2 class="mb-5">Refer for Classes and Details</h2>
+         <div class="row justify-content-center">
+            <div class="col-lg-3 col-6">
+               <div class="icon-box bg-color-box">
+                  <a href="{{settings.youtube_url}}">
+                     <div class="box-icon">
+                        <img src="/static/web/images/youtube.png" alt="" style=width:60px;height:60px;>
+                     </div>
+                  </a>
+               </div>
+            </div>
+            <div class="col-lg-3 col-6">
+               <div class="icon-box bg-color-box">
+                  <a href="{{settings.instagram_url}}">
+                     <div class="box-icon">
+                        <img src="/static/web/images/instagram.png" alt="" style=width:60px;height:60px;>
+                     </div>
+                  </a>
+               </div>
+            </div>
+            <div class="col-lg-3 col-6">
+               <div class="icon-box bg-color-box">
+                  <a href="{{settings.whatsapp_url}}">
+                     <div class="box-icon">
+                        <img src="/static/web/images/whatsapp.png" alt="" style=width:60px;height:60px;>
+                     </div>
+                  </a>
+               </div>
+            </div>
+            <div class="col-lg-3 col-6">
+               <div class="icon-box bg-color-box">
+                  <a href="{{settings.website_url}}">
+                     <div class="box-icon">
+                        <img src="/static/web/images/web.png" alt="" style=width:60px;height:60px;>
+                     </div>
+                  </a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+
+   <!-- NEWS & EVENTS -->
+   <section class="section_padding">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-8 offset-lg-2 text-center">
+               <div class="section-heading mb-3">
+                  <h2 class="section-title">NEWS & EVENTS</h2>
+               </div>
+            </div>
+         </div>
+         <div class="section-section section-slider">
+            {% for news in newses %}
+            <div class="section-item">
+               <div class="section-content mb-2 shadow">
+                  <img src="{{news.image.url}}" alt="" style="aspect-ratio:1;">
+               </div>
+            </div>
+            {% endfor %}
+         </div>
+      </div>
+   </section>
+
+
+   <!-- ACHIEVEMENTS -->
+   <section class="home-callback bg-color-callback primary-bg section_padding">
+      <div class="container">
+         <div class="row mb-4">
+            <div class="col-lg-8 offset-lg-2 text-center">
+               <div class="section-heading mb-3">
+                  <h2 class="section-title">Our Achievements</h2>
+               </div>
+            </div>
+         </div>
+         <div class="row align-items-center">
+            {% for achievement in achievements %}
+            <div class="col-md-3 col-6 mb-3">
+               <div class="card">
+                  <img src="{{achievement.image.url}}" alt="" style="height:120px;object-fit:contain">
+               </div>
+            </div>
+            {% endfor %}
+         </div>
+      </div>
+   </section>
+
+   <!-- FEATURED -->
+   <section class="home-section section_padding">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-8 offset-lg-2 text-center">
+               <div class="section-heading mb-3">
+                  <h2 class="section-title">We are Featured on</h2>
+               </div>
+            </div>
+         </div>
+         <div class="section-section section-slider">
+            {% for feature in features %}
+            <div class="section-item">
+               <div class="section-content">
+                  <img src="{{feature.image.url}}" alt=""
+                     style="height:300px;width:100%;object-fit:contain;object-position:center;">
+               </div>
+            </div>
+            {% endfor %}
+         </div>
+      </div>
+   </section>
+
+   <!-- SCHOOL CTA -->
+   <section class="home-callback bg-color-callback primary-bg section_padding">
+      <div class="container">
+         <div class="row align-items-center">
+            <div class="col-md-8 mb-3">
+               <h5 class="sub-title">Enroll Your School for the Interval Talent Boost Exam Today!</h5>
+               <h2 class="section-title">Empower Your Students with Opportunities <br> to Excel and Win Big</h2>
+               <p>
+                  Is your school ready to inspire and empower its students? Join the Interval Talent Boost Exam
+                  and provide your students with a platform to showcase their talents and achieve greatness.
+               </p>
+            </div>
+            <div class="col-md-4 text-md-end">
+               <a href="{% url 'web:school_registration' %}" class="bg-white outline-btn text-primary school_btn">Enroll
+                  Your School Now !</a>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!-- FAQ -->
+   <div class="faq-page-section section_padding">
+      <div class="faq-page-container">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-8 offset-lg-2 text-sm-center">
+                  <div class="section-heading">
+                     <h2 class="section-title">Frequently Asked Questions</h2>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-12">
+                  <div class="faq-content-wrap">
+                     <div id="accordion-tab-two" class="accordion-content" role="tablist">
+                        {% for faq in faqs %}
+                        <div id="accordion-{{faq.pk}}"
+                           class="card tab-pane {% if forloop.first %}fade show active{% endif %}" role="tabpanel"
+                           aria-labelledby="accordion-{{faq.pk}}">
+                           <div class="card-header" role="tab" id="qus-{{faq.pk}}">
+                              <h5 class="mb-0">
+                                 <a class="" data-bs-toggle="collapse" href="#collapse-{{faq.pk}}"
+                                    aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}"
+                                    aria-controls="collapse-{{faq.pk}}">
+                                    {{faq.question}}
+                                 </a>
+                              </h5>
+                           </div>
+                           <div id="collapse-{{faq.pk}}" class="collapse {% if forloop.first %}show{% endif %}"
+                              data-bs-parent="#accordion-tab-two" role="tabpanel" aria-labelledby="qus-{{faq.pk}}">
+                              <div class="card-body">
+                                 {{faq.answer}}
+                              </div>
+                           </div>
+                        </div>
+                        {% endfor %}
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <!-- PROJECTS -->
+   <section class="home-callback bg-color-callback primary-bg section_padding">
+      <div class="container">
+         <div class="row mb-4">
+            <div class="col-lg-8 offset-lg-2 text-center">
+               <div class="section-heading mb-3">
+                  <h2 class="section-title">Our Upcoming Projects</h2>
+               </div>
+            </div>
+         </div>
+         <div class="row align-items-center justify-content-center">
+            {% for project in projects %}
+            <div class="col-md-3 col-6 mb-3">
+               <div class="thumb text-center mb-2 mx-auto">
+                  <img src="{{project.image.url}}" alt="">
+                  <h4 class="mb-0">{{project.title}}</h4>
+               </div>
+            </div>
+            {% endfor %}
+         </div>
+      </div>
+   </section>
+
+</main>
+
+{% include 'web/partials/_studentBackdrop.html' %}
+
+{% endblock content %}
+
+
+{% block scripts %}
+<script>
+   // Define the input fields and country code inputs
+   const phoneInput = document.querySelector("#id_contact_number");
+   const whatsappInput = document.querySelector("#id_whatsapp_number");
+   const selectedPhoneCountryCodeInput = document.querySelector("#id_selected_contact_number_country_code");
+   const selectedWhatsappCountryCodeInput = document.querySelector("#id_selected_whatsapp_country_code");
+
+   // Function to initialize the international phone input
+   const initIntlTelInput = (input, countryCodeInput) => {
+      const iti = window.intlTelInput(input, {
+         separateDialCode: true,
+         preferredCountries: ["in", "ae", "qa", "sa", "bh", "kw"],
+         utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js",
+      });
+
+      // Function to handle changes in the selected country
+      const handleChange = () => {
+         const countryCode = iti.getSelectedCountryData().dialCode;
+         countryCodeInput.value = countryCode;
+      };
+
+      // Add an event listener for country change
+      input.addEventListener("countrychange", handleChange);
+
+      // Initial update of the country code
+      handleChange();
+   };
+
+   // Initialize the international phone inputs
+   initIntlTelInput(phoneInput, selectedPhoneCountryCodeInput);
+   initIntlTelInput(whatsappInput, selectedWhatsappCountryCodeInput);
+
+   $("#id_selected_contact_number_country_code").closest(".col-md-6").hide();
+   $("#id_selected_whatsapp_country_code").closest(".col-md-6").hide();
+
+</script>
+<script>
+   // accept only numbers in #id_whatsapp_number
+   document.getElementById("id_whatsapp_number").addEventListener("input", function (e) {
+      this.value = this.value.replace(/[^0-9]/g, '');
+   });
+   // accept only numbers in #id_contact_number
+   document.getElementById("id_contact_number").addEventListener("input", function (e) {
+      this.value = this.value.replace(/[^0-9]/g, '');
+   });
+</script>
+{% endblock %}

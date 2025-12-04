@@ -1,0 +1,35 @@
+<!-- Modal -->
+<div class="modal fade" id="studentBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="studentBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="studentBackdropLabel">REGISTER NOW</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="{% url 'web:student_application' %}" method="post" class="">
+                {% csrf_token %}
+
+                <div class="row">
+                    {% for field in registration_form %}
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            {{ field.errors }}
+                            {{ field.label_tag }} {{ field }}
+                            {% if field.help_text %}
+                                <p class="help">{{ field.help_text|safe }}</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <div class="col-md-12">
+                        <div class="form-group pt-4">
+                            <button type="submit" class="round-btn px-5">Register</button>
+                        </div>
+                    </div>
+                </div>
+                <form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,128 @@
+<header class="edu-header header-style-1 header-fullwidth no-topbar">
+    <div id="edu-sticky-placeholder"></div>
+    <div class="header-mainmenu">
+        <div class="container-fluid">
+            <div class="header-navbar">
+                <div class="header-brand">
+                    <div class="logo">
+                        <a href="/" title="Homepage">
+                            <img class="logo-light" src="/static/web/images/logo/interval_logo.png" alt="Interval Education Logo" width="166" height="40" fetchpriority="high">
+                            <img class="logo-dark" src="/static/web/images/logo/logo-white.png" alt="Interval Education Logo" width="166" height="40" loading="lazy">
+                        </a>
+                    </div>
+
+                </div>
+                <div class="header-mainnav">
+                    <nav class="mainmenu-nav">
+                        <ul class="mainmenu">
+                            <li><a href="{% url 'web:index' %}">Home</a></li>
+                            <li class="has-droupdown">
+                                <a href="javascript:void(0);" role="button" onclick="return false;">Academic Courses</a>
+                                <ul class="submenu">
+                                    {% for program in ac_programs %}
+                                    <li class="nav-item"><a class="nav-link" href="{{program.get_absolute_url}}">{{program.title}}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </li>
+                            <li><a href="{% url 'web:nonacademics' %}">Non Academic Courses</a></li>
+                            <li><a target="_blank" href="https://tutor.intervaledu.com/">Become a Tutor</a></li>
+                            <li><a href="{% url 'web:clubs' %}">Join a Club </a></li>
+                            <li class="has-droupdown">
+                                <a href="javascript:void(0);" role="button" onclick="return false;">More</a>
+                                <ul class="submenu">
+                                    <li class="nav-item"><a class="nav-link" href="{% url 'web:about' %}">About Us</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{% url 'web:tools' %}">Calculators</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{% url 'web:testimonials' %}">Testimonials</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{% url 'web:blogs' %}">Blogs</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{% url 'web:news' %}">News & Events</a></li>
+                                    <li class="nav-item"><a class="nav-link" target="_blank" href="https://teaminterval.zohorecruit.in/jobs/Careers">Careers</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{% url 'web:countries' %}">Countries</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{% url 'web:boards' %}">Boards</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{% url 'web:smartest_search' %}">Mock Test </a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{% url 'web:downloads' %}">Downloads</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{% url 'web:contact' %}">Contact</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="header-right">
+                    <ul class="header-action">
+                        <li class="header-btn">
+                            <a href="javascript:void(0);" role="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="edu-btn btn-medium btn-gradient">Join <i class="icon-4"></i></a>
+                        </li>
+                        <li class="mobile-menu-bar d-block d-xl-none">
+                            <button class="hamberger-button" aria-label="hamberger">
+                                <i class="icon-54"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="popup-mobile-menu">
+        <div class="inner">
+            <div class="header-top">
+                <div class="logo">
+                    <a href="/" title="Homepage">
+                        <img class="logo-light" src="/static/web/images/logo/logo-dark.png" alt="Corporate Logo" width="186" height="45" loading="lazy">
+                        <img class="logo-dark" src="/static/web/images/logo/logo-white.png" alt="Corporate Logo" width="186" height="45" loading="lazy">
+                    </a>
+                </div>
+                <div class="close-menu">
+                    <button class="close-button">
+                        <i class="icon-73"></i>
+                    </button>
+                </div>
+            </div>
+            <ul class="mainmenu" style="overflow-y: auto;">
+
+                <li><a href="{% url 'web:index' %}">Home</a></li>
+
+                <li class="has-droupdown">
+                    <a href="javascript:void(0);" role="button" onclick="return false;">Academic Courses</a>
+                    <ul class="submenu">
+                        {% for program in ac_programs %}
+                        <li class="nav-item"><a class="nav-link" href="{{program.get_absolute_url}}">{{program.title}}</a></li>
+                        {% endfor %}
+                    </ul>
+                </li>
+
+                <li><a href="{% url 'web:nonacademics' %}">Non Academic Courses</a></li>
+                <li><a target="_blank" href="https://tutor.intervaledu.com/">Become a Tutor</a></li>
+                <li><a href="{% url 'web:clubs' %}">Join a Club </a></li>
+                <li><a href="{% url 'web:smartest_search' %}">Smartest </a></li>
+                <li><a href="{% url 'web:about' %}">About Us</a></li>
+                <li><a href="{% url 'web:tools' %}">Calculators</a></li>
+                <li><a href="{% url 'web:testimonials' %}">Testimonials</a></li>
+                <li><a href="{% url 'web:blogs' %}">Blogs</a></li>
+                <li><a href="{% url 'web:news' %}">News & Events</a></li>
+                <li><a target="_blank" href="https://teaminterval.zohorecruit.in/jobs/Careers">Careers</a></li>
+                <li><a href="{% url 'web:boards' %}">Boards</a></li>
+                <li><a href="{% url 'web:downloads' %}">Downloads</a></li>
+                <li><a href="{% url 'web:countries' %}">Countries</a></li>
+                <li><a href="{% url 'web:contact' %}">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Start Search Popup  -->
+    <div class="edu-search-popup">
+        <div class="content-wrap">
+            <div class="site-logo">
+                <img class="logo-light" src="/static/web/images/logo/logo-dark.png" alt="" style="height:50px;">
+                <img class="logo-dark" src="/static/web/images/logo/logo-white.png" alt="" style="height:50px;">
+            </div>
+            <div class="close-button">
+                <button aria-label="navclose" class="close-trigger"><i class="icon-73"></i></button>
+            </div>
+            <div class="inner">
+                <form class="search-form" action="#">
+                    <input type="text" class="edublink-search-popup-field" placeholder="Search Here...">
+                    <button class="submit-button" aria-label="submit"><i class="icon-2"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- End Search Popup  -->
+</header>

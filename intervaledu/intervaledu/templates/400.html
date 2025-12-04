@@ -1,0 +1,24 @@
+{% extends 'web/base.html' %}
+
+{% block content %}
+
+<section class="section-gap-equal error-page-area">
+    <div class="container">
+        <div class="edu-error">
+
+            <div class="p-relative">
+                <video autoplay muted loop playsinline class="" style="max-height:240px">
+                    <source src="/static/web/video/map.webm" type="video/webm">
+                </video>
+            </div>
+        
+            <div class="content">
+                <h2 class="title">Bad Request</h2>
+                <h4 class="subtitle">The request cannot be fulfilled due to bad syntax</h4>
+                <a href="/" class="edu-btn"><i class="icon-west"></i>Back to Homepage</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

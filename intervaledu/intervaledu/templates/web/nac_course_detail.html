@@ -1,0 +1,251 @@
+{% extends 'web/base.html' %}
+
+
+{% block meta %}
+<!-- Primary Meta Tags -->
+<title>{{course.meta_title}}</title>
+<meta name="title" content="{{course.meta_title}}" />
+<meta name="description" content="{{course.meta_description}}" />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{og_url}}" />
+<meta property="og:title" content="{{course.meta_title}}" />
+<meta property="og:description" content="{{course.meta_description}}" />
+<meta property="og:image" content="https://intervaledu.com/static/web/images/main/preview.png" />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content="{{og_url}}" />
+<meta property="twitter:title" content="{{course.meta_title}}" />
+<meta property="twitter:description" content="{{course.meta_description}}" />
+<meta property="twitter:image" content="https://intervaledu.com/static/web/images/main/preview.png" />
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="edu-breadcrumb-area breadcrumb-style-3">
+    <div class="container">
+        <div class="breadcrumb-inner">
+            <div class="page-title">
+                <h1 class="title">{{course.title}}</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<section class="edu-section-gap course-details-area pt-0">
+    <div class="container">
+        <div class="row row--30">
+            <div class="col-lg-8">
+                <div class="course-details-content course-details-2">
+
+                    <div class="course-overview mb--70">
+                        <blockquote>
+                            {{course.description|default:""}}
+                        </blockquote>
+                    </div>
+
+                    {% if course.content %}
+                    <div class="course-overview mb--60">
+                        <h2 class="h3 course_title">Overview</h2>
+                        <div class="html_content">
+                            {{course.content|default:""|safe}}
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {% if course.show_learning_overview %}
+                    <div class="course-overview mb--60">
+                        <h2 class="h3 course_title">Learning Overview</h2>
+                        <div class="p-5" style="background: #a125c217;border-radius: 20px;">
+                            <div class="html_content">
+                                {{course.learning_overview|default:""|safe}}
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {% if course.available_times %}
+                    <div class="course-overview mb--60">
+                        <h2 class="h3 course_title">Available times</h2>
+                        <div class="html_content">
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Day</th>
+                                            <th>Time</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for item in course.available_times %}
+                                        <tr>
+                                            <td>{{item.day}}</td>
+                                            <td>{{item.start_time}} - {{item.end_time}}</td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>              
+            </div>
+
+            <div class="col-lg-4">
+                <div class="course-sidebar-3">
+                    <div class="edu-course-widget widget-course-summery border">
+                        <div class="inner">
+                            <div class="thumbnail">
+                                <img src="{{course.image.url}}" alt="Courses">
+                                {% if course.preview_video_id %}
+                                <a href="https://www.youtube.com/watch?v={{course.preview_video_id}}" class="play-btn video-popup-activation"><i class="icon-18"></i></a>
+                                {% endif %}
+                            </div>
+                            <div class="content">
+                                <ul class="course-item">
+                                    {% if course.duration %}
+                                    <li>
+                                        <span class="label"><i class="icon-61"></i>Duration:</span>
+                                        <span class="value">{{course.duration}}</span>
+                                    </li>
+                                    {% endif %}
+                                    {% if course.lessons %}
+                                    <li>
+                                        <span class="label"><img class="svgInject" src="/static/web/images/svg-icons/books.svg" alt="book icon">Lessons:</span>
+                                        <span class="value">{{course.lessons}}</span>
+                                    </li>
+                                    {% endif %}
+                                    {% if course.language %}
+                                    <li>
+                                        <span class="label"><i class="icon-59"></i>Language:</span>
+                                        <span class="value">{{course.language}}</span>
+                                    </li>
+                                    {% endif %}
+                                    {% if course.is_certificate_included %}
+                                    <li>
+                                        <span class="label"><i class="icon-64"></i>Certificate:</span>
+                                        <span class="value">Yes</span>
+                                    </li>
+                                    {% endif %}
+                                    {% if course.course_fee %}
+                                    <li>
+                                        <span class="label"><i class="icon-60"></i>Fee:</span>
+                                        <span class="value">&#8377;{{course.course_fee}}</span>
+                                    </li>
+                                    {% endif %}
+                                </ul>
+                                
+                                <div class="read-more-btn mb-0">
+                                    <a href="{{course.get_form_url}}" class="edu-btn">Buy Now <i class="icon-4"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include 'web/partials/cta.html' %}
+
+
+<div class="fixed_cta d-block d-sm-none">
+    <a href="/courses/cooking/form/" class="edu-btn shadow-lg">Buy Now <i class="icon-4"></i></a>
+</div>
+
+{% endblock %}
+
+
+{% block gtm_scripts %}
+<script>
+    dataLayer.push({ ecommerce: null });
+    dataLayer.push({
+    event: "view_item",
+        ecommerce: {
+            currency: "INR",
+            value: {{course.course_fee}},
+            items : [
+                {
+                    item_id: "{{ course.id }}",
+                    item_name: "{{ course.title }}",
+                    item_category: "NonAcademicProgram",
+                    price: {{ course.course_fee }},
+                    quantity: 1
+                }
+            ]
+        }
+    })
+</script>
+{% endblock %}
+
+{% block popup_script %}{% endblock %}
+
+
+{% block stylesheet %}
+<style>
+    .fixed_cta {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 10;
+        width: 100%;
+        padding: 7px 15px;
+    }
+    .fixed_cta a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        font-weight: 600;
+        color: #fff;
+        background-color: #a125c2;
+        border-radius: 5px;
+        margin-top: 0;
+    }
+</style>
+{% endblock %}
+
+{% block progress %}
+{% endblock %}
+
+
+{% block scripts %}
+<script>
+    const ctas = {{ course.get_ctas|safe }};
+    ctas.forEach(cta => {
+        const div = document.createElement('div');
+        div.className = 'course-cta';
+
+        const a = document.createElement('a');
+        a.href = 'javascript:void(0);';
+        a.setAttribute('role', 'button');
+        a.setAttribute('data-bs-toggle', 'modal');
+        a.setAttribute('data-bs-target', '#staticBackdrop');
+
+        const img = document.createElement('img');
+        img.src = cta.image;
+        img.alt = cta.title;
+        img.style.width = '100%';
+        img.style.height = 'auto';
+
+        // Append image inside anchor
+        a.appendChild(img);
+        div.appendChild(a);
+
+        // Insert the div just after the element found via XPath
+        const xpath = cta.xpath;
+        const element = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+        if (element) {
+            element.parentNode.insertBefore(div, element.nextSibling);
+        }
+    });
+</script>
+{% endblock %}

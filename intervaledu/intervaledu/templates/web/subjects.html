@@ -1,0 +1,187 @@
+{% extends 'web/base.html' %}
+{% load static tags %}
+
+{% block meta %}
+    <!-- Primary Meta Tags -->
+    <title>{% get_value 'subjects_meta_title' %}</title>
+    <meta name="title" content="{% get_value 'subjects_meta_title' %}" />
+    <meta name="description" content="{% get_value 'subjects_meta_desc' %}" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{og_url}}" />
+    <meta property="og:title" content="{% get_value 'subjects_meta_title' %}" />
+    <meta property="og:description" content="{% get_value 'subjects_meta_desc' %}" />
+    <meta property="og:image" content="https://www.intervaledu.com/static/web/images/main/preview.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="{{og_url}}" />
+    <meta property="twitter:title" content="{% get_value 'subjects_meta_title' %}" />
+    <meta property="twitter:description" content="{% get_value 'subjects_meta_desc' %}" />
+    <meta property="twitter:image" content="https://www.intervaledu.com/static/web/images/main/preview.png" />
+{% endblock %}
+
+
+{% block content %}
+
+<div class="edu-breadcrumb-area">
+    <div class="container">
+        <div class="breadcrumb-inner">
+            <div class="page-title">
+                <h1 class="title">Subjects</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="edu-categorie-area categorie-area-2 edu-section-gap">
+    <div class="container">
+        <div class="row g-5">
+            {% for subject in subjects %}
+            <div class="col-lg-4 col-md-6 sal-animate" data-sal-delay="50" data-sal="slide-up" data-sal-duration="800">
+                <div class="categorie-grid categorie-style-2 color-primary-style edublink-svg-animate">
+                    <div class="icon me-2">
+                        <img src="{{subject.icon.url}}" alt="{{subject.subject}}" style="width:60px;height:60px;object-fit:contain;">
+                    </div>
+                    <div class="content">
+                        <a href="{{subject.get_absolute_url}}"><h5 class="title m-0">{{subject.subject}}</h5></a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+
+
+<section class="why-choose-area-3 edu-section-gap section_padding">
+    <div class="container">
+
+        <div class="row row--45 mb-5">
+            <div class="section-title-flex section-title" data-sal-delay="150" data-sal="slide-up"
+                data-sal-duration="800">
+                <div class="left-content">
+                    <h2 class="title">We Provide The <br> Best <span class="color-secondary">Online Tuition </span>
+                        services</h2>
+                    <span class="shape-line"><i class="icon-19"></i></span>
+                </div>
+                <div class="right-content">
+                    <p>No matter what class your child is currently studying right now, your child needs to have a personalized approach to dealing with their school life and studies. The Interval Learning Platform is one of the best online tuition.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-5">
+            <div class="col-lg-4" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                <div class="why-choose-box-2 features-box color-primary-style">
+                    <div class="icon">
+                        <i class="icon-45"></i>
+                    </div>
+                    <div class="content">
+                        <h4 class="title">High Quality Courses</h4>
+                        <p>Comprehensive and expertly designed courses that deliver deep, practical knowledge, ensuring
+                            students excel in their chosen subjects.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                <div class="why-choose-box-2 features-box color-secondary-style">
+                    <div class="icon">
+                        <i class="icon-46"></i>
+                    </div>
+                    <div class="content">
+                        <h4 class="title">Individualized online class</h4>
+                        <p>Personalized online lessons tailored to each student's unique learning style and pace,
+                            providing focused attention and customized support.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                <div class="why-choose-box-2 features-box color-extra08-style">
+                    <div class="icon">
+                        <i class="icon-47"></i>
+                    </div>
+                    <div class="content">
+                        <h4 class="title">Blended model of online tutoring</h4>
+                        <p>A flexible learning approach combining live online tutoring with self-paced digital
+                            resources, offering the best of both virtual and independent learning experiences.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!--=====================================-->
+<div class="edu-faq-area faq-style-1">
+    <div class="container">
+        <div class="row g-5 row--45">
+            <div class="col-lg-5">
+                <div class="edu-faq-gallery">
+                    <div class="row g-5">
+                        <video autoplay muted loop playsinline>
+                            <source src="/static/web/video/pencil.webm" type="video/webm">
+                        </video>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="edu-faq-content">
+                    <div class="section-title section-left" data-sal-delay="100" data-sal="slide-up"
+                        data-sal-duration="800">
+                        <h2 class="title">Over 10 Years in <span class="color-secondary">Distant <br>
+                                Skill</span> Development</h2>
+                        <span class="shape-line"><i class="icon-19"></i></span>
+                        <p>
+                            With more than a decade of expertise in providing remote learning opportunities,
+                            we have empowered individuals across the globe to unlock their potential. Our
+                            focus on distant skill development ensures that no matter where you are, you can
+                            access world-class education, personalized training, and the tools necessary to
+                            thrive in today’s fast-paced world
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="faq-accordion" id="faq-accordion" data-sal-delay="100" data-sal="slide-up"
+                    data-sal-duration="800">
+                    <div class="accordion">
+                        {% for faq in faqs %}
+                        <div class="accordion-item">
+                            <h5 class="accordion-header">
+                                <button class="accordion-button {% if not forloop.first %}collapsed{% endif %}"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{faq.pk}}"
+                                    aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}">
+                                    {{faq.question}}
+                                </button>
+                            </h5>
+                            <div id="collapse{{faq.pk}}"
+                                class="accordion-collapse collapse {% if forloop.first %}show{% endif %}"
+                                data-bs-parent="#faq-accordion">
+                                <div class="accordion-body">
+                                    <p>{{faq.answer}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+                    </div>
+                </div>
+                <ul class="shape-group">
+                    <li class="shape-bg sal-animate" data-sal-delay="500" data-sal="fade" data-sal-duration="200">
+                        <img src="/static/web/images/main/bg-image-36.svg" alt="Shape Images">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include 'web/partials/cta.html' %}
+
+{% endblock %}
+

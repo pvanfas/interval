@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <head>
+        {% load static %}
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        
+        <!-- Primary Meta Tags -->
+        <title>ISOFS - Interval School of Future Skills</title>
+        <meta name="title" content="ISOFS - Interval School of Future Skills" />
+        <meta name="description" content="Interval School of Future Skills is a trailblazer in the education landscape, dedicated to empowering learners and professionals across the globe with industry-relevant skills and transformative career opportunities. Based in the vibrant tech hub of Bangalore, we are committed to bridging the gap between academic excellence and real-world application." />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://isofs.ac/" />
+        <meta property="og:title" content="ISOFS - Interval School of Future Skills" />
+        <meta property="og:description" content="Interval School of Future Skills is a trailblazer in the education landscape, dedicated to empowering learners and professionals across the globe with industry-relevant skills and transformative career opportunities. Based in the vibrant tech hub of Bangalore, we are committed to bridging the gap between academic excellence and real-world application." />
+        <meta property="og:image" content="https://isofs.ac/web/images/preview.png" />
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://isofs.ac/" />
+        <meta property="twitter:title" content="ISOFS - Interval School of Future Skills" />
+        <meta property="twitter:description" content="Interval School of Future Skills is a trailblazer in the education landscape, dedicated to empowering learners and professionals across the globe with industry-relevant skills and transformative career opportunities. Based in the vibrant tech hub of Bangalore, we are committed to bridging the gap between academic excellence and real-world application." />
+        <meta property="twitter:image" content="https://isofs.ac/web/images/preview.png" />
+
+        <link rel="shortcut icon" href="/static/web/images/favicon.svg" />
+        <link rel="apple-touch-icon" sizes="57x57" href="/static/web/images/favicon/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/static/web/images/favicon/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/static/web/images/favicon/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/static/web/images/favicon/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/static/web/images/favicon/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/static/web/images/favicon/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/static/web/images/favicon/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/static/web/images/favicon/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/static/web/images/favicon/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="/static/web/images/favicon/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/static/web/images/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="/static/web/images/favicon/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/static/web/images/favicon/favicon-16x16.png">
+        <link rel="manifest" href="/static/web/images/favicon/manifest.json">
+        <meta name="msapplication-TileColor" content="#FFFAF3">
+        <meta name="msapplication-TileImage" content="/static/web/images/favicon/ms-icon-144x144.png">
+        <meta name="theme-color" content="#FFFAF3">
+
+        <link rel="stylesheet" href="/static/web/plugins/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="/static/web/plugins/css/animate.min.css" />
+        <link rel="stylesheet" href="/static/web/plugins/css/owl.carousel.min.css" />
+        <link rel="stylesheet" href="/static/web/plugins/css/swiper-bundle.min.css" />
+        <link rel="stylesheet" href="/static/web/plugins/css/maginific-popup.min.css" />
+        <link rel="stylesheet" href="/static/web/plugins/css/nice-select.min.css" />
+        <link rel="stylesheet" href="/static/web/plugins/css/icofont.css" />
+        <link rel="stylesheet" href="/static/web/plugins/css/uicons.css" />
+        <link rel="stylesheet" href="/static/web/css/style.css" />
+        <link rel="stylesheet" href="/static/web/css/custom.css?v=1.2" />
+        {% block extra_css %} {% endblock %}
+    </head>
+
+    <body class="element-wrapper">
+
+        <!-- Custom Cursor Start -->
+        <div id="ed-mouse">
+            <div id="cursor-ball"></div>
+        </div>
+
+        {% include 'web/includes/header.html' %}
+
+        <div id="smooth-wrapper">
+            <div id="smooth-content">                  
+
+                {% block content %}
+                
+                {% endblock %}
+
+                <div class="footer-bg position-relative">
+
+                    <div class="footer-bg__img">
+                        <img src="/static/web/images/main/footer-bg.png" alt="footer-bg-img" />
+                    </div>
+
+                    {% block cta %}
+                    {% include 'web/includes/cta.html' %}
+                    {% endblock %}
+
+                    {% block footer %}
+                    {% include 'web/includes/footer.html' %}
+                    {% endblock %}
+
+
+                </div>
+            </div>
+        </div>
+
+        {% include 'web/includes/offcanvas.html' %}
+        {% include 'web/includes/login_modal.html' %}
+
+
+        <script src="/static/web/plugins/js/jquery.min.js"></script>
+        <script src="/static/web/plugins/js/jquery-migrate.js"></script>
+        <script src="/static/web/plugins/js/bootstrap.min.js"></script>
+        <script src="/static/web/plugins/js/gsap/gsap.js"></script>
+        <script src="/static/web/plugins/js/gsap/gsap-scroll-to-plugin.js"></script>
+        <script src="/static/web/plugins/js/gsap/gsap-scroll-smoother.js"></script>
+        <script src="/static/web/plugins/js/gsap/gsap-scroll-trigger.js"></script>
+        <script src="/static/web/plugins/js/gsap/gsap-split-text.js"></script>
+        <script src="/static/web/plugins/js/wow.min.js"></script>
+        <script src="/static/web/plugins/js/owl.carousel.min.js"></script>
+        <script src="/static/web/plugins/js/swiper-bundle.min.js"></script>
+        <script src="/static/web/plugins/js/magnific-popup.min.js"></script>
+        <script src="/static/web/plugins/js/jquery.counterup.min.js"></script>
+        <script src="/static/web/plugins/js/waypoints.min.js"></script>
+        <script src="/static/web/plugins/js/nice-select.min.js"></script>
+        <script src="/static/web/plugins/js/active.js"></script>
+    </body>
+</html>

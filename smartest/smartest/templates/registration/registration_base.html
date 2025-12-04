@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static crispy_forms_tags i18n %}
+{% block body %}
+
+<div class="page responsive-log"
+	style="background-image: url('/static/app/config/home.png');background-size: cover;background-position: left bottom;">
+	<div class="page-single">
+		<div class="container">
+			<div class="row">
+				<div class="col mx-auto">
+					<div class="row justify-content-center">
+						<div class="col-md-8 col-lg-6 col-xl-4 col-xxl-4">
+							<div class="card my-5 p-5"
+								style="background-color: rgb(255 255 255 / 90%);border:1px solid rgba(0, 0, 0, 0.125);">
+								<div class="p-4 text-center">
+									<img src="{{app_settings.logo}}" class="d-block mb-3" alt=""
+										style="width:100%;height:46px;object-fit:contain">
+								</div>
+								{% block content %}
+
+								{% endblock content %}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock body %}

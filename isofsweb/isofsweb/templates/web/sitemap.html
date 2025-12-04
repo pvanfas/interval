@@ -1,0 +1,35 @@
+{% extends 'web/base.html' %}
+
+{% block content %}
+<main>
+    <section class="ed-course__details">
+        <div class="container ed-container html_content pt-5">
+            <div class="row">
+                <div class="col-md-3">
+                    <h4>Main Pages</h4>
+                    <ul>
+                        <li><a href="{% url 'web:index' %}">Homepage</a></li>
+                        <li><a href="{% url 'web:admissions' %}">Admissions</a></li>
+                        <li><a href="{% url 'web:events' %}">Events</a></li>
+                        <li><a href="{% url 'web:about_us' %}">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h4>Policy Pages</h4>
+                    <ul>
+                        <li><a href="{% url 'web:pricing_policy' %}">Pricing Policy</a></li>
+                        <li><a href="{% url 'web:shipping_policy' %}">Shipping Policy</a></li>
+                        <li><a href="{% url 'web:terms_and_conditions' %}">Terms and Conditions</a></li>
+                        <li><a href="{% url 'web:privacy_policy' %}">Privacy Policy</a></li>
+                        <li><a href="{% url 'web:cancellation_refund_policy' %}">Cancellation and Refund Policy</a></li>
+                        <li><a href="{% url 'web:payment_policy' %}">Payment Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}
+
+{% block cta %} {% endblock %}
+{% block footer %} {% endblock %}

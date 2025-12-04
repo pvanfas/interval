@@ -1,0 +1,77 @@
+{% extends 'app/base.html' %}
+{% load static i18n crispy_forms_tags django_tables2 humanize %}
+{% block title %}Home: {{app_settings.site_title}}{% endblock %}
+
+{% block content %}
+
+<div class="side-app main-container">
+
+    <div class="page-header d-xl-flex d-block">
+        <div class="page-leftheader">
+            <div class="page-title">Complete Import</div>
+        </div>
+        <div class="page-rightheader ms-md-auto">
+            <form action="" method="post">
+                {% csrf_token %}
+                <div class="btn-list">
+                    <button type="submit" class="btn btn-primary" id="confirmButton">Confirm Import</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    {% if error %}
+    <div class="row">
+        <div class="col-12">
+            <div class="alert alert-danger" role="alert">
+                {{error}}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div id="container" class="table-responsive"></div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    // Function to convert JSON data to HTML table
+    function convert() {
+        let jsonData = {{ item.data| safe }};
+    let container = $("#container");
+    let table = $("<table class='table key-buttons border-bottom table-hover'>");
+    let cols = Object.keys(jsonData[0]);
+    let thead = $("<thead>");
+    let headerRow = $("<tr>");
+    $.each(cols, function (i, colName) {
+        let th = $("<th>");
+        th.text(colName);
+        headerRow.append(th);
+    });
+    thead.append(headerRow);
+    table.append(thead);
+    let tbody = $("<tbody>");
+    $.each(jsonData, function (i, item) {
+        let row = $("<tr>");
+        let values = Object.values(item);
+        $.each(values, function (i, value) {
+            let td = $("<td>");
+            td.text(value);
+            row.append(td);
+        });
+        tbody.append(row);
+    });
+    table.append(tbody);
+    container.append(table);
+    }
+    convert(); 
+</script>
+
+{% endblock content %}

@@ -1,0 +1,324 @@
+{% extends 'web/base.html' %}
+{% load static tags %}
+
+{% block meta %}
+    <!-- Primary Meta Tags -->
+    <title>{% get_value 'about_meta_title' %}</title>
+    <meta name="title" content="{% get_value 'about_meta_title' %}" />
+    <meta name="description" content="{% get_value 'about_meta_desc' %}" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+    <meta property="og:title" content="{% get_value 'about_meta_title' %}" />
+    <meta property="og:description" content="{% get_value 'about_meta_desc' %}" />
+    <meta property="og:image" content="https://www.intervaledu.com/static/web/images/main/preview.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="{{og_url}}" />
+    <meta property="twitter:title" content="{% get_value 'about_meta_title' %}" />
+    <meta property="twitter:description" content="{% get_value 'about_meta_desc' %}" />
+    <meta property="twitter:image" content="https://www.intervaledu.com/static/web/images/main/preview.png" />
+{% endblock %}
+
+
+{% block content %}
+
+<div class="edu-breadcrumb-area breadcrumb-style-2 bg-image bg-image--19"
+    style="background-image: url('/static/web/images/main/team.webp');">
+    <div class="container">
+        <div class="breadcrumb-inner">
+            <div class="page-title">
+                <h1 class="title">Journey Of Our Growth</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="edu-team-area team-area-2 edu-section-gap">
+    <div class="container">
+        <div class="row g-5">
+            <!-- Start Instructor Grid  -->
+            <div class="col-lg-4 col-md-6 sal-animate" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                <div class="edu-team-grid team-style-2">
+                    <div class="inner">
+                        <div class="thumbnail-wrap">
+                            <div class="thumbnail">
+                                <video autoplay muted loop playsinline class="shadow">
+                                    <source src="/static/web/video/vision.webm" type="video/webm">
+                                </video>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <h5 class="title">Vision</h5>
+                            <p>A world where education adapts to each learners unique needs and aspirations</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Instructor Grid  -->
+            <!-- Start Instructor Grid  -->
+            <div class="col-lg-4 col-md-6 sal-animate" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                <div class="edu-team-grid team-style-2">
+                    <div class="inner">
+                        <div class="thumbnail-wrap">
+                            <div class="thumbnail">
+                                <div class="thumbnail">
+                                    <video autoplay muted loop playsinline class="shadow">
+                                        <source src="/static/web/video/mission.webm" type="video/webm">
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <h5 class="title">Mission</h5>
+                            <p>
+                                Making Quality Education Accessible, Personalised and Effective, Nurturing a Lifelong
+                                Passion for Learning and Fostering Versatile Skills.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Instructor Grid  -->
+            <!-- Start Instructor Grid  -->
+            <div class="col-lg-4 col-md-6 sal-animate" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                <div class="edu-team-grid team-style-2">
+                    <div class="inner">
+                        <div class="thumbnail-wrap">
+                            <div class="thumbnail">
+                                <div class="thumbnail">
+                                    <video autoplay muted loop playsinline class="shadow">
+                                        <source src="/static/web/video/values.webm" type="video/webm">
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <h5 class="title">Values</h5>
+                            <p>Empathy, Empowerment, Explore</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Instructor Grid  -->
+        </div>
+    </div>
+</div>
+
+
+<div class="edu-section-gap edu-about-area about-style-4 pt-0">
+    <div class="container">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-12">
+                <div class="about-image-gallery">
+                    <div class="main-img-1 sal-animate" data-sal-delay="50" data-sal="slide-right"
+                        data-sal-duration="800">
+                        <img src="/static/web/images/main/about.webp" alt="About Image">
+                    </div>
+                    <ul class="shape-group">
+                        <li class="shape-2 scene sal-animate" data-sal-delay="500" data-sal="fade"
+                            data-sal-duration="200"
+                            style="transform: translate3d(0px, 0px, 0px) rotate(0.0001deg); transform-style: preserve-3d; backface-visibility: hidden; pointer-events: none;">
+                            <img data-depth="-2" src="/static/web/images/about/shape-39.png" alt="Shape"
+                                style="transform: translate3d(-3.7px, 37.2px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: relative; display: block; left: 0px; top: 0px;">
+                        </li>
+                        <li class="shape-3 scene sal-animate" data-sal-delay="500" data-sal="fade"
+                            data-sal-duration="200"
+                            style="transform: translate3d(0px, 0px, 0px) rotate(0.0001deg); transform-style: preserve-3d; backface-visibility: hidden; pointer-events: none;">
+                            <img data-depth="2" src="/static/web/images/about/shape-07.png" alt="Shape"
+                                style="transform: translate3d(2.2px, -36.8px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: relative; display: block; left: 0px; top: 0px;">
+                        </li>
+                        <li class="shape-4 sal-animate" data-sal-delay="500" data-sal="fade" data-sal-duration="200">
+                            <span></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-12 sal-animate" data-sal-delay="50" data-sal="slide-up" data-sal-duration="800">
+                <div class="section-title section-left mb-0">
+                    <h2 class="title">Interval is a little bit <span class="color-secondary">different!</span></h2>
+                    <span class="shape-line"><i class="icon-19"></i></span>
+                    <p>
+                        Interval is completely personalized in a way that it doesn't follow a one time structure.
+                        Interval is completely dependent on the need provided by the students. at interval it's
+                        learners journey to realizing what they are good at and what they do best and with team of
+                        experts who ensure this on a broader level you can see a change that truly counts.
+                    </p>
+                    <p>
+                        With over 5000+ active students and 30,000 plus overall enrollments we are growing every day
+                        with a renewed sense of purpose as we find ourselves helping and aiding students who are
+                        brilliant learners if they are given the right instructions. the most brilliant part about
+                        our teacher community and our expertise faculty is that we had dedicated professional to
+                        handle a task and impart necessary upgrades.
+                    </p>
+                    <p>
+                        At Interval we embark on superiority by admitting to being true to our mission and vision to
+                        give education that stays at it's unhinged best. with over 5000 tutors and 5+ courses
+                        targeting academics from every age group and grade and helping students build prowess from
+                        where they felt themselves to have let off.
+                    </p>
+                    <p>
+                        Personalized learning is bound to become the level best upgrade as interval notoriously
+                        pursues personalization that never compromises on education.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% comment %}
+<div class="edu-blog-area about_page blog-area-3 edu-section-gap bgcp border-bottom">
+    <div class="container" data-sal-delay="50" data-sal="slide-up" data-sal-duration="800">
+        <div class="row edu-blog blog-style-2 first-large-blog mb-0">
+            
+            <div class="col-md-9 order-2 order-md-1">
+                <div class="content ps-0">
+                    <h4 class="title">Our MD's Message</h4>
+                    <p>
+                        Education is more than just a process; it’s a journey. Yet too often, it feels like that journey is one size fits all, leaving many students struggling to keep pace with a system that doesn’t truly cater to their needs.
+                    </p>
+                    <p>
+                        At Interval Learning, we’re committed to changing that. Our platform isn’t just about teaching; it’s about understanding each learner’s unique journey and creating an environment where they can thrive. We’re not here to fit students into an outdated mold. We’re here to break that mold and give them a space to grow on their own terms.
+                    </p>
+                    <p>
+                        We recognize that every learner has different needs, and that’s why we’ve built a system that adapts to them. Interval Learning is not just another education platform. It’s a place where learning is personalized, engaging, and impactful from start to finish.
+                    </p>
+                    <p>
+                        As we continue to evolve, we remain focused on one simple goal: to empower students by putting their needs first and creating an educational experience that adapts to them.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-3 order-1 order-md-2">
+                <div class="thumbnail">
+                    <img src="/static/web/images/main/fadhil.jpg" alt="Blog Images" class="ceo_image shadow">
+                </div>
+                <h5 class="mb-0">Fadhil Mohammed MP</h5>
+                <p>MD, Interval Learning Platform</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endcomment %}
+
+
+<div class="edu-blog-area about_page blog-area-3 edu-section-gap bgcp">
+    <div class="container" data-sal-delay="50" data-sal="slide-up" data-sal-duration="800">
+        <div class="row edu-blog blog-style-2 first-large-blog mb-0">
+            <div class="col-md-3">
+                <div class="thumbnail">
+                    <img src="/static/web/images/main/najim.jpeg" alt="Blog Images" class="ceo_image shadow">
+                </div>
+                <h5 class="mb-0">Najim Illyas</h5>
+                <p>CEO, Interval Learning</p>
+            </div>
+            <div class="col-md-9">
+                <div class="content ps-0">
+                    <h4 class="title">Our CEO's Message</h4>
+                    <p>
+                        Over the years, we have challenged conventional norms and stayed true to the idea that real learning happens when students feel seen, heard, and supported.
+                    </p>
+                    <p>
+                       Taking on the responsibility of leading our K12 sector, my vision is to make learning flexible, meaningful, and deeply personal; adapting to each child’s pace, curiosity, and dreams.
+                    </p>
+                    <p>
+                        Interval learning is not just a learning platform, but a true companion in every child’s learning journey, bridging the gap between what education is today and what it should be.
+                    </p>
+                    <p>
+                        With our team of educators and innovators, Interval will continue to shape classrooms into spaces of discovery, confidence, and growth.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="edu-blog-area about_page blog-area-3 edu-section-gap">
+    <div class="container">
+        <div class="section-title section-center">
+            <h2 class="title">Our <span class="color-primary">CXO</span>'s</h2>
+            <span class="shape-line"><i class="icon-19"></i></span>
+        </div>
+
+        <div class="row g-5 row--45">
+            <!-- End Blog Grid  -->
+            <div class="col-lg-12 sal-animate" data-sal-delay="100" data-sal="slide-up" data-sal-duration="800">
+                <div class="row">
+                    {% for staff in staffs %}
+                    <div class="col-md-6">
+                        <div class="edu-blog blog-style-2 cardlike">
+                            <div class="inner">
+                                <div class="thumbnail">
+                                    <a href="javascript:void(0);" role="button">
+                                        <img class="lazy" data-src="{{staff.image.url}}" alt="Blog Images"
+                                            style="width:180px;height:170px;object-fit:cover">
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <div class="category-wrap">
+                                    </div>
+                                    <h5 class="title mb-1">{{staff.name}}<span class="blog-category"> ({{staff.designation}})</span></h5>
+                                    <p>
+                                        {{staff.bio}}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="edu-event-area event-area-1 gap-large-text pt-0">
+    <div class="container edublink-animated-shape">
+        <div class="section-title section-center sal-animate" data-sal-delay="150" data-sal="slide-up"
+            data-sal-duration="800">
+            <h2 class="title">News and Events </h2>
+            <span class="shape-line"><i class="icon-19"></i></span>
+        </div>
+        <div class="row g-5">
+            <!-- Start Event Grid  -->
+            {% for news in newses %}
+            <div class="col-lg-4 col-md-6 sal-animate" data-sal-delay="100" data-sal="slide-up" data-sal-duration="800">
+                <div class="bdrs bradius edu-event event-style-1 shadow">
+                    <div class="inner">
+                        <div class="thumbnail shadow">
+                            <a href="{{news.get_absolute_url}}">
+                                <img src="{{news.image.url}}" alt="Blog Images"
+                                    style="height: 250px;object-fit: cover;">
+                            </a>
+                        </div>
+                        <div class="content">
+                            <div class="event-date">
+                                <span class="day">{{news.date|date:"d"}}</span>
+                                <span class="month">{{news.date|date:"M"|upper}}</span>
+                            </div>
+                            <h5 class="title"><a href="{{news.get_absolute_url}}">{{news.title}}</a></h5>
+                            <div class="read-more-btn">
+                                <a class="edu-btn btn-small btn-secondary" href="{{news.get_absolute_url}}">Learn More <i class="icon-4"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="event-view-all-btn sal-animate" data-sal-delay="150" data-sal="slide-up" data-sal-duration="1200">
+            <h6 class="view-text">The Latest News from Interval.
+                <a href="{% url 'web:news' %}" class="btn-transparent">View All <i class="icon-4"></i></a>
+            </h6>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

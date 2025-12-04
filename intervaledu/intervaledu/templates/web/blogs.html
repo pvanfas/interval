@@ -1,0 +1,110 @@
+{% extends 'web/base.html' %}
+{% load static tags %}
+
+{% block meta %}
+    <!-- Primary Meta Tags -->
+    <title>{% get_value 'blogs_meta_title' %}</title>
+    <meta name="title" content="{% get_value 'blogs_meta_title' %}" />
+    <meta name="description" content="{% get_value 'blogs_meta_desc' %}" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{og_url}}" />
+    <meta property="og:title" content="{% get_value 'blogs_meta_title' %}" />
+    <meta property="og:description" content="{% get_value 'blogs_meta_desc' %}" />
+    <meta property="og:image" content="https://www.intervaledu.com/static/web/images/main/preview.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="{{og_url}}" />
+    <meta property="twitter:title" content="{% get_value 'blogs_meta_title' %}" />
+    <meta property="twitter:description" content="{% get_value 'blogs_meta_desc' %}" />
+    <meta property="twitter:image" content="https://www.intervaledu.com/static/web/images/main/preview.png" />
+{% endblock %}
+
+
+{% block content %}
+
+<section class="section-gap-equal" style="min-height:100vh;">
+    <div class="container">
+        <div class="section-title section-center">
+            <h1 class="h2 title">Blogs</h1>
+            <span class="shape-line"><i class="icon-19"></i></span>
+        </div>
+
+        <div class="categories d-none d-md-block">
+            {% for category in categories %}
+            <a href="{{category.get_absolute_url}}" class="category_btn {% if category.slug == active_category.slug %}active{% endif %}">{{category}}</a>
+            {% endfor %}
+        </div>
+
+        <div class="mobile_categories d-block d-sm-block d-md-none mb-5">
+            <form action="" method="get">
+                <label for="category" class="form-label fs-5">Filter By</label>
+                <select class="form-select form-select-lg" name="category" onchange="this.form.submit()" style="border-radius:12px;">
+                    <option value="" {% if not active_category %}selected{% endif %}>All Categories</option>
+                    {% for category in categories %}
+                    <option value="{{category.slug}}" {% if category.slug == active_category.slug %}selected{% endif %}>{{category}}</option>
+                    {% endfor %}
+                </select>
+            </form>
+
+        </div>
+
+        <div class="row g-5" id="masonry-gallery" style="position: relative;">
+
+            {% for blog in blogs %}
+            <div class="col-lg-4 col-md-6 col-12 masonry-item sal-animate" data-sal-delay="100" data-sal="slide-up" data-sal-duration="800" style="position: absolute; left: 0px; top: 0px;">
+                <div class="edu-blog blog-style-5">
+                    <div class="inner">
+                        <div class="thumbnail">
+                            <a href="{{blog.get_absolute_url}}" style="height:220px;width:100%;">
+                                <img class="lazy border" data-src="{{blog.image.url}}" alt="Blog Images" style="height:220px;width:100%;object-fit:cover">
+                            </a>
+                        </div>
+                        <div class="content position-top">
+                            <div class="read-more-btn">
+                                <a class="btn-icon-round" href="{{blog.get_absolute_url}}"><i class="icon-4"></i></a>
+                            </div>
+                            <div class="category-wrap">
+                                <a href="{{blog.get_absolute_url}}" class="blog-category">{{blog.category}}</a>
+                            </div>
+                            <h5 class="title"><a href="{{blog.get_absolute_url}}">{{blog.title}}</a></h5>
+                            <ul class="blog-meta">
+                                <li><i class="icon-27"></i>{{blog.date}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+
+        <ul class="edu-pagination top-space-30">
+            {% if blogs.has_previous %}
+            <li><a href="?page={{ blogs.previous_page_number }}" aria-label="Previous"><i class="icon-west"></i></a></li>
+            {% endif %}
+        
+            {% for page_num in blogs.paginator.page_range %}
+                {% if page_num == blogs.number %}
+                <li class="active"><a href="#">{{ page_num }}</a></li>
+                {% elif page_num >= blogs.number|add:"-2" and page_num <= blogs.number|add:"2" %}
+                <li><a href="?page={{ page_num }}">{{ page_num }}</a></li>
+                {% endif %}
+            {% endfor %}
+        
+            {% if blogs.has_next %}
+            <li><a href="?page={{ blogs.next_page_number }}" aria-label="Next"><i class="icon-east"></i></a></li>
+            {% endif %}
+        </ul>
+        
+
+    </div>
+</section>
+
+
+
+{% include 'web/partials/cta.html' %}
+
+{% endblock %}

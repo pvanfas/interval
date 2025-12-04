@@ -1,0 +1,100 @@
+{% extends 'web/base.html' %}
+{% load honeypot %}
+
+{% block content %}
+
+
+<div class="edu-cta-banner-area home-one-cta-wrapper bg-image">
+    <div class="container">
+        <div class="edu-cta-banner">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-6">
+                    <div class="card" style="padding: 50px;border-radius: 20px;align-items: center;">
+                        <h2 class="h3 mb--20"><span class="color-secondary">{{course}}</h2>
+
+                        <div class="text-left w-100 shadow-sm w-100" style="border-radius: 15px;border: 1px solid #a125c21c;padding: 26px;margin-bottom: 30px;">
+                            <h3 class="h5 mb-3">Billing Address</h3>
+                            <p class="mb-0">Name: {{payment_obj.student_name}}</p>
+                            <p class="mb-0">Email: {{payment_obj.email}}</p>
+                            <p class="mb-0">Country: {{payment_obj.country}}</p>
+                            <p class="mb-0">State/Province: {{payment_obj.state}}</p>
+                            <p class="mb-0">Phone number: {{payment_obj.phone_number}}</p>
+                            <p class="mb-0">Whatsapp number: {{payment_obj.whatsapp_number}}</p>
+                            <p class="mb-0">Class: {{payment_obj.get_standard_display}}</p>
+                        </div>
+                                                
+
+                        <form action="" class="enquiry_form w-100">
+                            <div class="form-group">
+                                <label for="name">Coupon Code</label>
+                                <div class="d-flex mb-2 coupon_column" style="background: #9c27b0;border-radius: 30px;">
+                                    <input type="text" class="form-control" id="coupon_code" name="coupon_code" style="height:44px"
+                                        value="{{request.GET.coupon_code}}">
+                                    <button type="submit" class="btn btn-lg fs-4 px-5 fw-bold text-white" id="apply_btn">Apply</button>
+                                </div>
+                                <p class="text-primary">{{message|default:""}}</p>
+                            </div>
+                        </form>
+                        
+                        <div class="d-flex justify-content-between align-items-center w-100">
+                            {% if coupon_obj %}
+                            <span class="edu-btn border"><del>&#8377;{{payment_obj.course.course_fee|floatformat:2}}</del></span>
+                            {% endif %}
+                            <button class="edu-btn ms-auto" id="paymentBtn">Pay &#8377;{{amount|floatformat:2}} <i class="icon-4"></i></button>
+                        </div>
+
+                        <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+                        <script>
+                            var options = {
+                            key: "{{razorpay_merchant_key}}",
+                            amount: "{{razorpay_amount}}",
+                            currency: "{{currency}}",
+                            name: "{{payment_obj.student_name}}",
+                            order_id: "{{razorpay_order_id}}",
+                            callback_url: "{{callback_url}}",
+                            description: "ORDER: {{order.order_id}}",
+                            image: "{{domain}}/static/web/images/logo/logo-dark.png",
+                            prefill: {
+                                "name": "{{payment_obj.student_name}}",
+                                "email": "{{payment_obj.email}}",
+                                "contact": "{{payment_obj.phone_number}}"
+                            },
+                            notes: {
+                                "payment_id": "{{payment_obj.id}}"
+                            }
+                            };
+                            var rzp1 = new Razorpay(options);
+                            document.getElementById("paymentBtn").onclick = function (e) {
+                            rzp1.open();
+                            e.preventDefault();
+                            };
+                        </script>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block gtm_scripts %}
+<script>
+    dataLayer.push({ ecommerce: null });
+    dataLayer.push({
+        event:  'add_to_cart', 
+        ecommerce: {
+            currency: "INR",
+            value: {{ payment_obj.course.course_fee }},
+            items : [{
+                item_id: "{{ payment_obj.course.id }}",
+                item_name: "{{ payment_obj.course.title }}",
+                item_category: "NonAcademicProgram",
+                price: {{ payment_obj.course.course_fee }},
+                quantity: 1
+            }]
+        }
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}About{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+    <h3 class="page-title"> About </h3>
+</div>
+
+{% if request.user.is_superuser %}
+{% if not object_list %}
+<div class="row mb-3">
+    <div class="col text-right">
+        <a href="{% url 'core:new_contact' %}" class="btn btn-lg btn-gradient-primary">New About</a>
+    </div>
+</div>
+{% endif %}
+{% endif %}
+
+<div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Abouts</h4>
+                {% if object_list %}
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover border" style="width:100%;">
+                        <thead>
+                            <tr>
+                                <th> # </th>
+                                <th> title </th>
+                                {% if request.user.is_superuser %}<th> Actions </th>{% endif %}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for object in object_list %}
+                            <tr>
+                                <td>{{forloop.counter}}</td>
+                                <td> {{object.title}} </td>
+                                {% if request.user.is_superuser %}
+                                <td>
+                                    <a href="{{object.get_update_url}}" class="btn btn-sm btn-circle btn-info"><i class="mdi mdi-pencil"></i></a>
+                                </td>
+                                {% endif %}
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% else %}
+                <small class="mb-0">No About exists.</small>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock content %}

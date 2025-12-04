@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    {% load static tags %}
+    {% load honeypot %}
+
+    <!-- Basic Meta Tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- DNS Prefetch & Preconnect for Performance -->
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://ipapi.co">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" as="style">
+    <link rel="preload" href="{% static 'web/css/app.min.css' %}" as="style">
+    <link rel="preload" href="{% static 'web/js/vendor/bundle.min.js' %}" as="script">
+
+    {% block robots %}{% endblock %}
+
+    <!-- SEO and Social Meta Tags -->
+    {% block meta %}
+    <title>{% get_value 'home_meta_title' %}</title>
+    <meta name="title" content="{% get_value 'home_meta_title' %}" />
+    <meta name="description" content="{% get_value 'home_meta_desc' %}" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ og_url }}" />
+    <meta property="og:title" content="{% get_value 'home_meta_title' %}" />
+    <meta property="og:description" content="{% get_value 'home_meta_desc' %}" />
+    <meta property="og:image" content="https://www.intervaledu.com/static/web/images/main/preview.png" />
+
+    <!-- Twitter Card -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="{{ og_url }}" />
+    <meta property="twitter:title" content="{% get_value 'home_meta_title' %}" />
+    <meta property="twitter:description" content="{% get_value 'home_meta_desc' %}" />
+    <meta property="twitter:image" content="https://www.intervaledu.com/static/web/images/main/preview.png" />
+    {% endblock %}
+
+    <link rel="canonical" href="{% with request.scheme|add:'://'|add:request.get_host|add:request.path as full_url %}{{ full_url }}{% endwith %}">
+
+    <!-- Favicon and App Icons -->
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="{% static 'web/images/favicon/ms-icon-144x144.png' %}">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="apple-mobile-web-app-title" content="Team Interval">
+
+    <link rel="icon" href="{% static 'web/images/favicon/favicon.svg' %}" type="image/svg+xml">
+    <link rel="icon" href="{% static 'web/images/favicon/favicon-48x48.png' %}" sizes="48x48" type="image/png">
+    <link rel="icon" href="{% static 'web/images/favicon/favicon.ico' %}" sizes="any" type="image/x-icon">
+
+    <!-- Keep only essential touch icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'web/images/favicon/apple-icon-180x180.png' %}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{% static 'web/images/favicon/android-icon-192x192.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'web/images/favicon/favicon-32x32.png' %}">
+    <link rel="manifest" href="{% static 'web/images/favicon/manifest.json' %}">
+
+    <!-- Critical CSS with font-display optimization -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'web/css/vendor/icomoon.css' %}">
+    <style>/* Ensure font-display: swap for faster rendering */ @font-face { font-display: swap; }</style>
+    
+    <!-- Deferred CSS for Non-Critical Resources -->
+    <link rel="preload" href="{% static 'web/css/vendor/magnifypopup.min.css' %}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/odometer@0.4.8/themes/odometer-theme-default.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/css/lightgallery-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="{% static 'web/css/vendor/animation.min.css' %}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery-ui@1.14.0/themes/base/theme.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@8.0.7/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.0/build/css/intlTelInput.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="{% static 'web/css/vendor/tipped.min.css' %}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="{% static 'web/css/vendor/magnifypopup.min.css' %}">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/odometer@0.4.8/themes/odometer-theme-default.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/css/lightgallery-bundle.min.css">
+        <link rel="stylesheet" href="{% static 'web/css/vendor/animation.min.css' %}">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-ui@1.14.0/themes/base/theme.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8.0.7/swiper-bundle.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.0/build/css/intlTelInput.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="{% static 'web/css/vendor/tipped.min.css' %}">
+    </noscript>
+    {% block css_plugins %}{% endblock %}
+
+    <!-- Custom Stylesheets -->
+    <link rel="stylesheet" href="{% static 'web/css/app.min.css' %}?v=2.0">
+    <link rel="stylesheet" href="{% static 'web/css/custom.min.css' %}?v=2.2">
+    {% block stylesheet %}{% endblock %}
+    {% block datalayer %}{% endblock %}
+
+    <!-- CSS Loader Polyfill -->
+     {% include 'web/partials/css_loader.html' %}
+
+    <!-- Analytics & Tracking -->
+    {% include 'web/partials/analytics.html' %}
+</head>
+
+<body class="sticky-header" data-spy="scroll" data-target="#toc">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W6FCQMT3" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+     
+    {% block gtm_scripts %}{% endblock %}
+
+    <div id="main-wrapper" class="main-wrapper">
+
+        {% block header %}
+        {% include 'web/partials/header.html' %}
+        {% endblock %}
+
+        {% block content %}
+        {% endblock %}
+
+        {% block footer %}
+        {% include 'web/partials/footer.html' %}
+        {% endblock %}
+
+    </div>
+
+    <!-- Modals -->
+    {% block static_backdrop %}
+    {% include 'web/partials/enquiry_modal.html' %}
+    {% endblock %}
+
+    {% block demo_backdrop %}
+    {% include 'web/partials/demo_modal.html' %}
+    {% endblock %}
+
+    <!-- Scroll to Top Progress Indicator -->
+    {% block progress %}
+    <div class="rn-progress-parent">
+        <svg class="rn-back-circle svg-inner" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
+        <svg class="chevron_up" fill="#ee4a62" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 407.436 407.436" xml:space="preserve">
+            <polygon points="203.718,91.567 0,294.621 21.179,315.869 203.718,133.924 386.258,315.869 407.436,294.621 " />
+        </svg>
+    </div>
+    {% endblock %}
+
+    <!-- WhatsApp Floating Button -->
+    {% block whatsapp_link %}
+    {% include 'web/partials/whatsapp_link.html' %}
+    {% endblock %}
+
+    <!-- External JavaScript Libraries - Optimized Loading -->
+    <script defer src="{% static 'web/js/vendor/bundle.min.js' %}"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.plugins.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.0/build/js/intlTelInput.min.js" crossorigin="anonymous"></script>
+    
+    <!-- Custom JavaScript -->
+    <script defer src="{% static 'web/js/app.js' %}"></script>
+    {% block js_plugins %}{% endblock %}
+    <script defer src="{% static 'web/js/script.js' %}"></script>
+
+    <!-- Phone Input Initialization -->
+    {% block phone_input_script %}
+    <script>
+        const initializeIntlTelInput = (formSelector, inputSelector, outputSelector) => {
+            const $inputElement = $(inputSelector);
+            
+            // Sanitize input to numbers only, remove leading zeros, max 10 digits
+            $inputElement.on("input", function () {
+                let sanitizedValue = $(this).val().replace(/[^0-9]/g, '');
+                if (sanitizedValue.startsWith('0')) {
+                    sanitizedValue = sanitizedValue.slice(1);
+                }
+                if (sanitizedValue.length > 10) {
+                    sanitizedValue = sanitizedValue.slice(0, 10);
+                }
+            });
+            
+            // Initialize intl-tel-input plugin
+            const iti = window.intlTelInput($inputElement[0], {
+                utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.0/build/js/utils.js",
+                initialCountry: "auto",
+                geoIpLookup: callback => {
+                    fetch("https://ipapi.co/json")
+                        .then(res => res.json())
+                        .then(data => callback(data.country_code))
+                        .catch(() => callback("in"));
+                },
+                separateDialCode: true,
+                preferredCountries: ["in", "ae", "sa", "qa", "om", "bh", "kw"],
+                formatOnDisplay: true,
+                customPlaceholder: function (selectedCountryPlaceholder, selectedCountryData) {
+                    return "";
+                },
+            });
+
+            // Set initial country code
+            const countryCode = iti.getSelectedCountryData().dialCode;
+            if ($(outputSelector).length) {
+                $(outputSelector).val(countryCode);
+            }
+
+            // Update country code on change
+            $inputElement.on("countrychange", function () {
+                const updatedCountryCode = iti.getSelectedCountryData().dialCode;
+                if ($(outputSelector).length) {
+                    $(outputSelector).val(updatedCountryCode);
+                }
+            });
+        };
+    </script>
+    {% endblock %}
+
+    {% block intl_block %}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof initializeIntlTelInput === 'function') {
+                initializeIntlTelInput(".demo_request_form", "#id_demo_phone_number", "#id_demo_phone_number_country_code");
+                initializeIntlTelInput(".demo_request_form", "#id_demo_whatsapp_number", "#id_demo_whatsapp_number_country_code");
+                initializeIntlTelInput(".enquiry_form", "#id_popup_phone_number", "#id_popup_phone_number_country_code");
+                initializeIntlTelInput(".enquiry_form", "#id_popup_whatsapp_number", "#id_popup_whatsapp_number_country_code");
+            }
+        });
+    </script>
+    {% endblock %}
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof $ !== 'undefined' && $('.lazy').length) {
+                $('.lazy').Lazy();
+            }
+        });
+    </script>
+    {% block popup_script %}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof $ === 'undefined') return;
+            
+            // Show modal after delay if not shown
+            if (!sessionStorage.getItem("modalShown")) {
+                setTimeout(function() {
+                    $("#staticBackdrop").modal("show");
+                    sessionStorage.setItem("modalShown", "true");
+                }, 6000);
+            }
+            
+            // Handle form submission
+            function handleFormSubmission(selector) {
+                $(selector).on('submit', function(event) {
+                    var form = this;
+                    event.preventDefault();
+                    $(form).find('button[type="submit"]').prop('disabled', true).text('Submitting...');
+                    setTimeout(() => form.submit(), 0);
+                });
+            }
+            handleFormSubmission('.enquiry_form, .demo_request_form');
+        });
+    </script>
+    {% endblock %}
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof $ === 'undefined') return;
+            
+            var purposes_json = {{ purposes_json|safe|default:"[]" }};
+            $('select[name="purpose"]').on('change', function() {
+                var selectedPurpose = $(this).val();
+                var purposeData = purposes_json.find(p => p.id === parseInt(selectedPurpose));
+                if (purposeData && purposeData.enable_redirect && purposeData.redirect_url) {
+                    window.location.href = purposeData.redirect_url;
+                }
+            });
+        });
+    </script>
+
+    <!-- Custom Page Scripts -->
+    {% block scripts %}{% endblock %}
+</body>
+
+</html>

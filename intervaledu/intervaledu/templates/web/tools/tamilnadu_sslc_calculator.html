@@ -1,0 +1,244 @@
+{% extends 'web/base.html' %}
+{% load static tags %}
+
+
+{% block meta %}
+<!-- Primary Meta Tags -->
+<title>{% get_value 'tamilnadu_sslc_calculator_meta_title' %}</title>
+<meta name="title" content="{% get_value 'tamilnadu_sslc_calculator_meta_title' %}" />
+<meta name="description" content="{% get_value 'tamilnadu_sslc_calculator_meta_desc' %}" />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{og_url}}" />
+<meta property="og:title" content="{% get_value 'tamilnadu_sslc_calculator_meta_title' %}" />
+<meta property="og:description" content="{% get_value 'tamilnadu_sslc_calculator_meta_desc' %}" />
+<meta property="og:image" content="https://www.intervaledu.com/static/web/images/main/preview.png" />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content="{{og_url}}" />
+<meta property="twitter:title" content="{% get_value 'tamilnadu_sslc_calculator_meta_title' %}" />
+<meta property="twitter:description" content="{% get_value 'tamilnadu_sslc_calculator_meta_desc' %}" />
+<meta property="twitter:image" content="https://www.intervaledu.com/static/web/images/main/preview.png" />
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="hero-banner hero-style-7 bgc1 p-0">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-12">
+                <div class="banner-content text-start mb-0" style="padding:60px 0 10px 0">
+                    <h1 class="h3 title sal-animate">Tamil Nadu SSLC Marks to Percentage Calculator 2025</h1>
+                    <p>
+                        Want to calculate your Tamil Nadu SSLC exam percentage based on the marks you scored? Use our
+                        easy and accurate calculator to get instant results.
+                    </p>
+                    <h2 class="h4 mb-2">Free TN SSLC Marks to Percentage Calculator</h2>
+                    <p>
+                        Enter the marks obtained in each subject (out of 100), and the calculator will compute your
+                        overall percentage based on a total of 500 marks.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-12 mb--60">
+                <form id="marksForm" class="border bradius p-5">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="subject1" class="form-label">Language</label>
+                                <input type="number" class="bradius form-control form-control-sm border fs-4" style="height: 50px;" id="subject1" min="0" max="100" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="subject2" class="form-label">English</label>
+                                <input type="number" class="bradius form-control form-control-sm border fs-4" style="height: 50px;" id="subject2" min="0" max="100" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="subject3" class="form-label">Mathematics</label>
+                                <input type="number" class="bradius form-control form-control-sm border fs-4" style="height: 50px;" id="subject3" min="0" max="100" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="subject4" class="form-label">Science</label>
+                                <input type="number" class="bradius form-control form-control-sm border fs-4" style="height: 50px;" id="subject4" min="0" max="100" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="subject5" class="form-label">Social Science</label>
+                                <input type="number" class="bradius form-control form-control-sm border fs-4" style="height: 50px;" id="subject5" min="0" max="100" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <button type="button" class="edu-btn btn-large" onclick="calculateMarksPercentage()">Calculate
+                            Percentage</button>
+                    </div>
+                </form>
+                <div class="mt-4">
+                    <div class="border p-5 result_container text-center text-success bradius">
+                        <h4 id="result" class="mb-0 fs-2"></h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12 mb-5">
+                <div class="alert alert-info p-5" role="alert">
+                    <h4 class="alert-heading">Disclaimer</h4>
+                    <p class="mb-0">
+                        This calculator provides an estimated percentage based on the marks you input. It is not an
+                        official tool and does not reflect the actual SSLC certificate issued by the Tamil Nadu Board.
+                        Please consult your official mark sheet for accurate results.
+                    </p>
+                </div>
+
+                <div class="border bradius p-5 mt-5">
+                    <h4>How to Calculate Your Tamil Nadu SSLC Percentage</h4>
+                    <p>
+                        To calculate your percentage in the Tamil Nadu SSLC exam, follow these simple steps:
+                    </p>
+                    <ol>
+                        <li><strong>Identify the Marks Scored:</strong> Enter the marks you received in each of the five
+                            subjects:
+                            <ul>
+                                <li>Language</li>
+                                <li>English</li>
+                                <li>Mathematics</li>
+                                <li>Science</li>
+                                <li>Social Science</li>
+                            </ul>
+                        </li>
+                        <li><strong>Add the Marks:</strong> Sum up the marks you got in all five subjects.</li>
+                        <li><strong>Use the Formula:</strong>
+                            <br>
+                            <code>Percentage = (Total Marks Scored ÷ 500) × 100</code>
+                        </li>
+                        <li><strong>Example:</strong> If your total marks are 445 out of 500:
+                            <br>
+                            <code>Percentage = (445 ÷ 500) × 100 = 89.00%</code>
+                        </li>
+                    </ol>
+                    <p class="mb-0">
+                        This method gives you your overall SSLC percentage based on your marks out of 500.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="col-md-12 mb--60">
+                <div class="faq-accordion sal-animate" id="faq-accordion" data-sal-delay="100" data-sal="slide-up"
+                    data-sal-duration="800">
+                    <div class="accordion">
+
+                        <div class="accordion-item">
+                            <h5 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq1" aria-expanded="true">
+                                    How is the SSLC percentage calculated in Tamil Nadu?
+                                </button>
+                            </h5>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faq-accordion">
+                                <div class="accordion-body">
+                                    <p>
+                                        Your percentage is calculated by adding the marks obtained in all five subjects,
+                                        dividing by the total possible marks (500), and multiplying by 100.
+                                        <br><strong>Formula:</strong> (Total Marks Scored ÷ 500) × 100
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h5 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq2" aria-expanded="false">
+                                    What subjects are considered for the SSLC percentage?
+                                </button>
+                            </h5>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faq-accordion">
+                                <div class="accordion-body">
+                                    <p>
+                                        The five subjects included in the SSLC percentage calculation are: Language,
+                                        English, Mathematics, Science, and Social Science. Each subject is scored out of
+                                        100 marks.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h5 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq3" aria-expanded="false">
+                                    Is this percentage considered official?
+                                </button>
+                            </h5>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faq-accordion">
+                                <div class="accordion-body">
+                                    <p>
+                                        No, this tool only provides an estimate based on your input. For official
+                                        results and certificates, refer to your mark sheet issued by the Directorate of
+                                        Government Examinations, Tamil Nadu.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h5 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq4" aria-expanded="false">
+                                    What if I enter incorrect marks?
+                                </button>
+                            </h5>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faq-accordion">
+                                <div class="accordion-body">
+                                    <p>
+                                        The calculator works only as accurately as the marks you input. Ensure that you
+                                        enter marks correctly (0–100 per subject) for a reliable percentage.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+
+{% block popup_script %}{% endblock %}
+
+{% block scripts %}
+<script>
+    function calculateMarksPercentage() {
+        let total = 0;
+        for (let i = 1; i <= 5; i++) {
+            const mark = parseFloat(document.getElementById(`subject${i}`).value);
+            if (isNaN(mark) || mark < 0 || mark > 100) {
+                alert("Please enter valid marks (0–100) for all subjects.");
+                return;
+            }
+            total += mark;
+        }
+        const percentage = (total / 500) * 100;
+        document.getElementById("result").innerText = `Your Estimated Percentage: ${percentage.toFixed(2)}%`;
+    }
+</script>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'web/base.html' %} {% block content %}
+
+<main>
+    <section class="ed-error section-gap pb-0" style="min-height:100vh">
+        <div class="container section-gap ed-container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-8 col-12">
+                    <div class="ed-error__inner text-center">
+                        <div class="ed-error__img">
+                            <img src="/static/web/images/main/success.png" alt="error-img" style="width:120px" />
+                        </div>
+                        <div class="ed-error__content">
+                            <p class="ed-error__content-text">
+                                We have recieved your message. We will get back to you as soon as possible.
+                            </p>
+                            <div class="ed-error__btn">
+                                <a href="/" class="ed-btn">Go to Homepage<i class="fi fi-rr-arrow-small-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+{% endblock %}
+
+{% block cta %} {% endblock %}
+{% block footer %} {% endblock %}
